@@ -281,7 +281,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 30px;
         }
 
@@ -670,12 +670,13 @@
 
             <!-- Main Cards -->
             <div class="services-grid">
+
                 <div class="service-card">
-                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=1000&auto=format&fit=crop');"></div>
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1000&auto=format&fit=crop');"></div>
                     <div class="card-content">
-                        <div class="card-icon"><i class="fa-solid fa-hard-drive"></i></div>
-                        <h3>הצלת מידע</h3>
-                        <p>שחזור וחילוץ מידע מדיסקים קשיחים, כוננים נשלפים, כרטיסי זיכרון, מחשבים, מכשירי אנדרואיד.</p>
+                        <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h3>מחשבים</h3>
+                        <p>תיקון תקלות, שידרוג, ניקוי וירוסים, אופטימיזציה, שיפור ביצועים.</p>
                     </div>
                 </div>
 
@@ -689,6 +690,15 @@
                 </div>
 
                 <div class="service-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=1000&auto=format&fit=crop');"></div>
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-hard-drive"></i></div>
+                        <h3>הצלת מידע</h3>
+                        <p>שחזור וחילוץ מידע מדיסקים קשיחים, כוננים נשלפים, כרטיסי זיכרון, מחשבים, מכשירי אנדרואיד.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
                     <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop');"></div>
                     <div class="card-content">
                         <div class="card-icon"><i class="fa-solid fa-code"></i></div>
@@ -696,27 +706,7 @@
                         <p>התקנת תוכנות, אפליקציות, מערכות הפעלה, חסימות.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Small Cards -->
-            <div class="services-grid-small">
-                <div class="service-card-small">
-                    <div class="card-icon"><i class="fa-solid fa-database"></i></div>
-                    <h3>חילוץ מידע</h3>
-                    <p>חילוץ מידע ממכשירים נעולים, שבורים או מוצפנים פתרונות מתקדמים לכל מצב.</p>
-                </div>
-                
-                <div class="service-card-small">
-                    <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
-                    <h3>מחשבים</h3>
-                    <p>תיקון תקלות, שידרוג, ניקוי וירוסים, אופטימיזציה, שיפור ביצועים.</p>
-                </div>
-                
-                <div class="service-card-small">
-                    <div class="card-icon"><i class="fa-solid fa-gear"></i></div>
-                    <h3>גרסאות בהתאמה אישית</h3>
-                    <p>התאמה אישית של תוכנות ומערכות הפעלה מותאם, גרסאות מיוחדות וקונפיגורציות ייחודיות.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -770,13 +760,6 @@
             <div class="contact-layout">
                 <!-- Info Boxes (Right) -->
                 <div class="contact-info">
-                    <div class="info-box">
-                        <div class="info-box-content">
-                            <h4>טלפון</h4>
-                            <p>050-1234567</p>
-                        </div>
-                        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
-                    </div>
 
                     <div class="info-box">
                         <div class="info-box-content">
@@ -802,7 +785,7 @@
                         <div class="info-icon"><i class="fa-regular fa-clock"></i></div>
                     </div>
 
-                    <div class="info-box whatsapp-box">
+                    <div class="info-box whatsapp-box" onclick="window.open('https://wa.me/972583521536', '_blank')">
                         <div class="info-box-content">
                             <h4>שלחו הודעה בוואטסאפ</h4>
                             <p style="font-size: 0.9rem; font-weight: 400;">מענה מהיר תוך דקות</p>
@@ -822,34 +805,33 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label>שם מלא</label>
-                                <input type="text" class="form-control" placeholder="השם שלך" required>
+                                <input type="text" name="name" class="form-control" placeholder="השם שלך" required>
                             </div>
                             <div class="form-group">
                                 <label>טלפון</label>
-                                <input type="tel" class="form-control" placeholder="050-0000000" required>
+                                <input type="tel" name="phone" class="form-control" placeholder="050-0000000" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label>אימייל</label>
-                            <input type="email" class="form-control" placeholder="email@example.com">
+                            <input type="email" name="email" class="form-control" placeholder="email@example.com">
                         </div>
 
                         <div class="form-group">
                             <label>סוג השירות</label>
-                            <select class="form-control">
+                            <select name="service" class="form-control">
                                 <option>בחר שירות...</option>
-                                <option>שחזור מידע</option>
-                                <option>תיקון סלולר</option>
-                                <option>תיקון מחשב</option>
-                                <option>פיתוח תוכנה</option>
-                                <option>אחר</option>
+                                <option>מחשבים</option>
+                                <option>מכשירי אנדרואיד</option>
+                                <option>הצלת מידע</option>
+                                <option>תוכנות</option>
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label>תיאור הבעיה</label>
-                            <textarea class="form-control" placeholder="ספרו לנו על הבעיה שלכם..."></textarea>
+                            <textarea name="description" class="form-control" placeholder="ספרו לנו על הבעיה שלכם..."></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-submit">
@@ -921,7 +903,7 @@
             }
         });
 
-        // Form submission handling
+        // Form submission handling (Sending to email directly using FormSubmit API)
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = this.querySelector('button[type="submit"]');
@@ -930,8 +912,17 @@
             btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> שולח...';
             btn.style.opacity = '0.8';
             
-            // Simulate API call
-            setTimeout(() => {
+            const formData = new FormData(this);
+
+            fetch('https://formsubmit.co/ajax/kobiamos001@gmail.com', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
                 btn.innerHTML = '<i class="fa-solid fa-check"></i> הפנייה נשלחה בהצלחה!';
                 btn.style.background = '#10b981'; // Green color for success
                 btn.style.color = '#fff';
@@ -943,7 +934,16 @@
                     btn.style.color = '#000';
                     btn.style.opacity = '1';
                 }, 3000);
-            }, 1500);
+            })
+            .catch(error => {
+                btn.innerHTML = '<i class="fa-solid fa-xmark"></i> אירעה שגיאה, נסו שוב';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = 'var(--primary-blue)';
+                    btn.style.color = '#000';
+                    btn.style.opacity = '1';
+                }, 3000);
+            });
         });
     </script>
 

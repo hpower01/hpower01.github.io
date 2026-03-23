@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* משתני צבעים ועיצוב תואמים לאתר הראשי */
+        /* משתני צבעים ועיצוב */
         :root {
             --bg-main: #0b0e14;
             --bg-card: #131822;
@@ -20,6 +20,7 @@
             --text-white: #ffffff;
             --text-gray: #9ca3af;
             --success: #10b981;
+            --purple: #a855f7;
             --transition: all 0.3s ease;
         }
 
@@ -97,7 +98,7 @@
 
         /* אזור המוצר */
         .product-section {
-            padding: 140px 0 80px;
+            padding: 120px 0 80px;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -108,12 +109,13 @@
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 60px;
-            align-items: center;
+            align-items: start; /* שונה מ-center כדי שהקופסאות יתיישרו יפה למעלה */
         }
 
         /* תמונת המוצר */
         .product-image-wrapper {
-            position: relative;
+            position: sticky;
+            top: 120px;
             border-radius: 20px;
             padding: 20px;
             background: var(--bg-card);
@@ -142,7 +144,7 @@
             font-size: 3.5rem;
             font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             background: linear-gradient(to left, #fff, #a0aec0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -153,79 +155,134 @@
             -webkit-text-fill-color: var(--primary-blue);
         }
 
+        /* כותרת משנית יוקרתית */
+        .best-version-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(90deg, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0.05) 100%);
+            color: var(--purple);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+        }
+        
+        .best-version-badge i { color: #facc15; } /* צבע זהב לכתר */
+
         /* סטטוס מלאי */
         .stock-status {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(16, 185, 129, 0.1);
             color: var(--success);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 700;
+            font-weight: 500;
             font-size: 1rem;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            margin-right: 15px;
         }
 
-        .stock-status i { font-size: 1.1rem; }
-
-        /* רשימות מפרט ושדרוגים */
+        /* קופסאות פרטים */
         .details-box {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 30px;
+            padding: 25px 30px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .details-box:hover {
+            border-color: rgba(255,255,255,0.1);
+            background: #161c27;
         }
 
         .details-box h3 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 10px;
             color: var(--text-white);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 10px;
         }
         
-        .details-box h3 i { color: var(--primary-blue); }
+        .box-specs h3 i { color: #3b82f6; } /* כחול */
+        .box-features h3 i { color: #10b981; } /* ירוק */
+        .box-upgrades h3 i { color: #a855f7; } /* סגול */
 
         .feature-list {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            grid-template-columns: 1fr;
+            gap: 12px;
         }
 
         .feature-list li {
             display: flex;
-            align-items: center;
-            gap: 10px;
+            align-items: flex-start;
+            gap: 12px;
             color: var(--text-gray);
-            font-size: 1.05rem;
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
         .feature-list li i {
-            color: var(--primary-blue);
+            margin-top: 3px;
             font-size: 0.9rem;
         }
 
-        .upgrades-list li i {
-            color: #a855f7; /* צבע סגול לשדרוגים כמו בתמונה */
+        .box-specs li i { color: #3b82f6; }
+        .box-features li i { color: #10b981; }
+        .box-upgrades li i { color: #a855f7; }
+
+        /* אזור רכישה ומחיר */
+        .purchase-area {
+            background: linear-gradient(to right, rgba(19, 24, 34, 0.8), rgba(0, 180, 255, 0.05));
+            border: 1px solid rgba(0, 180, 255, 0.2);
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 35px;
         }
 
-        /* כפתור רכישה/יצירת קשר */
-        .action-area {
+        .price-container {
             display: flex;
-            gap: 20px;
-            align-items: center;
-            margin-top: 40px;
+            flex-direction: column;
+        }
+
+        .price {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--primary-blue);
+            line-height: 1;
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+        }
+
+        .price .currency {
+            font-size: 1.5rem;
+            color: var(--text-white);
+        }
+
+        .price-subtitle {
+            color: var(--text-gray);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: 5px;
         }
 
         .btn-buy {
             background: var(--primary-blue);
             color: #000;
-            padding: 15px 40px;
-            border-radius: 10px;
+            padding: 15px 35px;
+            border-radius: 12px;
             font-size: 1.2rem;
             font-weight: 800;
             display: inline-flex;
@@ -243,22 +300,13 @@
             background: var(--primary-blue-hover);
         }
 
-        .price {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--text-white);
-        }
-
         /* התאמה למובייל */
         @media (max-width: 992px) {
             .product-grid { grid-template-columns: 1fr; gap: 40px; }
-            .product-image-wrapper { max-width: 500px; margin: 0 auto; }
+            .product-image-wrapper { position: relative; top: 0; max-width: 500px; margin: 0 auto; }
             .product-info h1 { font-size: 2.8rem; }
-        }
-
-        @media (max-width: 768px) {
-            .feature-list { grid-template-columns: 1fr; }
-            .action-area { flex-direction: column; align-items: stretch; text-align: center; }
+            .purchase-area { flex-direction: column; gap: 20px; text-align: center; }
+            .btn-buy { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -288,7 +336,6 @@
             <div class="product-grid">
                 
                 <!-- צד ימין: תמונה -->
-                <!-- שים לב! וודא ששם התמונה בתיקייה שלך הוא hpower.jpg -->
                 <div class="product-image-wrapper">
                     <img src="hpower.jpg" alt="נגן HPower Z80">
                 </div>
@@ -297,38 +344,60 @@
                 <div class="product-info">
                     <h1>נגן HPower <span>Z80</span></h1>
                     
-                    <div class="stock-status">
-                        <i class="fa-solid fa-circle-check"></i> המוצר זמין במלאי
+                    <div class="best-version-badge">
+                        <i class="fa-solid fa-crown"></i> הגרסה הטובה ביותר בשוק
                     </div>
+                    
+                    <span class="stock-status">
+                        <i class="fa-solid fa-circle-check"></i> זמין במלאי
+                    </span>
 
-                    <div class="details-box">
+                    <!-- קטגוריה 1: מפרט טכני -->
+                    <div class="details-box box-specs">
                         <h3><i class="fa-solid fa-microchip"></i> מפרט טכני</h3>
+                        <ul class="feature-list" style="grid-template-columns: 1fr 1fr;">
+                            <li><i class="fa-solid fa-hard-drive"></i> זיכרון 16 ג'יגה</li>
+                            <li><i class="fa-solid fa-memory"></i> זיכרון ראם 2 ג'יגה</li>
+                            <li><i class="fa-solid fa-bolt"></i> מעבד עוצמתי</li>
+                            <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 2050 mA</li>
+                            <li style="grid-column: 1 / -1;"><i class="fa-brands fa-android"></i> מערכת הפעלה אנדרואיד 10</li>
+                        </ul>
+                    </div>
+
+                    <!-- קטגוריה 2: תכונות -->
+                    <div class="details-box box-features">
+                        <h3><i class="fa-solid fa-star"></i> תכונות המכשיר</h3>
                         <ul class="feature-list">
-                            <li><i class="fa-solid fa-check"></i> מסך מגע מלא ואיכותי</li>
-                            <li><i class="fa-solid fa-check"></i> גוף מתכתי יוקרתי ועמיד</li>
-                            <li><i class="fa-solid fa-check"></i> בלוטוס איכותי ויציב</li>
-                            <li><i class="fa-solid fa-check"></i> סוללה חזקה במיוחד</li>
-                            <li><i class="fa-solid fa-check"></i> חריץ הרחבה לכרטיס זיכרון</li>
-                            <li><i class="fa-solid fa-check"></i> שמע עוצמתי ונקי</li>
+                            <li><i class="fa-solid fa-store"></i> חנות אפליקציות אופליין מתקדמת עם 150 אפליקציות ומשחקים פופולארים</li>
+                            <li><i class="fa-solid fa-radio"></i> רדיו כשר (ללא צורך באינטרנט)</li>
+                            <li><i class="fa-solid fa-video-slash"></i> מנגנון בלעדי לחסימת וידיאו עם התקנת אפליקציות פתוחה</li>
+                            <li><i class="fa-solid fa-shield-halved"></i> מנגנון ייחודי למניעת פריצה והחלפת גירסה</li>
+                            <li><i class="fa-solid fa-ban"></i> ללא אינטרנט כלל - חסום ובטוח לחלוטין</li>
                         </ul>
                     </div>
 
-                    <div class="details-box" style="border-color: rgba(168, 85, 247, 0.3);">
-                        <h3><i class="fa-solid fa-wand-magic-sparkles" style="color: #a855f7;"></i> שדרוגים מיוחדים מבית המעבדה</h3>
-                        <ul class="feature-list upgrades-list">
-                            <li><i class="fa-solid fa-shield-halved"></i> מערכת VidBlocker - חסימת וידאו הרמטית</li>
-                            <li><i class="fa-solid fa-mobile-screen"></i> HPOWER Firmwares - לוגו וגרסה מותאמת</li>
-                            <li><i class="fa-solid fa-lock"></i> מוגן לחלוטין - ללא דפדפן ואינטרנט</li>
-                            <li><i class="fa-solid fa-layer-group"></i> התקנת אפליקציות כשרות בהתאמה אישית</li>
+                    <!-- קטגוריה 3: שדרוגים -->
+                    <div class="details-box box-upgrades">
+                        <h3><i class="fa-solid fa-wand-magic-sparkles"></i> שדרוגים מיוחדים</h3>
+                        <ul class="feature-list" style="grid-template-columns: 1fr 1fr;">
+                            <li><i class="fa-solid fa-lock"></i> נעילת קו וקוד</li>
+                            <li><i class="fa-solid fa-palette"></i> ערכות נושא מרהיבות</li>
+                            <li><i class="fa-solid fa-hand-pointer"></i> מחוות, לחצני צילום וסיבוב מסך</li>
+                            <li><i class="fa-solid fa-folder-plus"></i> הוספת ווידג'טים ותיקיות</li>
                         </ul>
                     </div>
 
-                    <div class="action-area">
+                    <!-- אזור מחיר ורכישה -->
+                    <div class="purchase-area">
+                        <div class="price-container">
+                            <div class="price">
+                                380 <span class="currency">₪</span>
+                            </div>
+                            <div class="price-subtitle">בלבד! מחיר ללא תחרות</div>
+                        </div>
                         <a href="index.html#contact" class="btn-buy">
-                            <i class="fa-brands fa-whatsapp"></i> להזמנה ובירור מחיר
+                            <i class="fa-brands fa-whatsapp"></i> להזמנה עכשיו
                         </a>
-                        <!-- במידה ותרצה להציג מחיר, תוכל להוריד את ה-display:none מהשורה הבאה -->
-                        <div class="price" style="display: none;">₪XXX</div>
                     </div>
 
                 </div>

@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מוצרים - נגן HPower Z80</title>
+    <title>חנות - נגן HPower Z80</title>
     <!-- פונט Heebo -->
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- אייקונים FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* משתני צבעים ועיצוב */
+        /* משתני צבעים ועיצוב תואמים לחלוטין לאתר הראשי */
         :root {
             --bg-main: #0b0e14;
             --bg-card: #131822;
             --border-color: #1f2a37;
             --primary-blue: #00b4ff;
             --primary-blue-hover: #009ce0;
+            --badge-bg: rgba(0, 180, 255, 0.1);
+            --danger: #ef4444;
+            --danger-bg: rgba(239, 68, 68, 0.1);
             --text-white: #ffffff;
             --text-gray: #9ca3af;
-            --success: #10b981;
-            --danger: #ef4444; /* צבע אדום למצב חוסר במלאי */
-            --purple: #a855f7;
             --transition: all 0.3s ease;
         }
 
@@ -48,15 +48,16 @@
             padding: 0 20px;
         }
 
-        /* Header מקוצר */
+        /* --- Header --- */
         header {
-            background: rgba(11, 14, 20, 0.95);
+            background: rgba(11, 14, 20, 0.85);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .nav-container {
@@ -88,22 +89,36 @@
         .logo-text p { font-size: 0.75rem; color: var(--text-gray); margin: 0; }
 
         .back-btn {
-            color: var(--text-gray);
-            font-weight: 500;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
+            color: var(--text-white);
+            background: transparent;
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
             transition: var(--transition);
         }
-        .back-btn:hover { color: var(--text-white); }
 
-        /* אזור המוצר */
+        .back-btn:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        /* --- Product Layout --- */
         .product-section {
-            padding: 120px 0 80px;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: radial-gradient(circle at left center, rgba(0, 180, 255, 0.05) 0%, transparent 50%);
+            padding: 140px 0 100px;
+            position: relative;
+        }
+
+        /* רקע זוהר עדין כמו בעמוד הראשי */
+        .product-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at top left, rgba(0, 180, 255, 0.05) 0%, transparent 50%);
+            z-index: -1;
         }
 
         .product-grid {
@@ -113,117 +128,147 @@
             align-items: start;
         }
 
-        /* תמונת המוצר */
+        /* --- Image Wrapper --- */
         .product-image-wrapper {
             position: sticky;
             top: 120px;
-            border-radius: 20px;
-            padding: 20px;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            transition: var(--transition);
         }
 
-        .product-image-wrapper::before {
-            content: '';
-            position: absolute;
-            top: -20px; right: -20px; bottom: -20px; left: -20px;
-            background: radial-gradient(circle at center, rgba(0, 180, 255, 0.15) 0%, transparent 70%);
-            z-index: -1;
-            border-radius: 30px;
+        .product-image-wrapper:hover {
+            border-color: rgba(0, 180, 255, 0.3);
+            box-shadow: 0 20px 50px rgba(0, 180, 255, 0.1);
         }
 
         .product-image-wrapper img {
             width: 100%;
+            max-width: 400px;
             height: auto;
             border-radius: 12px;
             display: block;
         }
 
-        /* פרטי המוצר */
+        /* --- Product Info --- */
+        .badges-area {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--badge-bg);
+            color: var(--primary-blue);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border: 1px solid rgba(0, 180, 255, 0.2);
+        }
+
+        .badge.danger {
+            background: var(--danger-bg);
+            color: var(--danger);
+            border-color: rgba(239, 68, 68, 0.2);
+        }
+
         .product-info h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 10px;
-            background: linear-gradient(to left, #fff, #a0aec0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
         }
 
         .product-info h1 span {
             color: var(--primary-blue);
-            -webkit-text-fill-color: var(--primary-blue);
+            text-shadow: 0 0 30px rgba(0, 180, 255, 0.4);
         }
 
-        /* כותרת משנית יוקרתית */
-        .best-version-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(90deg, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0.05) 100%);
-            color: var(--purple);
-            border: 1px solid rgba(168, 85, 247, 0.3);
-            padding: 8px 20px;
-            border-radius: 8px;
-            font-weight: 800;
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-            box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
-        }
-        
-        .best-version-badge i { color: #facc15; }
-
-        /* סטטוס מלאי */
-        .stock-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-            font-size: 1rem;
-            margin-bottom: 25px;
-            margin-right: 15px;
-            color: var(--danger); /* שונה לאדום */
-            background: rgba(239, 68, 68, 0.1); /* רקע אדום עדין */
-            padding: 5px 15px;
-            border-radius: 50px;
-            border: 1px solid rgba(239, 68, 68, 0.2);
+        /* --- Detail Cards (יוקרתי כמו בדף הראשי) --- */
+        .details-section {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
 
-        /* קופסאות פרטים */
-        .details-box {
+        .detail-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 25px 30px;
-            margin-bottom: 20px;
+            padding: 35px 30px;
+            position: relative;
+            overflow: hidden;
             transition: var(--transition);
         }
 
-        .details-box:hover {
-            border-color: rgba(255,255,255,0.1);
-            background: #161c27;
+        .detail-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 180, 255, 0.05);
         }
 
-        .details-box h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+        /* פס כחול עדין בצד ימין של הכרטיסייה */
+        .detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 4px; height: 100%;
+            background: var(--primary-blue);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .detail-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
             display: flex;
             align-items: center;
-            gap: 10px;
-            color: var(--text-white);
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 10px;
         }
-        
-        .box-specs h3 i { color: #3b82f6; }
-        .box-features h3 i { color: #10b981; }
-        .box-upgrades h3 i { color: #a855f7; }
+
+        .card-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+
+        .card-header h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-white);
+        }
 
         .feature-list {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
+            gap: 15px;
+        }
+
+        .list-2-cols {
+            grid-template-columns: 1fr 1fr;
         }
 
         .feature-list li {
@@ -231,87 +276,101 @@
             align-items: flex-start;
             gap: 12px;
             color: var(--text-gray);
-            font-size: 1rem;
-            line-height: 1.4;
+            font-size: 1.05rem;
+            line-height: 1.5;
         }
 
         .feature-list li i {
-            margin-top: 3px;
-            font-size: 0.9rem;
+            margin-top: 5px;
+            color: var(--primary-blue);
+            font-size: 0.85rem;
+            opacity: 0.8;
         }
 
-        .box-specs li i { color: #3b82f6; }
-        .box-features li i { color: #10b981; }
-        .box-upgrades li i { color: #a855f7; }
-
-        /* אזור רכישה ומחיר */
-        .purchase-area {
-            background: linear-gradient(to right, rgba(19, 24, 34, 0.8), rgba(0, 180, 255, 0.05));
-            border: 1px solid rgba(0, 180, 255, 0.2);
+        /* --- Purchase Action Area --- */
+        .purchase-box {
+            margin-top: 40px;
+            background: linear-gradient(135deg, rgba(19, 24, 34, 1) 0%, rgba(19, 24, 34, 0.4) 100%);
+            border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 25px;
+            padding: 35px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 35px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .price-container {
-            display: flex;
-            flex-direction: column;
+        .purchase-box::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -50%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.03), transparent);
+            transform: skewX(-20deg);
+            animation: shine 6s infinite;
         }
 
-        .price {
-            font-size: 2.8rem;
+        @keyframes shine {
+            0% { left: -50%; }
+            20% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        .price-block .price {
+            font-size: 3rem;
             font-weight: 900;
             color: var(--primary-blue);
             line-height: 1;
-            display: flex;
-            align-items: baseline;
-            gap: 5px;
         }
 
-        .price .currency {
+        .price-block .currency {
             font-size: 1.5rem;
             color: var(--text-white);
         }
 
-        .price-subtitle {
+        .price-block .sub {
             color: var(--text-gray);
             font-size: 1rem;
-            font-weight: 500;
             margin-top: 5px;
+            display: block;
         }
 
         .btn-buy {
             background: var(--primary-blue);
             color: #000;
-            padding: 15px 35px;
-            border-radius: 12px;
-            font-size: 1.2rem;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 1.1rem;
             font-weight: 800;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            box-shadow: 0 0 20px rgba(0, 180, 255, 0.4);
-            border: none;
+            justify-content: center;
             cursor: pointer;
+            border: none;
+            box-shadow: 0 0 20px rgba(0, 180, 255, 0.2);
             transition: var(--transition);
+            z-index: 2;
         }
 
         .btn-buy:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 180, 255, 0.6);
             background: var(--primary-blue-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 180, 255, 0.4);
         }
 
-        /* התאמה למובייל */
+        /* --- Responsive Design --- */
         @media (max-width: 992px) {
             .product-grid { grid-template-columns: 1fr; gap: 40px; }
-            .product-image-wrapper { position: relative; top: 0; max-width: 500px; margin: 0 auto; }
-            .product-info h1 { font-size: 2.8rem; }
-            .purchase-area { flex-direction: column; gap: 20px; text-align: center; }
-            .btn-buy { width: 100%; justify-content: center; }
+            .product-image-wrapper { position: relative; top: 0; max-width: 600px; margin: 0 auto; }
+            .product-info h1 { font-size: 3rem; }
+            .list-2-cols { grid-template-columns: 1fr; }
+            .purchase-box { flex-direction: column; gap: 25px; text-align: center; }
+            .btn-buy { width: 100%; }
+        }
+        
+        @media (max-width: 768px) {
+            .badges-area { flex-direction: column; align-items: flex-start; }
+            .product-info h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -321,7 +380,7 @@
     <header>
         <div class="container nav-container">
             <a href="index.html" class="back-btn">
-                <i class="fa-solid fa-arrow-right"></i> חזרה לאתר הראשי
+                <i class="fa-solid fa-arrow-right"></i> ראשי
             </a>
             <div class="logo-area">
                 <div class="logo-text">
@@ -340,72 +399,82 @@
         <div class="container">
             <div class="product-grid">
                 
-                <!-- צד ימין: תמונה -->
+                <!-- צד ימין: תמונת המוצר -->
                 <div class="product-image-wrapper">
                     <img src="hpower.jpg" alt="נגן HPower Z80">
                 </div>
 
-                <!-- צד שמאל: פרטים -->
+                <!-- צד שמאל: פרטי המוצר המלאים -->
                 <div class="product-info">
+                    
+                    <div class="badges-area">
+                        <div class="badge">
+                            הגרסה הטובה ביותר בשוק
+                        </div>
+                        <div class="badge danger">
+                            <i class="fa-solid fa-circle-xmark"></i> אזל מהמלאי
+                        </div>
+                    </div>
+
                     <h1>נגן HPower <span>Z80</span></h1>
                     
-                    <div class="best-version-badge">
-                        <i class="fa-solid fa-crown"></i> הגרסה הטובה ביותר בשוק
-                    </div>
-                    
-                    <!-- סטטוס מלאי שונה לאזל מהמלאי -->
-                    <span class="stock-status">
-                        <i class="fa-solid fa-circle-xmark"></i> אזל מהמלאי
-                    </span>
-
-                    <!-- קטגוריה 1: מפרט טכני -->
-                    <div class="details-box box-specs">
-                        <h3><i class="fa-solid fa-microchip"></i> מפרט טכני</h3>
-                        <ul class="feature-list" style="grid-template-columns: 1fr 1fr;">
-                            <li><i class="fa-solid fa-hard-drive"></i> זיכרון 16 ג'יגה</li>
-                            <li><i class="fa-solid fa-memory"></i> זיכרון ראם 2 ג'יגה</li>
-                            <li><i class="fa-solid fa-bolt"></i> מעבד עוצמתי</li>
-                            <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 2050 mA</li>
-                            <li style="grid-column: 1 / -1;"><i class="fa-brands fa-android"></i> מערכת הפעלה אנדרואיד 10</li>
-                        </ul>
-                    </div>
-
-                    <!-- קטגוריה 2: תכונות -->
-                    <div class="details-box box-features">
-                        <h3><i class="fa-solid fa-star"></i> תכונות המכשיר</h3>
-                        <ul class="feature-list">
-                            <li><i class="fa-solid fa-store"></i> חנות אפליקציות אופליין מתקדמת עם 150 אפליקציות ומשחקים פופולארים</li>
-                            <li><i class="fa-solid fa-radio"></i> רדיו כשר (רק התחנות החרדיות)</li>
-                            <li><i class="fa-solid fa-video-slash"></i> מנגנון בלעדי לחסימת וידיאו עם התקנת אפליקציות פתוחה</li>
-                            <li><i class="fa-solid fa-shield-halved"></i> מנגנון ייחודי למניעת פריצה והחלפת גירסה</li>
-                            <li><i class="fa-solid fa-ban"></i> ללא אינטרנט כלל</li>
-                            <!-- התכונה החדשה שהתווספה -->
-                            <li><i class="fa-solid fa-sliders"></i> אפשרות להתאמה אישית של הגרסה</li>
-                        </ul>
-                    </div>
-
-                    <!-- קטגוריה 3: שדרוגים -->
-                    <div class="details-box box-upgrades">
-                        <h3><i class="fa-solid fa-wand-magic-sparkles"></i> שדרוגים מיוחדים</h3>
-                        <ul class="feature-list" style="grid-template-columns: 1fr 1fr;">
-                            <li><i class="fa-solid fa-lock"></i> נעילת קו וקוד</li>
-                            <li><i class="fa-solid fa-palette"></i> ערכות נושא</li>
-                            <!-- המחוות והלחצנים פוצלו לשניים -->
-                            <li><i class="fa-solid fa-hand-pointer"></i> מחוות</li>
-                            <li><i class="fa-solid fa-camera-rotate"></i> לחצני צילום וסיבוב מסך</li>
-                            <li><i class="fa-solid fa-folder-plus"></i> הוספת ווידג'טים ותיקיות</li>
-                        </ul>
-                    </div>
-
-                    <!-- אזור מחיר ורכישה -->
-                    <div class="purchase-area">
-                        <div class="price-container">
-                            <div class="price">
-                                380 <span class="currency">₪</span>
+                    <div class="details-section">
+                        
+                        <!-- כרטיסייה 1: מפרט טכני -->
+                        <div class="detail-card">
+                            <div class="card-header">
+                                <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+                                <h3>מפרט טכני</h3>
                             </div>
-                            <div class="price-subtitle">בלבד! מחיר ללא תחרות</div>
+                            <ul class="feature-list list-2-cols">
+                                <li><i class="fa-solid fa-hard-drive"></i> זיכרון 16 ג'יגה</li>
+                                <li><i class="fa-solid fa-memory"></i> זיכרון ראם 2 ג'יגה</li>
+                                <li><i class="fa-solid fa-bolt"></i> מעבד עוצמתי</li>
+                                <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 2050 mA</li>
+                                <li style="grid-column: 1 / -1;"><i class="fa-brands fa-android"></i> מערכת הפעלה אנדרואיד 10</li>
+                            </ul>
                         </div>
-                        <!-- אייקון הוואטסאפ הוסר מהכפתור -->
+
+                        <!-- כרטיסייה 2: תכונות -->
+                        <div class="detail-card">
+                            <div class="card-header">
+                                <div class="card-icon"><i class="fa-solid fa-star"></i></div>
+                                <h3>תכונות המכשיר</h3>
+                            </div>
+                            <ul class="feature-list">
+                                <li><i class="fa-solid fa-store"></i> חנות אפליקציות אופליין מתקדמת עם 150 אפליקציות ומשחקים פופולארים</li>
+                                <li><i class="fa-solid fa-radio"></i> רדיו כשר (ללא צורך באינטרנט)</li>
+                                <li><i class="fa-solid fa-video-slash"></i> מנגנון בלעדי לחסימת וידיאו עם התקנת אפליקציות פתוחה</li>
+                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון ייחודי למניעת פריצה והחלפת גירסה</li>
+                                <li><i class="fa-solid fa-ban"></i> ללא אינטרנט כלל - חסום ובטוח לחלוטין</li>
+                                <li><i class="fa-solid fa-sliders"></i> אפשרות להתאמה אישית של הגרסה</li>
+                            </ul>
+                        </div>
+
+                        <!-- כרטיסייה 3: שדרוגים -->
+                        <div class="detail-card">
+                            <div class="card-header">
+                                <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                                <h3>שדרוגים מיוחדים</h3>
+                            </div>
+                            <ul class="feature-list list-2-cols">
+                                <li><i class="fa-solid fa-lock"></i> נעילת קו וקוד</li>
+                                <li><i class="fa-solid fa-palette"></i> ערכות נושא מרהיבות</li>
+                                <li><i class="fa-solid fa-hand-pointer"></i> מחוות</li>
+                                <li><i class="fa-solid fa-camera-rotate"></i> לחצני צילום וסיבוב מסך</li>
+                                <li><i class="fa-solid fa-folder-plus"></i> הוספת ווידג'טים ותיקיות</li>
+                                <li><i class="fa-solid fa-cloud-arrow-up"></i> גיבוי ושיחזור נתוני אפליקציות</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!-- אזור מחיר והזמנה -->
+                    <div class="purchase-box">
+                        <div class="price-block">
+                            <span class="price">380 <span class="currency">₪</span></span>
+                            <span class="sub">בלבד! מחיר ללא תחרות</span>
+                        </div>
                         <a href="index.html#contact" class="btn-buy">
                             להזמנה עכשיו
                         </a>

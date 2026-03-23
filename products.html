@@ -101,4 +101,240 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background
+            background: radial-gradient(circle at left center, rgba(0, 180, 255, 0.05) 0%, transparent 50%);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        /* תמונת המוצר */
+        .product-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            padding: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.05);
+        }
+
+        .product-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20px; right: -20px; bottom: -20px; left: -20px;
+            background: radial-gradient(circle at center, rgba(0, 180, 255, 0.15) 0%, transparent 70%);
+            z-index: -1;
+            border-radius: 30px;
+        }
+
+        .product-image-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+        }
+
+        /* פרטי המוצר */
+        .product-info h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            background: linear-gradient(to left, #fff, #a0aec0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .product-info h1 span {
+            color: var(--primary-blue);
+            -webkit-text-fill-color: var(--primary-blue);
+        }
+
+        /* סטטוס מלאי */
+        .stock-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        .stock-status i { font-size: 1.1rem; }
+
+        /* רשימות מפרט ושדרוגים */
+        .details-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .details-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-white);
+        }
+        
+        .details-box h3 i { color: var(--primary-blue); }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+
+        .feature-list li i {
+            color: var(--primary-blue);
+            font-size: 0.9rem;
+        }
+
+        .upgrades-list li i {
+            color: #a855f7; /* צבע סגול לשדרוגים כמו בתמונה */
+        }
+
+        /* כפתור רכישה/יצירת קשר */
+        .action-area {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .btn-buy {
+            background: var(--primary-blue);
+            color: #000;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 0 20px rgba(0, 180, 255, 0.4);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-buy:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 180, 255, 0.6);
+            background: var(--primary-blue-hover);
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--text-white);
+        }
+
+        /* התאמה למובייל */
+        @media (max-width: 992px) {
+            .product-grid { grid-template-columns: 1fr; gap: 40px; }
+            .product-image-wrapper { max-width: 500px; margin: 0 auto; }
+            .product-info h1 { font-size: 2.8rem; }
+        }
+
+        @media (max-width: 768px) {
+            .feature-list { grid-template-columns: 1fr; }
+            .action-area { flex-direction: column; align-items: stretch; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-right"></i> חזרה לאתר הראשי
+            </a>
+            <div class="logo-area">
+                <div class="logo-text">
+                    <h2>המעבדה</h2>
+                    <p>מעבדת מחשבים וסלולר</p>
+                </div>
+                <div class="logo-icon">
+                    <i class="fa-solid fa-desktop"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Showcase -->
+    <section class="product-section">
+        <div class="container">
+            <div class="product-grid">
+                
+                <!-- צד ימין: תמונה -->
+                <!-- שים לב! וודא ששם התמונה בתיקייה שלך הוא hpower.jpg -->
+                <div class="product-image-wrapper">
+                    <img src="hpower.jpg" alt="נגן HPower Z80">
+                </div>
+
+                <!-- צד שמאל: פרטים -->
+                <div class="product-info">
+                    <h1>נגן HPower <span>Z80</span></h1>
+                    
+                    <div class="stock-status">
+                        <i class="fa-solid fa-circle-check"></i> המוצר זמין במלאי
+                    </div>
+
+                    <div class="details-box">
+                        <h3><i class="fa-solid fa-microchip"></i> מפרט טכני</h3>
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-check"></i> מסך מגע מלא ואיכותי</li>
+                            <li><i class="fa-solid fa-check"></i> גוף מתכתי יוקרתי ועמיד</li>
+                            <li><i class="fa-solid fa-check"></i> בלוטוס איכותי ויציב</li>
+                            <li><i class="fa-solid fa-check"></i> סוללה חזקה במיוחד</li>
+                            <li><i class="fa-solid fa-check"></i> חריץ הרחבה לכרטיס זיכרון</li>
+                            <li><i class="fa-solid fa-check"></i> שמע עוצמתי ונקי</li>
+                        </ul>
+                    </div>
+
+                    <div class="details-box" style="border-color: rgba(168, 85, 247, 0.3);">
+                        <h3><i class="fa-solid fa-wand-magic-sparkles" style="color: #a855f7;"></i> שדרוגים מיוחדים מבית המעבדה</h3>
+                        <ul class="feature-list upgrades-list">
+                            <li><i class="fa-solid fa-shield-halved"></i> מערכת VidBlocker - חסימת וידאו הרמטית</li>
+                            <li><i class="fa-solid fa-mobile-screen"></i> HPOWER Firmwares - לוגו וגרסה מותאמת</li>
+                            <li><i class="fa-solid fa-lock"></i> מוגן לחלוטין - ללא דפדפן ואינטרנט</li>
+                            <li><i class="fa-solid fa-layer-group"></i> התקנת אפליקציות כשרות בהתאמה אישית</li>
+                        </ul>
+                    </div>
+
+                    <div class="action-area">
+                        <a href="index.html#contact" class="btn-buy">
+                            <i class="fa-brands fa-whatsapp"></i> להזמנה ובירור מחיר
+                        </a>
+                        <!-- במידה ותרצה להציג מחיר, תוכל להוריד את ה-display:none מהשורה הבאה -->
+                        <div class="price" style="display: none;">₪XXX</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

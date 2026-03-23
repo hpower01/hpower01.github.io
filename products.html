@@ -112,7 +112,6 @@
             position: relative;
         }
 
-        /* רקע זוהר עדין כמו בעמוד הראשי */
         .product-section::before {
             content: '';
             position: absolute;
@@ -128,10 +127,17 @@
             align-items: start;
         }
 
-        /* --- Image Wrapper --- */
-        .product-image-wrapper {
+        /* עמודת התמונה (נדבקת בגלילה) */
+        .sticky-column {
             position: sticky;
             top: 120px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* --- Image Wrapper --- */
+        .product-image-wrapper {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 20px;
@@ -154,6 +160,38 @@
             height: auto;
             border-radius: 12px;
             display: block;
+        }
+
+        /* --- Marketing Text Box (מתחת לתמונה) --- */
+        .marketing-text-box {
+            background: linear-gradient(135deg, rgba(19, 24, 34, 0.9) 0%, rgba(0, 180, 255, 0.05) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .marketing-text-box h4 {
+            color: var(--text-white);
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .marketing-text-box h4 i {
+            color: #f97316; /* צבע כתום לאש */
+        }
+
+        .marketing-text-box p {
+            color: var(--text-gray);
+            font-size: 1.05rem;
+            line-height: 1.5;
+            margin: 0;
         }
 
         /* --- Product Info --- */
@@ -196,7 +234,7 @@
             border-color: rgba(239, 68, 68, 0.2);
         }
 
-        /* --- Detail Cards (יוקרתי כמו בדף הראשי) --- */
+        /* --- Detail Cards --- */
         .details-section {
             display: flex;
             flex-direction: column;
@@ -213,7 +251,6 @@
             transition: var(--transition);
         }
 
-        /* מעבר עכבר - מסגרת אחידה והילה כחולה יוקרתית */
         .detail-card:hover {
             border-color: var(--primary-blue);
             transform: translateY(-3px);
@@ -347,7 +384,7 @@
         /* --- Responsive Design --- */
         @media (max-width: 992px) {
             .product-grid { grid-template-columns: 1fr; gap: 40px; }
-            .product-image-wrapper { position: relative; top: 0; max-width: 600px; margin: 0 auto; }
+            .sticky-column { position: relative; top: 0; max-width: 600px; margin: 0 auto; }
             .product-info h1 { font-size: 3rem; }
             .list-2-cols { grid-template-columns: 1fr; }
             .purchase-box { flex-direction: column; gap: 25px; text-align: center; }
@@ -385,9 +422,17 @@
         <div class="container">
             <div class="product-grid">
                 
-                <!-- צד ימין: תמונת המוצר -->
-                <div class="product-image-wrapper">
-                    <img src="hpower.jpg" alt="נגן HPower Z80">
+                <!-- צד ימין: תמונה + טקסט שיווקי (נדבק בגלילה) -->
+                <div class="sticky-column">
+                    <div class="product-image-wrapper">
+                        <img src="hpower.jpg" alt="נגן HPower Z80">
+                    </div>
+                    
+                    <!-- הוספת הטקסט השיווקי מתחת לתמונה -->
+                    <div class="marketing-text-box">
+                        <h4><i class="fa-solid fa-fire"></i> הלהיט המבוקש עכשיו בגרסה משודרגת</h4>
+                        <p>הגרסה המתקדמת ביותר עם חסימה הרמטית ללא אינטרנט וללא וידיאו כלל.</p>
+                    </div>
                 </div>
 
                 <!-- צד שמאל: פרטי המוצר המלאים -->
@@ -395,7 +440,6 @@
                     
                     <h1>נגן HPower <span>Z80</span></h1>
 
-                    <!-- הבועות ממוקמות עכשיו מתחת לכותרת -->
                     <div class="badges-area">
                         <div class="badge">
                             הגרסה הטובה ביותר בשוק

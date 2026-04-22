@@ -1,1 +1,6 @@
-
+[
+  "com.package.name1 Productivity",
+  "com.package.name2 Games",
+  "com.another.package Social",
+  "com.nocategory.app"
+]

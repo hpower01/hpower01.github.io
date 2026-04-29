@@ -48,16 +48,45 @@
             padding: 0 20px;
         }
 
-        /* --- Header --- */
+        /* --- כפתורים כלליים --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 180, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-blue-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 180, 255, 0.5);
+        }
+
+        /* --- Header (ניווט) --- */
         header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             background: rgba(11, 14, 20, 0.85);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
             z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
         }
 
         .nav-container {
@@ -85,25 +114,37 @@
             font-size: 1.2rem;
         }
 
-        .logo-text h2 { font-size: 1.2rem; font-weight: 800; line-height: 1; }
-        .logo-text p { font-size: 0.75rem; color: var(--text-gray); margin: 0; }
+        .logo-text h2 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            line-height: 1;
+        }
 
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-white);
-            background: transparent;
-            border: 1px solid var(--border-color);
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.9rem;
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            margin: 0;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--text-gray);
+            font-weight: 500;
             transition: var(--transition);
         }
 
-        .back-btn:hover {
-            border-color: var(--primary-blue);
-            color: var(--primary-blue);
+        nav a:hover, nav a.active {
+            color: var(--text-white);
+        }
+
+        .header-btn .btn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
         }
 
         /* --- Product Layout --- */
@@ -358,27 +399,22 @@
             display: block;
         }
 
-        .btn-buy {
-            background: var(--primary-blue);
-            color: #000;
-            padding: 15px 40px;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 800;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border: none;
-            box-shadow: 0 0 20px rgba(0, 180, 255, 0.2);
-            transition: var(--transition);
-            z-index: 2;
+        /* --- Footer --- */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 30px 0;
+            margin-top: 50px;
         }
 
-        .btn-buy:hover {
-            background: var(--primary-blue-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(0, 180, 255, 0.4);
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            color: var(--text-gray);
+            font-size: 0.9rem;
         }
 
         /* --- Responsive Design --- */
@@ -392,19 +428,38 @@
         }
         
         @media (max-width: 768px) {
+            /* תפריט מובייל */
+            .nav-container { flex-wrap: wrap; }
+            nav { order: 3; width: 100%; margin-top: 15px; }
+            nav ul { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+            nav a { font-size: 0.9rem; }
+
             .badges-area { flex-direction: column; align-items: flex-start; }
             .product-info h1 { font-size: 2.5rem; }
+            .footer-content { flex-direction: column-reverse; gap: 20px; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
+    <!-- Header (ניווט) -->
+    <header id="header">
         <div class="container nav-container">
-            <a href="index.html" class="back-btn">
-                <i class="fa-solid fa-arrow-right"></i> ראשי
-            </a>
+            <div class="header-btn">
+                <a href="index.html#contact" class="btn btn-primary">שלח פנייה</a>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">ראשי</a></li>
+                    <li><a href="index.html#services">שירותים</a></li>
+                    <li><a href="products.html" class="active">מוצרים</a></li> <!-- הלשונית הפעילה -->
+                    <li><a href="download.html">הורדות</a></li>
+                    <li><a href="index.html#about">אודות</a></li>
+                    <li><a href="index.html#contact">צור קשר</a></li>
+                </ul>
+            </nav>
+
             <div class="logo-area">
                 <div class="logo-text">
                     <h2>המעבדה</h2>
@@ -506,7 +561,7 @@
                             <span class="price">380 <span class="currency">₪</span></span>
                             <span class="sub">בלבד! מחיר ללא תחרות</span>
                         </div>
-                        <a href="index.html#contact" class="btn-buy">
+                        <a href="index.html#contact" class="btn btn-primary btn-buy" style="padding: 15px 40px; font-size: 1.1rem; border-radius: 8px;">
                             להזמנה עכשיו
                         </a>
                     </div>
@@ -515,6 +570,40 @@
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="logo-area">
+                <div class="logo-text" style="text-align: right;">
+                    <h2>המעבדה</h2>
+                    <p>מעבדת מחשבים וסלולר</p>
+                </div>
+                <div class="logo-icon" style="width: 35px; height: 35px; font-size: 1rem;">
+                    <i class="fa-solid fa-desktop"></i>
+                </div>
+            </div>
+            
+            <div class="footer-text">
+                © 2026 המעבדה. כל הזכויות שמורות.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // אפקט הופעת רקע לתפריט העליון בעת גלילה
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.5)';
+                header.style.background = 'rgba(11, 14, 20, 0.95)';
+            } else {
+                header.style.boxShadow = 'none';
+                header.style.background = 'rgba(11, 14, 20, 0.85)';
+            }
+        });
+    </script>
 
 </body>
 </html>

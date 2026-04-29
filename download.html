@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidBlocker - חסימת וידאו חכמה וחינמית</title>
+    <!-- פונט Heebo -->
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- אייקונים FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- משתני צבעים ועיצוב (זהה למקור) --- */
+        :root {
+            --bg-main: #0b0e14;
+            --bg-card: #131822;
+            --bg-input: #1a202c;
+            --border-color: #1f2a37;
+            --primary-blue: #00b4ff;
+            --primary-blue-hover: #009ce0;
+            --badge-bg: rgba(0, 180, 255, 0.1);
+            --text-white: #ffffff;
+            --text-gray: #9ca3af;
+            --transition: all 0.3s ease;
+        }
+
+        /* --- איפוס גלובלי --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Heebo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- רכיבים --- */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--badge-bg);
+            color: var(--primary-blue);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 180, 255, 0.2);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: var(--primary-blue);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 180, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-blue-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 180, 255, 0.5);
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(11, 14, 20, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px; height: 40px;
+            background: rgba(0, 180, 255, 0.1);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--primary-blue);
+        }
+
+        /* --- Hero --- */
+        .hero {
+            padding: 180px 0 100px;
+            background: radial-gradient(circle at 10% 20%, rgba(0, 180, 255, 0.05) 0%, transparent 50%),
+                        linear-gradient(to bottom, #0b0e14, #131822);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: var(--text-gray);
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .free-tag {
+            color: #10b981; /* Green for Free */
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        /* --- Features Grid --- */
+        .features {
+            padding: 100px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 40px 30px;
+            border-radius: 20px;
+            transition: var(--transition);
+            text-align: right;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px; height: 60px;
+            background: var(--badge-bg);
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+        }
+
+        /* --- MDM Section --- */
+        .mdm-info {
+            background: #0f1219;
+            padding: 80px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mdm-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .mdm-text { flex: 1; text-align: right; }
+        .mdm-box {
+            flex: 1;
+            background: linear-gradient(135deg, var(--bg-card) 0%, #1a202c 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px dashed var(--primary-blue);
+        }
+
+        /* --- CTA Footer --- */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        footer {
+            padding: 30px 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .mdm-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">הורדה בחינם</a>
+            <div class="logo-area">
+                <div class="logo-text">
+                    <h2 style="font-size: 1.4rem; font-weight: 900;">VidBlocker</h2>
+                </div>
+                <div class="logo-icon">
+                    <i class="fa-solid fa-video-slash"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="badge">🚀 טכנולוגיית חסימה פורצת דרך</div>
+            <h1>האפליקציות פתוחות,<br><span>הוידאו חסום.</span></h1>
+            <p>הדרך היחידה להשתמש בכל אפליקציה שתרצו מבלי להיחשף לתכני וידאו. חסימה מערכתית חכמה שפשוט אי אפשר לעקוף. וכן, זה <span class="free-tag">בחינם לחלוטין</span>.</p>
+            
+            <div class="hero-buttons">
+                <a href="#download" class="btn btn-primary">
+                    <i class="fa-brands fa-android"></i> הורד עכשיו (APK)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-scissors"></i></div>
+                    <h3>חסימה כירורגית</h3>
+                    <p>בניגוד לחוסמים אחרים, אנחנו לא סוגרים את האפליקציה. המנגנון שלנו מזהה את ה"נגן" בתוך האפליקציה ומנטרל רק אותו. הצ'אט והטקסט נשארים פעילים.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-shield-lock"></i></div>
+                    <h3>הגנת MDM</h3>
+                    <p>VidBlocker משתלבת במערכת ההפעלה. היא אינה ניתנת לעקיפה, אינה ניתנת להסרה ללא מנהל, ועובדת תמיד ברקע כדי לשמור עליכם.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3>זיהוי אוטומטי</h3>
+                    <p>אין צורך להגדיר כלום. התקינו כל אפליקציה שתרצו מהחנות - המנגנון שלנו כבר יזהה בעצמו היכן יש וידאו ויחסום אותו מיידית.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="mdm-info">
+        <div class="container mdm-container">
+            <div class="mdm-box">
+                <ul style="list-style: none; text-align: right;">
+                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: var(--primary-blue); margin-left: 10px;"></i> אינו ניתן למחיקה ע"י המשתמש</li>
+                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: var(--primary-blue); margin-left: 10px;"></i> אכיפה ברמת ה-Kernel של המערכת</li>
+                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: var(--primary-blue); margin-left: 10px;"></i> 0% פגיעה בחיי הסוללה</li>
+                    <li><i class="fa-solid fa-check" style="color: var(--primary-blue); margin-left: 10px;"></i> פרטיות מלאה - ללא איסוף נתונים</li>
+                </ul>
+            </div>
+            <div class="mdm-text">
+                <div class="badge">אבטחה מקסימלית</div>
+                <h2 class="section-title">שילוב <span>MDM</span> מנצח</h2>
+                <p>כדי להבטיח שהחסימה תהיה הרמטית באמת, VidBlocker עושה שימוש בפרוטוקול ניהול מכשירים. זה אומר שגם ברגעים של חולשה, אי אפשר פשוט "לכבות" את ההגנה.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="cta-section">
+        <div class="container">
+            <h2 class="section-title">מוכנים להתקדם לסינון <span>החכם ביותר?</span></h2>
+            <p style="margin-bottom: 40px; color: var(--text-gray);">הצטרפו לאלפי משתמשים שהחזירו לעצמם את הריכוז והשקט הנפשי.</p>
+            
+            <div style="background: var(--bg-card); padding: 40px; border-radius: 20px; display: inline-block; border: 1px solid var(--border-color);">
+                <p style="margin-bottom: 20px; font-weight: 700;">גרסה נוכחית: v2.4.0 | מחיר: <span class="free-tag">0.00₪</span></p>
+                <a href="#" class="btn btn-primary">
+                    <i class="fa-solid fa-download"></i> הורדה ישירה לאנדרואיד
+                </a>
+                <p style="margin-top: 15px; font-size: 0.8rem; color: var(--text-gray);">* נדרשת הרשאת Device Administrator במהלך ההתקנה</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 VidBlocker מבית המעבדה. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

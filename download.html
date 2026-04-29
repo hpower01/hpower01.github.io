@@ -10,85 +10,228 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* --- משתני צבעים ועיצוב (זהה לאתר הראשי) --- */
         :root {
             --bg-main: #0b0e14;
             --bg-card: #131822;
+            --bg-input: #1a202c;
             --border-color: #1f2a37;
             --primary-blue: #00b4ff;
             --primary-blue-hover: #009ce0;
+            --badge-bg: rgba(0, 180, 255, 0.1);
             --text-white: #ffffff;
             --text-gray: #9ca3af;
             --success-green: #10b981;
             --transition: all 0.3s ease;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Heebo', sans-serif; }
+        /* --- איפוס גלובלי --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Heebo', sans-serif;
+        }
 
         body {
             background-color: var(--bg-main);
             color: var(--text-white);
             line-height: 1.6;
-            text-align: right;
+            overflow-x: hidden;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-        /* --- Header --- */
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- כפתורים (זהה לאתר הראשי) --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 180, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-blue-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 180, 255, 0.5);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--badge-bg);
+            color: var(--primary-blue);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 180, 255, 0.2);
+        }
+
+        /* --- Header (ניווט) --- */
         header {
-            background: rgba(11, 14, 20, 0.9);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(11, 14, 20, 0.85);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
             z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
         }
 
-        .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        
-        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
         .logo-icon {
-            width: 45px; height: 45px;
+            width: 40px;
+            height: 40px;
             background: rgba(0, 180, 255, 0.1);
-            border: 1px solid var(--primary-blue);
-            border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
+            border: 1px solid rgba(0, 180, 255, 0.3);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--primary-blue);
             font-size: 1.2rem;
         }
 
-        /* --- Hero Section --- */
+        .logo-text h2 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            margin: 0;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--text-gray);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-white);
+        }
+
+        .header-btn .btn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* --- Hero Section (מותאם לעמוד הורדות) --- */
         .hero {
-            padding: 60px 0 40px;
+            position: relative;
+            padding: 160px 0 80px;
+            background: linear-gradient(to right, rgba(11, 14, 20, 1) 0%, rgba(11, 14, 20, 0.5) 100%), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop') center/cover;
+            border-bottom: 1px solid var(--border-color);
             text-align: center;
         }
 
-        .hero h1 { font-size: 3rem; font-weight: 900; margin-bottom: 15px; }
-        .hero h1 span { color: var(--primary-blue); }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, var(--bg-main) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 15px; }
+        .hero h1 span { color: var(--primary-blue); text-shadow: 0 0 30px rgba(0, 180, 255, 0.4); }
         .hero p { color: var(--text-gray); font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
 
         /* --- App Grid --- */
         .app-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            padding: 40px 0 80px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 80px 0;
         }
 
         .app-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 30px;
+            border-radius: 20px;
+            padding: 35px;
             display: flex;
             flex-direction: column;
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--primary-blue);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
         }
 
         .app-card:hover {
             border-color: var(--primary-blue);
             transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 180, 255, 0.1);
+        }
+
+        .app-card:hover::before {
+            transform: scaleX(1);
         }
 
         .app-header { display: flex; gap: 20px; margin-bottom: 25px; align-items: center; }
@@ -102,82 +245,114 @@
             color: var(--primary-blue);
             border: 1px solid var(--border-color);
             flex-shrink: 0;
+            box-shadow: inset 0 0 20px rgba(0, 180, 255, 0.05);
         }
 
-        .app-title-area h2 { font-size: 1.6rem; font-weight: 800; line-height: 1.2; }
-        .app-status { color: var(--success-green); font-size: 0.85rem; font-weight: 700; }
+        .app-title-area h2 { font-size: 1.6rem; font-weight: 800; line-height: 1.2; margin-bottom: 5px; }
+        .app-status { color: var(--success-green); font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 5px; }
+        .app-status i { font-size: 0.7rem; }
 
         .app-description {
             color: var(--text-gray);
-            font-size: 0.95rem;
+            font-size: 1rem;
             margin-bottom: 25px;
             flex-grow: 1;
-            min-height: 80px;
         }
 
-        .app-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 25px; }
+        .app-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
         .tag {
             background: rgba(0, 180, 255, 0.05);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.8rem;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
             color: var(--primary-blue);
             border: 1px solid rgba(0, 180, 255, 0.2);
             font-weight: 500;
         }
 
         .download-btn {
-            background: var(--primary-blue);
-            color: #000;
-            text-align: center;
-            padding: 14px;
+            width: 100%;
+            padding: 15px;
             border-radius: 12px;
-            font-weight: 800;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: var(--transition);
+            font-size: 1.1rem;
         }
 
-        .download-btn:hover { background: var(--primary-blue-hover); }
-
+        /* --- Footer --- */
         footer {
-            padding: 40px 0;
             border-top: 1px solid var(--border-color);
-            text-align: center;
-            color: var(--text-gray);
+            padding: 30px 0;
+            margin-top: 50px;
         }
 
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* --- Responsive Design --- */
         @media (max-width: 768px) {
+            .nav-container { flex-wrap: wrap; }
+            nav { order: 3; width: 100%; margin-top: 15px; }
+            nav ul { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+            nav a { font-size: 0.9rem; }
+            
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1rem; }
             .app-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.2rem; }
+            .footer-content { flex-direction: column-reverse; gap: 20px; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <!-- Header -->
+    <header id="header">
         <div class="container nav-container">
-            <a href="index.html" style="color: var(--text-gray); text-decoration: none;"><i class="fa-solid fa-arrow-right"></i> חזרה לאתר</a>
+            <div class="header-btn">
+                <a href="index.html#contact" class="btn btn-primary">שלח פנייה</a>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">ראשי</a></li>
+                    <li><a href="index.html#services">שירותים</a></li>
+                    <li><a href="products.html">מוצרים</a></li>
+                    <li><a href="download.html" class="active">הורדות</a></li>
+                    <li><a href="index.html#about">אודות</a></li>
+                    <li><a href="index.html#contact">צור קשר</a></li>
+                </ul>
+            </nav>
+
             <div class="logo-area">
                 <div class="logo-text">
-                    <h2 style="font-size: 1.2rem; font-weight: 800;">המעבדה</h2>
-                    <p style="font-size: 0.7rem; color: var(--text-gray);">DOWNLOAD CENTER</p>
+                    <h2>המעבדה</h2>
+                    <p>מעבדת מחשבים וסלולר</p>
                 </div>
-                <div class="logo-icon"><i class="fa-solid fa-box-archive"></i></div>
+                <div class="logo-icon">
+                    <i class="fa-solid fa-desktop"></i>
+                </div>
             </div>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
+        <div class="container hero-content">
+            <div class="badge" style="margin: 0 auto 20px;">
+                <i class="fa-solid fa-cloud-arrow-down"></i> מרכז הורדות בלעדי
+            </div>
             <h1>האפליקציות <span>שלנו</span></h1>
-            <p>כל הכלים זמינים להורדה בחינם, עם דגש על אבטחה מקסימלית וחווית משתמש נקייה.</p>
+            <p>כל הכלים זמינים להורדה בחינם, עם דגש על אבטחה מקסימלית וחווית משתמש נקייה, המפותחים במיוחד על ידי המעבדה.</p>
         </div>
     </section>
 
+    <!-- Apps Grid -->
     <div class="container">
         <div class="app-grid">
 
@@ -187,7 +362,7 @@
                     <div class="app-icon"><i class="fa-solid fa-video-slash"></i></div>
                     <div class="app-title-area">
                         <h2>VidBlocker</h2>
-                        <div class="app-status">חינם • בלעדי</div>
+                        <div class="app-status"><i class="fa-solid fa-circle-check"></i> חינם • בלעדי</div>
                     </div>
                 </div>
                 <p class="app-description">
@@ -198,7 +373,7 @@
                     <span class="tag">מבוסס MDM</span>
                     <span class="tag">ללא עקיפה</span>
                 </div>
-                <a href="#" class="download-btn">הורדה בחינם <i class="fa-solid fa-download"></i></a>
+                <a href="#" class="btn btn-primary download-btn">הורדה בחינם <i class="fa-solid fa-download"></i></a>
             </div>
 
             <!-- 2. System Guard -->
@@ -207,7 +382,7 @@
                     <div class="app-icon"><i class="fa-solid fa-shield-halved"></i></div>
                     <div class="app-title-area">
                         <h2>System Guard</h2>
-                        <div class="app-status">חינם • מוגן</div>
+                        <div class="app-status"><i class="fa-solid fa-circle-check"></i> חינם • מוגן</div>
                     </div>
                 </div>
                 <p class="app-description">
@@ -217,7 +392,7 @@
                     <span class="tag">חסימה מערכתית</span>
                     <span class="tag">ללא עקיפה</span>
                 </div>
-                <a href="#" class="download-btn">הורדה בחינם <i class="fa-solid fa-download"></i></a>
+                <a href="#" class="btn btn-primary download-btn">הורדה בחינם <i class="fa-solid fa-download"></i></a>
             </div>
 
             <!-- 3. Smart Gallery -->
@@ -226,7 +401,7 @@
                     <div class="app-icon"><i class="fa-solid fa-images"></i></div>
                     <div class="app-title-area">
                         <h2>Smart Gallery</h2>
-                        <div class="app-status">חינם • כשר</div>
+                        <div class="app-status"><i class="fa-solid fa-circle-check"></i> חינם • כשר</div>
                     </div>
                 </div>
                 <p class="app-description">
@@ -235,7 +410,7 @@
                 <div class="app-tags">
                     <span class="tag">ללא עקיפה</span>
                 </div>
-                <a href="#" class="download-btn">הורדה בחינם <i class="fa-solid fa-download"></i></a>
+                <a href="#" class="btn btn-primary download-btn">הורדה בחינם <i class="fa-solid fa-download"></i></a>
             </div>
 
             <!-- 4. Kosher FM -->
@@ -244,7 +419,7 @@
                     <div class="app-icon"><i class="fa-solid fa-radio"></i></div>
                     <div class="app-title-area">
                         <h2>Kosher FM</h2>
-                        <div class="app-status">חינם • MTK</div>
+                        <div class="app-status"><i class="fa-solid fa-circle-check"></i> חינם • MTK</div>
                     </div>
                 </div>
                 <p class="app-description">
@@ -254,17 +429,45 @@
                     <span class="tag">רדיו אופליין</span>
                     <span class="tag">כשר</span>
                 </div>
-                <a href="#" class="download-btn">הורדה בחינם <i class="fa-solid fa-download"></i></a>
+                <a href="#" class="btn btn-primary download-btn">הורדה בחינם <i class="fa-solid fa-download"></i></a>
             </div>
 
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>© 2024 המעבדה - פתרונות טכנולוגיים מתקדמים. כל הזכויות שמורות.</p>
+        <div class="container footer-content">
+            <div class="logo-area">
+                <div class="logo-text" style="text-align: right;">
+                    <h2>המעבדה</h2>
+                    <p>מעבדת מחשבים וסלולר</p>
+                </div>
+                <div class="logo-icon" style="width: 35px; height: 35px; font-size: 1rem;">
+                    <i class="fa-solid fa-desktop"></i>
+                </div>
+            </div>
+            
+            <div class="footer-text">
+                © 2026 המעבדה. כל הזכויות שמורות.
+            </div>
         </div>
     </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.5)';
+                header.style.background = 'rgba(11, 14, 20, 0.95)';
+            } else {
+                header.style.boxShadow = 'none';
+                header.style.background = 'rgba(11, 14, 20, 0.85)';
+            }
+        });
+    </script>
 
 </body>
 </html>

@@ -169,25 +169,18 @@
             font-size: 0.9rem;
         }
 
-        /* --- Hero Section (מותאם לעמוד הראשי עם רקע כהה לפיתוח תוכנה) --- */
+        /* --- Hero Section --- */
         .hero {
             position: relative;
             padding: 160px 0 100px;
-            /* החשכה כבדה יותר לטקסט ברור יותר, בסגנון האתר הראשי */
-            background: linear-gradient(to right, rgba(11, 14, 20, 1) 0%, rgba(11, 14, 20, 0.85) 100%), 
-                        url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop') center/cover;
+            /* החשכה שמאל-ימין שמאפשרת לראות את התמונה בצד שמאל */
+            background: linear-gradient(to left, rgba(11, 14, 20, 0.3) 0%, rgba(11, 14, 20, 1) 80%), 
+                        url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
             border-bottom: 1px solid var(--border-color);
-            text-align: center;
+            text-align: right;
             min-height: 50vh;
             display: flex;
             align-items: center;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, transparent 0%, var(--bg-main) 100%);
         }
 
         .hero-content {
@@ -197,7 +190,7 @@
 
         .hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 15px; }
         .hero h1 span { color: var(--primary-blue); text-shadow: 0 0 30px rgba(0, 180, 255, 0.4); }
-        .hero p { color: var(--text-gray); font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
+        .hero p { color: var(--text-gray); font-size: 1.2rem; max-width: 600px; }
 
         /* --- App Grid --- */
         .app-grid {
@@ -219,14 +212,31 @@
             overflow: hidden;
         }
 
-        /* מסגרת כחולה בהירה והצללה עדינה בריחוף */
         .app-card:hover {
             border-color: var(--primary-blue);
             transform: translateY(-3px);
             box-shadow: 0 5px 20px rgba(0, 180, 255, 0.15);
         }
 
-        .app-header { display: flex; gap: 20px; margin-bottom: 25px; align-items: center; }
+        /* תווית בלעדי באלכסון */
+        .ribbon-exclusive {
+            position: absolute;
+            top: 25px;
+            right: -35px;
+            width: 150px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0077ff 100%);
+            color: #000;
+            padding: 6px 0;
+            text-align: center;
+            font-weight: 900;
+            font-size: 0.85rem;
+            transform: rotate(45deg);
+            box-shadow: 0 4px 15px rgba(0, 180, 255, 0.4);
+            letter-spacing: 0.5px;
+            z-index: 10;
+        }
+
+        .app-header { display: flex; gap: 20px; margin-bottom: 25px; align-items: center; position: relative; z-index: 2; }
         
         .app-icon {
             width: 70px; height: 70px;
@@ -258,9 +268,10 @@
             font-size: 1rem;
             margin-bottom: 25px;
             flex-grow: 1;
+            position: relative; z-index: 2;
         }
 
-        .app-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
+        .app-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; position: relative; z-index: 2; }
         .tag {
             background: rgba(0, 180, 255, 0.05);
             padding: 6px 12px;
@@ -271,13 +282,13 @@
             font-weight: 500;
         }
 
-        /* תצוגת הגרסה - הכל באותו צבע (אפור) */
         .app-version {
             text-align: center;
             color: var(--text-gray);
             font-size: 0.95rem;
             margin-bottom: 12px;
             font-weight: 500;
+            position: relative; z-index: 2;
         }
 
         .app-version span {
@@ -291,6 +302,7 @@
             padding: 15px;
             border-radius: 12px;
             font-size: 1.1rem;
+            position: relative; z-index: 2;
         }
 
         /* --- Footer --- */
@@ -318,8 +330,11 @@
             nav ul { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
             nav a { font-size: 0.9rem; }
             
+            .hero { text-align: center; background: linear-gradient(to right, rgba(11, 14, 20, 1) 0%, rgba(11, 14, 20, 0.85) 100%), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop') center/cover; }
             .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1rem; }
+            .hero p { font-size: 1rem; margin: 0 auto; }
+            .badge { margin: 0 auto 20px; }
+            
             .app-grid { grid-template-columns: 1fr; }
             .footer-content { flex-direction: column-reverse; gap: 20px; text-align: center; }
         }
@@ -360,7 +375,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <div class="badge" style="margin: 0 auto 20px;">
+            <div class="badge">
                 <i class="fa-solid fa-cloud-arrow-down"></i> מרכז הורדות בלעדי
             </div>
             <h1>האפליקציות <span>שלנו</span></h1>
@@ -374,6 +389,9 @@
 
             <!-- 1. VidBlocker -->
             <div class="app-card">
+                <!-- הסרט באלכסון -->
+                <div class="ribbon-exclusive">בלעדי</div>
+                
                 <div class="app-header">
                     <div class="app-icon"><i class="fa-solid fa-video-slash"></i></div>
                     <div class="app-title-area">
@@ -388,9 +406,9 @@
                     <span class="tag">חסימה מערכתית</span>
                     <span class="tag">ניטור בזמן אמת</span>
                     <span class="tag">משולב MDM</span>
+                    <span class="tag">לא ניתן לעקיפה</span>
                 </div>
                 <div class="app-version">גרסה אחרונה: <span>V2.2</span></div>
-                <!-- להורדה: מחפש את הקובץ בתיקיית האתר -->
                 <a href="Vidblocker.apk" download class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
             </div>
 
@@ -409,6 +427,7 @@
                 <div class="app-tags">
                     <span class="tag">חסימה מערכתית</span>
                     <span class="tag">לא דורש שירותי גוגל</span>
+                    <span class="tag">לא ניתן לעקיפה</span>
                 </div>
                 <div class="app-version">גרסה אחרונה: <span>V1.4</span></div>
                 <a href="SystemGuard.apk" download class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
@@ -427,7 +446,8 @@
                     גלריה חכמה ומתקדמת שמציגה ופותחת רק הסרטות ללא אפשרות של צפייה והצגה של וידיאו חיצוני. מנגנון ייחודי שסורק ומנתח את הקבצים ללא אפשרות עקיפה.
                 </p>
                 <div class="app-tags">
-                    <span class="tag">ניטור בזמן אמת</span>
+                    <span class="tag">סריקת קבצים</span>
+                    <span class="tag">לא ניתן לעקיפה</span>
                 </div>
                 <div class="app-version">גרסה אחרונה: <span>V2.1</span></div>
                 <a href="SmartGallery.apk" download class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>

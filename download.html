@@ -173,7 +173,6 @@
         .hero {
             position: relative;
             padding: 160px 0 100px;
-            /* רקע עם הכהיה עדינה שמאפשרת לראות את הקוד ומשאירה את הטקסט קריא במרכז */
             background: linear-gradient(to bottom, rgba(11, 14, 20, 0.9) 0%, rgba(11, 14, 20, 0.6) 100%), 
                         url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
             border-bottom: 1px solid var(--border-color);
@@ -202,6 +201,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             padding: 80px 0;
+            align-items: stretch; /* שומר על גובה שווה לכל הריבועים */
         }
 
         .app-card {
@@ -214,6 +214,7 @@
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+            height: 100%; /* מוודא שהכרטיסייה תופסת את כל הגובה האפשרי ב-grid */
         }
 
         .app-card:hover {
@@ -270,12 +271,39 @@
         .app-description {
             color: var(--text-gray);
             font-size: 1rem;
-            margin-bottom: 25px;
-            flex-grow: 1;
+            margin-bottom: 12px;
+            flex-grow: 1; /* דוחף את שאר האלמנטים למטה כך שהכל מתיישר */
             position: relative; z-index: 2;
         }
 
-        .app-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; position: relative; z-index: 2; }
+        /* עיצוב הקישור למידע נוסף */
+        .more-info-link {
+            color: var(--primary-blue);
+            text-decoration: underline;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+            align-self: flex-start;
+            position: relative; z-index: 2;
+            transition: var(--transition);
+        }
+
+        .more-info-link:hover {
+            color: var(--text-white);
+        }
+
+        /* עיצוב אזור הבועות עם גובה מינימלי למניעת קפיצות גובה בכרטיסיות שונות */
+        .app-tags { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 8px; 
+            margin-bottom: 30px; 
+            position: relative; 
+            z-index: 2; 
+            min-height: 65px; /* שומר על גובה אחיד לכל הריבועים */
+            align-content: flex-start;
+        }
+
         .tag {
             background: rgba(0, 180, 255, 0.05);
             padding: 6px 12px;
@@ -338,6 +366,7 @@
             .hero p { font-size: 1rem; }
             
             .app-grid { grid-template-columns: 1fr; }
+            .app-tags { min-height: auto; } /* במסכים קטנים אין צורך בגובה קבוע */
             .footer-content { flex-direction: column-reverse; gap: 20px; text-align: center; }
         }
     </style>
@@ -404,6 +433,9 @@
                 <p class="app-description">
                     אפליקציה ייחודית ובלעדית לחסימת וידיאו הרמטית בכל האפליקציות עם התקנת אפליקציות פתוחה. מנגנון מתקדם שמזהה וחוסם נגני וידיאו בתוך כל אפליקציה באופן כירורגי מבלי לפגוע בשימוש השוטף. מבוסס טכנולוגיית MDM למניעת עקיפה.
                 </p>
+                
+                <a href="https://mitmachim.top/post/1087457" target="_blank" class="more-info-link">למידע נוסף</a>
+                
                 <div class="app-tags">
                     <span class="tag">חסימה מערכתית</span>
                     <span class="tag">ניטור בזמן אמת</span>
@@ -426,6 +458,9 @@
                 <p class="app-description">
                     אפליקציה מתקדמת למניעת עקיפת חסימות MDM במכשירים ללא שירותי גוגל רשמיים. מעניקה שכבת הגנה נוספת למניעת הסרת מגבלות מערכת.
                 </p>
+                
+                <a href="https://mitmachim.top/post/1099767" target="_blank" class="more-info-link">למידע נוסף</a>
+
                 <div class="app-tags">
                     <span class="tag">חסימה מערכתית</span>
                     <span class="tag">לא דורש שירותי גוגל</span>
@@ -447,6 +482,9 @@
                 <p class="app-description">
                     גלריה חכמה ומתקדמת שמציגה ופותחת רק הסרטות ללא אפשרות של צפייה והצגה של וידיאו חיצוני. מנגנון ייחודי שסורק ומנתח את הקבצים ללא אפשרות עקיפה.
                 </p>
+                
+                <a href="https://mitmachim.top/post/1073814" target="_blank" class="more-info-link">למידע נוסף</a>
+
                 <div class="app-tags">
                     <span class="tag">סריקת קבצים</span>
                     <span class="tag">שליטה בתצוגה</span>
@@ -468,6 +506,9 @@
                 <p class="app-description">
                     רדיו אופליין כשר המותאם למכשירי MTK. האפליקציה מאפשרת האזנה רק לתחנות החרדיות הנבחרות, ללא צורך בחיבור לאינטרנט.
                 </p>
+                
+                <a href="https://mitmachim.top/post/1076410" target="_blank" class="more-info-link">למידע נוסף</a>
+
                 <div class="app-tags">
                     <span class="tag">אופליין</span>
                     <span class="tag">תמיכה בבלוטוס</span>

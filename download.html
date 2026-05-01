@@ -53,6 +53,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
 
         /* --- כפתורים --- */
@@ -168,15 +169,18 @@
             font-size: 0.9rem;
         }
 
-        /* --- Hero Section (רקע פיתוח תוכנה) --- */
+        /* --- Hero Section (מותאם לעמוד הראשי עם רקע כהה לפיתוח תוכנה) --- */
         .hero {
             position: relative;
-            padding: 160px 0 80px;
-            /* הוחלפה תמונה לתמונת פיתוח קוד */
-            background: linear-gradient(to right, rgba(11, 14, 20, 1) 0%, rgba(11, 14, 20, 0.6) 100%), 
+            padding: 160px 0 100px;
+            /* החשכה כבדה יותר לטקסט ברור יותר, בסגנון האתר הראשי */
+            background: linear-gradient(to right, rgba(11, 14, 20, 1) 0%, rgba(11, 14, 20, 0.85) 100%), 
                         url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop') center/cover;
             border-bottom: 1px solid var(--border-color);
             text-align: center;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
         }
 
         .hero::before {
@@ -215,7 +219,7 @@
             overflow: hidden;
         }
 
-        /* הותאם לקובץ השני: מסגרת כחולה בהירה והצללה עדינה בריחוף */
+        /* מסגרת כחולה בהירה והצללה עדינה בריחוף */
         .app-card:hover {
             border-color: var(--primary-blue);
             transform: translateY(-3px);
@@ -267,17 +271,16 @@
             font-weight: 500;
         }
 
-        /* תצוגת הגרסה */
+        /* תצוגת הגרסה - הכל באותו צבע (אפור) */
         .app-version {
             text-align: center;
             color: var(--text-gray);
-            font-size: 0.9rem;
-            margin-bottom: 10px;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
             font-weight: 500;
         }
 
         .app-version span {
-            color: var(--primary-blue);
             font-weight: 700;
             direction: ltr;
             display: inline-block;
@@ -383,11 +386,12 @@
                 </p>
                 <div class="app-tags">
                     <span class="tag">חסימה מערכתית</span>
-                    <span class="tag">מבוסס MDM</span>
-                    <span class="tag">ללא עקיפה</span>
+                    <span class="tag">ניטור בזמן אמת</span>
+                    <span class="tag">משולב MDM</span>
                 </div>
                 <div class="app-version">גרסה אחרונה: <span>V2.2</span></div>
-                <a href="#" class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
+                <!-- להורדה: מחפש את הקובץ בתיקיית האתר -->
+                <a href="Vidblocker.apk" download class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
             </div>
 
             <!-- 2. System Guard -->
@@ -404,10 +408,10 @@
                 </p>
                 <div class="app-tags">
                     <span class="tag">חסימה מערכתית</span>
-                    <span class="tag">ללא עקיפה</span>
+                    <span class="tag">לא דורש שירותי גוגל</span>
                 </div>
-                <div class="app-version">גרסה אחרונה: <span>1.4</span></div>
-                <a href="#" class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
+                <div class="app-version">גרסה אחרונה: <span>V1.4</span></div>
+                <a href="SystemGuard.apk" download class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
             </div>
 
             <!-- 3. Smart Gallery -->
@@ -423,10 +427,10 @@
                     גלריה חכמה ומתקדמת שמציגה ופותחת רק הסרטות ללא אפשרות של צפייה והצגה של וידיאו חיצוני. מנגנון ייחודי שסורק ומנתח את הקבצים ללא אפשרות עקיפה.
                 </p>
                 <div class="app-tags">
-                    <span class="tag">ללא עקיפה</span>
+                    <span class="tag">ניטור בזמן אמת</span>
                 </div>
-                <div class="app-version">גרסה אחרונה: <span>2.1</span></div>
-                <a href="#" class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
+                <div class="app-version">גרסה אחרונה: <span>V2.1</span></div>
+                <a href="SmartGallery.apk" download class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
             </div>
 
             <!-- 4. Kosher FM -->
@@ -442,11 +446,10 @@
                     רדיו אופליין כשר המותאם למכשירי MTK. האפליקציה מאפשרת האזנה רק לתחנות החרדיות הנבחרות, ללא צורך בחיבור לאינטרנט.
                 </p>
                 <div class="app-tags">
-                    <span class="tag">רדיו אופליין</span>
-                    <span class="tag">כשר</span>
+                    <span class="tag">אופליין</span>
                 </div>
-                <div class="app-version">גרסה אחרונה: <span>2.0</span></div>
-                <a href="#" class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
+                <div class="app-version">גרסה אחרונה: <span>V2.0</span></div>
+                <a href="KosherFM.apk" download class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
             </div>
 
         </div>

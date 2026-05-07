@@ -22,6 +22,7 @@
             --text-white: #ffffff;
             --text-gray: #9ca3af;
             --success-green: #10b981;
+            --warning-yellow: #fbbf24; /* צבע צהוב לאפליקציות בתשלום */
             --transition: all 0.3s ease;
         }
 
@@ -81,6 +82,19 @@
             background: var(--primary-blue-hover);
             transform: translateY(-2px);
             box-shadow: 0 0 30px rgba(0, 180, 255, 0.5);
+        }
+
+        /* עיצוב כפתור רכישה */
+        .btn-purchase {
+            background: var(--warning-yellow);
+            color: #000;
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+        }
+
+        .btn-purchase:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(251, 191, 36, 0.5);
         }
 
         .badge {
@@ -265,6 +279,10 @@
             align-items: center; 
             gap: 5px; 
         }
+
+        .app-status.paid {
+            color: var(--warning-yellow);
+        }
         
         .app-status i { font-size: 0.7rem; }
 
@@ -416,82 +434,68 @@
 
     <!-- Apps Grid -->
     <div class="container">
+        <!-- מסודר לפי אותיות באנגלית A-Z -->
         <div class="app-grid">
 
-            <!-- 1. VidBlocker -->
+            <!-- 1. Face Unlock -->
             <div class="app-card">
-                <!-- הסרט באלכסון -->
-                <div class="ribbon-exclusive">בלעדי</div>
-                
                 <div class="app-header">
-                    <div class="app-icon"><i class="fa-solid fa-video-slash"></i></div>
+                    <div class="app-icon"><i class="fa-solid fa-user-lock"></i></div>
                     <div class="app-title-area">
-                        <h2>VidBlocker</h2>
-                        <div class="app-status"><i class="fa-solid fa-circle-check"></i> חינם</div>
+                        <h2>Face Unlock</h2>
+                        <div class="app-status paid"><i class="fa-solid fa-tag"></i> בתשלום</div>
                     </div>
                 </div>
                 <p class="app-description">
-                    אפליקציה ייחודית ובלעדית לחסימת וידיאו הרמטית בכל האפליקציות עם התקנת אפליקציות פתוחה. מנגנון מתקדם שמזהה וחוסם נגני וידיאו בתוך כל אפליקציה באופן כירורגי מבלי לפגוע בשימוש השוטף. מבוסס טכנולוגיית MDM למניעת עקיפה.
+                    אפליקציה מתקדמת לביטול נעילת המכשיר עי זיהוי פנים במכשירים ללא זיהוי פנים מובנה.
                 </p>
-                
-                <a href="https://mitmachim.top/post/1087457" target="_blank" class="more-info-link">למידע נוסף</a>
-                
                 <div class="app-tags">
-                    <span class="tag">חסימה מערכתית</span>
-                    <span class="tag">ניטור בזמן אמת</span>
-                    <span class="tag">משולב MDM</span>
-                    <span class="tag">לא ניתן לעקיפה</span>
+                    <span class="tag">מובנה במערכת</span>
+                    <span class="tag">אופליין</span>
+                    <span class="tag">ללא רוט</span>
                 </div>
-                <div class="app-version">גרסה אחרונה: <span>V2.2</span></div>
-                <a href="Vidblocker.apk" download class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
+                <div class="app-version">גרסה אחרונה: <span>V1.8</span></div>
+                <a href="index.html#contact" class="btn btn-purchase download-btn">לרכישה <i class="fa-solid fa-bag-shopping"></i></a>
             </div>
 
-            <!-- 2. System Guard -->
+            <!-- 2. HFilter -->
             <div class="app-card">
                 <div class="app-header">
-                    <div class="app-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="app-icon"><i class="fa-solid fa-filter"></i></div>
                     <div class="app-title-area">
-                        <h2>System Guard</h2>
-                        <div class="app-status"><i class="fa-solid fa-circle-check"></i> חינם</div>
+                        <h2>HFilter</h2>
+                        <div class="app-status paid"><i class="fa-solid fa-tag"></i> בתשלום</div>
                     </div>
                 </div>
                 <p class="app-description">
-                    אפליקציה מתקדמת למניעת עקיפת חסימות MDM במכשירים ללא שירותי גוגל רשמיים. מעניקה שכבת הגנה נוספת למניעת הסרת מגבלות מערכת.
+                    אפליקצית סינון וחסימת מכשירים מבוססת MDM עם רשימה לבנה של אתרים ואפליקציות חסימת פרסומות ודפדפנים פנימיים.
                 </p>
-                
-                <a href="https://mitmachim.top/post/1099767" target="_blank" class="more-info-link">למידע נוסף</a>
-
                 <div class="app-tags">
-                    <span class="tag">חסימה מערכתית</span>
-                    <span class="tag">לא דורש שירותי גוגל</span>
+                    <span class="tag">מבוסס MDM</span>
                     <span class="tag">לא ניתן לעקיפה</span>
                 </div>
-                <div class="app-version">גרסה אחרונה: <span>V1.4</span></div>
-                <a href="SystemGuard.apk" download class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
+                <div class="app-version">גרסה אחרונה: <span>V1.0</span></div>
+                <a href="index.html#contact" class="btn btn-purchase download-btn">לרכישה <i class="fa-solid fa-bag-shopping"></i></a>
             </div>
 
-            <!-- 3. Smart Gallery -->
+            <!-- 3. HMarket -->
             <div class="app-card">
                 <div class="app-header">
-                    <div class="app-icon"><i class="fa-solid fa-images"></i></div>
+                    <div class="app-icon"><i class="fa-solid fa-store"></i></div>
                     <div class="app-title-area">
-                        <h2>Smart Gallery</h2>
-                        <div class="app-status"><i class="fa-solid fa-circle-check"></i> חינם</div>
+                        <h2>HMarket</h2>
+                        <div class="app-status paid"><i class="fa-solid fa-tag"></i> בתשלום</div>
                     </div>
                 </div>
                 <p class="app-description">
-                    גלריה חכמה ומתקדמת שמציגה ופותחת רק הסרטות ללא אפשרות של צפייה והצגה של וידיאו חיצוני. מנגנון ייחודי שסורק ומנתח את הקבצים ללא אפשרות עקיפה.
+                    חנות אפליקציות מתקדמת אופליין כולל תמיכה בהרחבות חיצוניות גיבוי ושחזור נתונים מנוע חיפוש מתקדם התקנה אוטומטית ומהירה.
                 </p>
-                
-                <a href="https://mitmachim.top/post/1073814" target="_blank" class="more-info-link">למידע נוסף</a>
-
                 <div class="app-tags">
-                    <span class="tag">סריקת קבצים</span>
-                    <span class="tag">שליטה בתצוגה</span>
-                    <span class="tag">לא ניתן לעקיפה</span>
+                    <span class="tag">אופליין</span>
+                    <span class="tag">אוטומטי</span>
                 </div>
-                <div class="app-version">גרסה אחרונה: <span>V2.1</span></div>
-                <a href="SmartGallery.apk" download class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
+                <div class="app-version">גרסה אחרונה: <span>V4.0</span></div>
+                <a href="index.html#contact" class="btn btn-purchase download-btn">לרכישה <i class="fa-solid fa-bag-shopping"></i></a>
             </div>
 
             <!-- 4. Kosher FM -->
@@ -506,15 +510,83 @@
                 <p class="app-description">
                     רדיו אופליין כשר. האפליקציה מאפשרת האזנה רק לתחנות החרדיות הנבחרות, ללא צורך בחיבור לאינטרנט.
                 </p>
-                
                 <a href="https://mitmachim.top/post/1076410" target="_blank" class="more-info-link">למידע נוסף</a>
-
                 <div class="app-tags">
                     <span class="tag">אופליין</span>
                     <span class="tag">תמיכה בבלוטוס</span>
                 </div>
                 <div class="app-version">גרסה אחרונה: <span>V2.0</span></div>
                 <a href="KosherFM.zip" download class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
+            </div>
+
+            <!-- 5. Smart Gallery -->
+            <div class="app-card">
+                <div class="app-header">
+                    <div class="app-icon"><i class="fa-solid fa-images"></i></div>
+                    <div class="app-title-area">
+                        <h2>Smart Gallery</h2>
+                        <div class="app-status"><i class="fa-solid fa-circle-check"></i> חינם</div>
+                    </div>
+                </div>
+                <p class="app-description">
+                    גלריה חכמה ומתקדמת שמציגה ופותחת רק הסרטות ללא אפשרות של צפייה והצגה של וידיאו חיצוני. מנגנון ייחודי שסורק ומנתח את הקבצים ללא אפשרות עקיפה.
+                </p>
+                <a href="https://mitmachim.top/post/1073814" target="_blank" class="more-info-link">למידע נוסף</a>
+                <div class="app-tags">
+                    <span class="tag">סריקת קבצים</span>
+                    <span class="tag">שליטה בתצוגה</span>
+                    <span class="tag">לא ניתן לעקיפה</span>
+                </div>
+                <div class="app-version">גרסה אחרונה: <span>V2.1</span></div>
+                <a href="SmartGallery.apk" download class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
+            </div>
+
+            <!-- 6. System Guard -->
+            <div class="app-card">
+                <div class="app-header">
+                    <div class="app-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="app-title-area">
+                        <h2>System Guard</h2>
+                        <div class="app-status"><i class="fa-solid fa-circle-check"></i> חינם</div>
+                    </div>
+                </div>
+                <p class="app-description">
+                    אפליקציה מתקדמת למניעת עקיפת חסימות MDM במכשירים ללא שירותי גוגל רשמיים. מעניקה שכבת הגנה נוספת למניעת הסרת מגבלות מערכת.
+                </p>
+                <a href="https://mitmachim.top/post/1099767" target="_blank" class="more-info-link">למידע נוסף</a>
+                <div class="app-tags">
+                    <span class="tag">חסימה מערכתית</span>
+                    <span class="tag">לא דורש שירותי גוגל</span>
+                    <span class="tag">לא ניתן לעקיפה</span>
+                </div>
+                <div class="app-version">גרסה אחרונה: <span>V1.4</span></div>
+                <a href="SystemGuard.apk" download class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
+            </div>
+
+            <!-- 7. VidBlocker -->
+            <div class="app-card">
+                <!-- הסרט באלכסון -->
+                <div class="ribbon-exclusive">בלעדי</div>
+                
+                <div class="app-header">
+                    <div class="app-icon"><i class="fa-solid fa-video-slash"></i></div>
+                    <div class="app-title-area">
+                        <h2>VidBlocker</h2>
+                        <div class="app-status"><i class="fa-solid fa-circle-check"></i> חינם</div>
+                    </div>
+                </div>
+                <p class="app-description">
+                    אפליקציה ייחודית ובלעדית לחסימת וידיאו הרמטית בכל האפליקציות עם התקנת אפליקציות פתוחה. מנגנון מתקדם שמזהה וחוסם נגני וידיאו בתוך כל אפליקציה באופן כירורגי מבלי לפגוע בשימוש השוטף. מבוסס טכנולוגיית MDM למניעת עקיפה.
+                </p>
+                <a href="https://mitmachim.top/post/1087457" target="_blank" class="more-info-link">למידע נוסף</a>
+                <div class="app-tags">
+                    <span class="tag">חסימה מערכתית</span>
+                    <span class="tag">ניטור בזמן אמת</span>
+                    <span class="tag">משולב MDM</span>
+                    <span class="tag">לא ניתן לעקיפה</span>
+                </div>
+                <div class="app-version">גרסה אחרונה: <span>V2.2</span></div>
+                <a href="Vidblocker.apk" download class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
             </div>
 
         </div>

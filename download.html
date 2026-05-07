@@ -213,9 +213,9 @@
         .app-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-auto-rows: 1fr; /* מכריח את כל הריבועים להיות באותו גובה בדיוק */
             gap: 30px;
             padding: 80px 0;
-            align-items: stretch; /* שומר על גובה שווה לכל הריבועים */
         }
 
         .app-card {
@@ -224,11 +224,11 @@
             border-radius: 20px;
             padding: 35px;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* מאפשר סידור פנימי גמיש */
             transition: var(--transition);
             position: relative;
             overflow: hidden;
-            height: 100%; /* מוודא שהכרטיסייה תופסת את כל הגובה האפשרי ב-grid */
+            height: 100%;
         }
 
         .app-card:hover {
@@ -290,7 +290,6 @@
             color: var(--text-gray);
             font-size: 1rem;
             margin-bottom: 12px;
-            flex-grow: 1; /* דוחף את שאר האלמנטים למטה כך שהכל מתיישר */
             position: relative; z-index: 2;
         }
 
@@ -310,15 +309,15 @@
             color: var(--text-white);
         }
 
-        /* עיצוב אזור הבועות עם גובה מינימלי למניעת קפיצות גובה בכרטיסיות שונות */
+        /* אזור הבועות - דוחף את עצמו ואת מה שתחתיו לתחתית הריבוע */
         .app-tags { 
             display: flex; 
             flex-wrap: wrap; 
             gap: 8px; 
             margin-bottom: 30px; 
+            margin-top: auto; /* זה מה שמיישר הכל לתחתית ויוצר מראה אחיד */
             position: relative; 
             z-index: 2; 
-            min-height: 65px; /* שומר על גובה אחיד לכל הריבועים */
             align-content: flex-start;
         }
 
@@ -383,8 +382,7 @@
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1rem; }
             
-            .app-grid { grid-template-columns: 1fr; }
-            .app-tags { min-height: auto; } /* במסכים קטנים אין צורך בגובה קבוע */
+            .app-grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
             .footer-content { flex-direction: column-reverse; gap: 20px; text-align: center; }
         }
     </style>
@@ -428,7 +426,7 @@
                 <i class="fa-solid fa-cloud-arrow-down"></i> מרכז הורדות
             </div>
             <h1>האפליקציות <span>שלנו</span></h1>
-            <p>כל הכלים זמינים להורדה בחינם, עם דגש על הטכנולגיה המתקדמת ביותר בהגנה מקסימלית וחווית משתמש נקייה, שפותחו בהתאמה אישית.</p>
+            <p>כל הכלים זמינים להורדה ישירה, עם דגש על הטכנולגיה המתקדמת ביותר בהגנה מקסימלית וחווית משתמש נקייה, שפותחו בהתאמה אישית.</p>
         </div>
     </section>
 
@@ -447,7 +445,7 @@
                     </div>
                 </div>
                 <p class="app-description">
-                    אפליקציה מתקדמת לביטול נעילת המכשיר עי זיהוי פנים במכשירים ללא זיהוי פנים מובנה.
+                    אפליקציה מתקדמת לביטול נעילת המכשיר ע"י זיהוי פנים במכשירים ללא זיהוי פנים מובנה.
                 </p>
                 <div class="app-tags">
                     <span class="tag">מובנה במערכת</span>
@@ -468,11 +466,12 @@
                     </div>
                 </div>
                 <p class="app-description">
-                    אפליקצית סינון וחסימת מכשירים מבוססת MDM עם רשימה לבנה של אתרים ואפליקציות חסימת פרסומות ודפדפנים פנימיים.
+                    אפליקצית סינון וחסימת מכשירים מבוססת MDM , חסימה והשבתת אפליקציות עם רשימה לבנה של אתרים ואפליקציות, חסימת פרסומות ודפדפנים פנימיים.
                 </p>
                 <div class="app-tags">
                     <span class="tag">מבוסס MDM</span>
                     <span class="tag">לא ניתן לעקיפה</span>
+                    <span class="tag">שליטה מלאה במכשיר</span>
                 </div>
                 <div class="app-version">גרסה אחרונה: <span>V1.0</span></div>
                 <a href="index.html#contact" class="btn btn-purchase download-btn">לרכישה <i class="fa-solid fa-bag-shopping"></i></a>
@@ -488,11 +487,12 @@
                     </div>
                 </div>
                 <p class="app-description">
-                    חנות אפליקציות מתקדמת אופליין כולל תמיכה בהרחבות חיצוניות גיבוי ושחזור נתונים מנוע חיפוש מתקדם התקנה אוטומטית ומהירה.
+                    חנות אפליקציות מתקדמת אופליין. כולל תמיכה בהרחבות חיצוניות, גיבוי ושחזור נתונים, מנוע חיפוש מתקדם והתקנה אוטומטית.
                 </p>
                 <div class="app-tags">
                     <span class="tag">אופליין</span>
-                    <span class="tag">אוטומטי</span>
+                    <span class="tag">אוטומטית</span>
+                    <span class="tag">מהירה</span>
                 </div>
                 <div class="app-version">גרסה אחרונה: <span>V4.0</span></div>
                 <a href="index.html#contact" class="btn btn-purchase download-btn">לרכישה <i class="fa-solid fa-bag-shopping"></i></a>
@@ -585,7 +585,7 @@
                     <span class="tag">משולב MDM</span>
                     <span class="tag">לא ניתן לעקיפה</span>
                 </div>
-                <div class="app-version">גרסה אחרונה: <span>V2.2</span></div>
+                <div class="app-version">גרסה אחרונה: <span>V2.3</span></div>
                 <a href="Vidblocker.apk" download class="btn btn-primary download-btn">להורדה <i class="fa-solid fa-download"></i></a>
             </div>
 

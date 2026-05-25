@@ -19,6 +19,7 @@
         :root {
             --bg-main: #0b0e14;
             --bg-card: #131822;
+            --bg-input: #1a202c;
             --border-color: #1f2a37;
             --primary-blue: #00b4ff;
             --primary-blue-hover: #009ce0;
@@ -80,7 +81,7 @@
             box-shadow: 0 0 30px rgba(0, 180, 255, 0.5);
         }
 
-        /* --- Header (ניווט) --- */
+        /* --- Header (ניווט) תואם למסך הראשי --- */
         header {
             position: fixed;
             top: 0;
@@ -146,22 +147,44 @@
             color: var(--text-white);
         }
 
-        /* --- עיצוב כותרת הדף --- */
+        .header-btn .btn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* --- עיצוב כותרת הדף העליונה (עם רקע תואם למכשירים ניידים) --- */
         .page-header {
-            padding: 160px 0 60px;
+            position: relative;
+            padding: 160px 0 80px;
+            background: linear-gradient(to right, rgba(11, 14, 20, 1) 0%, rgba(11, 14, 20, 0.65) 100%), 
+                        url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2080&auto=format&fit=crop') center/cover;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
-            background: radial-gradient(circle at top, rgba(0, 180, 255, 0.05) 0%, var(--bg-main) 100%);
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, var(--bg-main) 100%);
+            z-index: 1;
+        }
+
+        .page-header .container {
+            position: relative;
+            z-index: 2;
         }
 
         .page-header h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             font-weight: 900;
             margin-bottom: 15px;
         }
 
         .page-header h1 span {
             color: var(--primary-blue);
+            text-shadow: 0 0 30px rgba(0, 180, 255, 0.4);
         }
 
         .page-header p {
@@ -200,14 +223,14 @@
         }
 
         .product-image-box {
-            position: relative;
             background: #1a202c;
-            height: 300px;
+            height: 280px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
             border-bottom: 1px solid var(--border-color);
+            position: relative;
         }
 
         .product-image-box img {
@@ -222,10 +245,18 @@
             transform: scale(1.05);
         }
 
+        .product-content {
+            padding: 25px 30px 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* בועת זמין במלאי מתחת לתמונה */
         .badge-stock {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             background: var(--success-bg);
             color: var(--success);
             padding: 6px 14px;
@@ -233,42 +264,18 @@
             font-size: 0.85rem;
             font-weight: 700;
             border: 1px solid rgba(16, 185, 129, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            z-index: 2;
-        }
-
-        .product-content {
-            padding: 30px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+            margin-bottom: 15px;
+            align-self: flex-start;
         }
 
         .product-title {
             font-size: 1.8rem;
             font-weight: 800;
-            margin-bottom: 5px;
+            margin-bottom: 25px;
         }
 
         .product-title span {
             color: var(--primary-blue);
-        }
-
-        .product-price {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--primary-blue);
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .product-price small {
-            font-size: 1.2rem;
-            color: var(--text-white);
         }
 
         /* --- רשימות מפרט ותכונות --- */
@@ -313,32 +320,36 @@
             text-align: center;
         }
 
+        /* אזור רכישה תחתון (מחיר + כפתור) */
         .buy-btn-wrap {
             margin-top: auto;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .product-price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            line-height: 1;
+        }
+
+        .product-price small {
+            font-size: 1.2rem;
+            color: var(--text-white);
         }
 
         .buy-btn-wrap .btn {
             width: 100%;
             padding: 15px;
             font-size: 1.1rem;
-        }
-
-        /* --- Footer --- */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 30px 0;
-            margin-top: 20px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-text {
-            color: var(--text-gray);
-            font-size: 0.9rem;
         }
 
         /* --- Responsive Design --- */
@@ -354,15 +365,19 @@
             nav a { font-size: 0.9rem; }
 
             .page-header { padding: 130px 0 40px; }
-            .page-header h1 { font-size: 2.5rem; }
+            .page-header h1 { font-size: 2.8rem; }
             .products-grid { grid-template-columns: 1fr; }
-            .footer-content { flex-direction: column-reverse; gap: 20px; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header (ניווט) -->
+    <!-- כותרת מוסתרת לטובת קידום בגוגל (SEO) - לא נראית בתצוגה -->
+    <h1 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">
+        נגני אנדרואיד כשרים ומומלצים - HPower M36, HPower M393, HPower Z80 בגרסאות הטובות ביותר ובמחיר הזול ביותר בשוק
+    </h1>
+
+    <!-- Header (ניווט - תואם לחלוטין למסך הראשי) -->
     <header id="header">
         <div class="container nav-container">
             <div class="header-btn">
@@ -392,7 +407,7 @@
         </div>
     </header>
 
-    <!-- כותרת העמוד -->
+    <!-- כותרת העמוד (עם תמונת רקע תואמת לאנדרואיד וסלולר) -->
     <section class="page-header">
         <div class="container">
             <h1>המוצרים <span>שלנו</span></h1>
@@ -408,13 +423,12 @@
                 <!-- מוצר 1: HPower M36 -->
                 <div class="product-card">
                     <div class="product-image-box">
-                        <div class="badge-stock"><i class="fa-solid fa-check"></i> זמין במלאי</div>
                         <img src="HPower_M36.jpg" alt="נגן HPower M36">
                     </div>
                     
                     <div class="product-content">
+                        <div class="badge-stock"><i class="fa-solid fa-check"></i> זמין במלאי</div>
                         <h2 class="product-title">HPower <span>M36</span></h2>
-                        <div class="product-price">400 <small>₪</small></div>
                         
                         <div class="spec-list">
                             <h4><i class="fa-solid fa-microchip"></i> מפרט טכני</h4>
@@ -426,18 +440,20 @@
                             </ul>
                         </div>
 
-                        <div class="spec-list" style="border:none; margin-bottom:15px;">
+                        <div class="spec-list" style="border:none; margin-bottom:10px;">
                             <h4><i class="fa-solid fa-star"></i> תכונות מיוחדות</h4>
                             <ul>
                                 <li><i class="fa-solid fa-store"></i> חנות עם 140 אפליקציות ומשחקים.</li>
-                                <li><i class="fa-solid fa-face-smile-scan"></i> זיהוי פנים מובנה.</li>
-                                <li><i class="fa-solid fa-video-slash"></i> <b>VidBlocker</b> - חסימת וידיאו בלעדית עם התקנת אפליקציות פתוחה.</li>
-                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון חזק נגד פריצות.</li>
-                                <li><i class="fa-solid fa-bug-slash"></i> גרסה מותאמת אישית ללא באגים.</li>
+                                <li><i class="fa-solid fa-video-slash"></i> חסימת וידיאו בלעדית עם התקנת אפליקציות פתוחה.</li>
+                                <li><i class="fa-solid fa-user-check"></i> זיהוי פנים מובנה.</li>
+                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון חזק וייחודי נגד פריצות.</li>
+                                <li><i class="fa-solid fa-sliders"></i> גרסה חלקה בהתאמה אישית ללא באגים.</li>
                             </ul>
                         </div>
 
+                        <!-- אזור המחיר והכפתור למטה -->
                         <div class="buy-btn-wrap">
+                            <div class="product-price">400 <small>₪</small></div>
                             <a href="index.html#contact" class="btn btn-primary">להזמנה עכשיו</a>
                         </div>
                     </div>
@@ -446,13 +462,12 @@
                 <!-- מוצר 2: HPower M393 -->
                 <div class="product-card">
                     <div class="product-image-box">
-                        <div class="badge-stock"><i class="fa-solid fa-check"></i> זמין במלאי</div>
                         <img src="HPower_M393.jpg" alt="נגן HPower M393">
                     </div>
                     
                     <div class="product-content">
+                        <div class="badge-stock"><i class="fa-solid fa-check"></i> זמין במלאי</div>
                         <h2 class="product-title">HPower <span>M393</span></h2>
-                        <div class="product-price">380 <small>₪</small></div>
                         
                         <div class="spec-list">
                             <h4><i class="fa-solid fa-microchip"></i> מפרט טכני</h4>
@@ -464,32 +479,33 @@
                             </ul>
                         </div>
 
-                        <div class="spec-list" style="border:none; margin-bottom:15px;">
+                        <div class="spec-list" style="border:none; margin-bottom:10px;">
                             <h4><i class="fa-solid fa-star"></i> תכונות מיוחדות</h4>
                             <ul>
                                 <li><i class="fa-solid fa-store"></i> חנות עם 140 אפליקציות ומשחקים.</li>
-                                <li><i class="fa-solid fa-video-slash"></i> <b>VidBlocker</b> - מנגנון בלעדי לחסימת סרטונים.</li>
-                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון הגנה חכם נגד פריצות.</li>
-                                <li><i class="fa-solid fa-sliders"></i> גרסה בהתאמה אישית, חלקה ומהירה.</li>
+                                <li><i class="fa-solid fa-video-slash"></i> חסימת וידיאו בלעדית עם התקנת אפליקציות פתוחה.</li>
+                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון חזק וייחודי נגד פריצות.</li>
+                                <li><i class="fa-solid fa-sliders"></i> גרסה חלקה בהתאמה אישית ללא באגים.</li>
                             </ul>
                         </div>
 
+                        <!-- אזור המחיר והכפתור למטה -->
                         <div class="buy-btn-wrap">
+                            <div class="product-price">380 <small>₪</small></div>
                             <a href="index.html#contact" class="btn btn-primary">להזמנה עכשיו</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- מוצר 3: HPower Z80 (הקודם ששודרג) -->
+                <!-- מוצר 3: HPower Z80 -->
                 <div class="product-card">
                     <div class="product-image-box">
-                        <div class="badge-stock"><i class="fa-solid fa-check"></i> זמין במלאי</div>
                         <img src="hpower.jpg" alt="נגן HPower Z80">
                     </div>
                     
                     <div class="product-content">
+                        <div class="badge-stock"><i class="fa-solid fa-check"></i> זמין במלאי</div>
                         <h2 class="product-title">HPower <span>Z80</span></h2>
-                        <div class="product-price">390 <small>₪</small></div>
                         
                         <div class="spec-list">
                             <h4><i class="fa-solid fa-microchip"></i> מפרט טכני</h4>
@@ -501,18 +517,20 @@
                             </ul>
                         </div>
 
-                        <div class="spec-list" style="border:none; margin-bottom:15px;">
+                        <div class="spec-list" style="border:none; margin-bottom:10px;">
                             <h4><i class="fa-solid fa-star"></i> תכונות מיוחדות</h4>
                             <ul>
                                 <li><i class="fa-solid fa-store"></i> חנות עם 150 אפליקציות ומשחקים.</li>
-                                <li><i class="fa-solid fa-video-slash"></i> מנגנון ייחודי לחסימת וידיאו עם התקנת אפליקציות פתוחה.</li>
-                                <li><i class="fa-solid fa-radio"></i> רדיו כשר ייחודי.</li>
-                                <li><i class="fa-solid fa-ban"></i> חסימה הרמטית לאינטרנט.</li>
-                                <li><i class="fa-solid fa-wand-magic-sparkles"></i> תמיכה במחוות, ערכות נושא ווידג'טים.</li>
+                                <li><i class="fa-solid fa-video-slash"></i> חסימת וידיאו בלעדית עם התקנת אפליקציות פתוחה.</li>
+                                <li><i class="fa-solid fa-radio"></i> רדיו כשר ייחודי (תחנות חרדיות בלבד).</li>
+                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון חזק וייחודי נגד פריצות.</li>
+                                <li><i class="fa-solid fa-sliders"></i> גרסה חלקה בהתאמה אישית ללא באגים.</li>
                             </ul>
                         </div>
 
+                        <!-- אזור המחיר והכפתור למטה -->
                         <div class="buy-btn-wrap">
+                            <div class="product-price">390 <small>₪</small></div>
                             <a href="index.html#contact" class="btn btn-primary">להזמנה עכשיו</a>
                         </div>
                     </div>

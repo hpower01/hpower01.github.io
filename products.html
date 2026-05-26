@@ -81,6 +81,37 @@
             box-shadow: 0 0 30px rgba(0, 180, 255, 0.5);
         }
 
+        /* --- בועות (Badges) --- */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--badge-bg);
+            color: var(--primary-blue);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 180, 255, 0.2);
+        }
+
+        /* בועת זמין במלאי מתחת לתמונה */
+        .badge-stock {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--success-bg);
+            color: var(--success);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            margin-bottom: 15px;
+            align-self: flex-start;
+        }
+
         /* --- Header (ניווט) תואם למסך הראשי --- */
         header {
             position: fixed;
@@ -157,9 +188,9 @@
         .page-header {
             position: relative;
             padding: 160px 0 80px;
-            /* רקע אנדרואיד / טכנולוגי כהה חדש */
-            background: linear-gradient(to right, rgba(11, 14, 20, 1) 0%, rgba(11, 14, 20, 0.7) 100%), 
-                        url('https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=2070&auto=format&fit=crop') center/cover;
+            /* רקע של מכשיר סלולר / אנדרואיד כהה */
+            background: linear-gradient(to right, rgba(11, 14, 20, 0.95) 0%, rgba(11, 14, 20, 0.6) 100%), 
+                        url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2080&auto=format&fit=crop') center/cover;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
         }
@@ -175,6 +206,9 @@
         .page-header .container {
             position: relative;
             z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .page-header-title {
@@ -193,6 +227,7 @@
             font-size: 1.2rem;
             max-width: 600px;
             margin: 0 auto;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         /* --- Products Grid --- */
@@ -251,22 +286,6 @@
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-        }
-
-        /* בועת זמין במלאי מתחת לתמונה */
-        .badge-stock {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: var(--success-bg);
-            color: var(--success);
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            margin-bottom: 15px;
-            align-self: flex-start;
         }
 
         .product-title {
@@ -430,6 +449,9 @@
     <!-- כותרת העמוד -->
     <section class="page-header">
         <div class="container">
+            <div class="badge">
+                <i class="fa-solid fa-mobile-screen-button"></i> חנות המכשירים
+            </div>
             <h2 class="page-header-title">המוצרים <span>שלנו</span></h2>
             <p>נגני אנדרואיד כשרים ומתקדמים, חסומים הרמטית ובטוחים לשימוש עם הגרסאות הטובות ביותר בהתאמה אישית.</p>
         </div>
@@ -457,6 +479,7 @@
                                 <li><i class="fa-solid fa-memory"></i> 3GB ראם | 16GB זיכרון אחסון.</li>
                                 <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 2000 mAh.</li>
                                 <li><i class="fa-solid fa-camera"></i> מצלמה אחורית 13MP | קדמית 5MP.</li>
+                                <li><i class="fa-brands fa-usb"></i> תומך OTG.</li>
                             </ul>
                         </div>
 
@@ -520,7 +543,7 @@
                 <!-- מוצר 3: HPower Z80 -->
                 <div class="product-card">
                     <div class="product-image-box">
-                        <img src="hpower.jpg" alt="נגן HPower Z80">
+                        <img src="HPower_Z80.jpg" alt="נגן HPower Z80">
                     </div>
                     
                     <div class="product-content">
@@ -534,6 +557,7 @@
                                 <li><i class="fa-solid fa-memory"></i> 2GB ראם | 16GB זיכרון אחסון.</li>
                                 <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 2050 mAh.</li>
                                 <li><i class="fa-solid fa-bolt"></i> מעבד עוצמתי.</li>
+                                <li><i class="fa-brands fa-usb"></i> תומך OTG.</li>
                             </ul>
                         </div>
 

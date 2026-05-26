@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
-  <!-- עמוד הבית (קורא אוטומטית לקובץ index.html) -->
+  <!-- עמוד הבית -->
   <url>
-    <loc>https://kobiamos001.github.io/</loc>
+    <loc>https://www.yosef-mobile.co.il/</loc>
     <priority>1.0</priority>
   </url>
 
   <!-- עמוד מוצרים -->
   <url>
-    <loc>https://kobiamos001.github.io/products.html</loc>
+    <loc>https://www.yosef-mobile.co.il/products.html</loc>
     <priority>0.8</priority>
   </url>
 
   <!-- עמוד הורדות -->
   <url>
-    <loc>https://kobiamos001.github.io/download.html</loc>
+    <loc>https://www.yosef-mobile.co.il/download.html</loc>
     <priority>0.8</priority>
   </url>
 

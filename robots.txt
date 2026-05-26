@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kobiamos001.github.io/sitemap.xml
+Sitemap: https://www.yosef-mobile.co.il/sitemap.xml

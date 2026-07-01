@@ -372,60 +372,22 @@
             font-size: 1.1rem;
         }
 
-        /* --- תגית זוהרת ומיקום שמאלי ל-MAX --- */
-        .max-card-special {
-            position: relative;
+        /* --- Footer --- */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 30px 0;
+            margin-top: 20px;
         }
 
-        /* דחיפת כרטיסיית ה-MAX לעמודה השמאלית במסכים רחבים (3 עמודות) */
-        @media (min-width: 1025px) {
-            .max-card-special {
-                grid-column: 3;
-                grid-row: 1;
-            }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* דחיפת כרטיסיית ה-MAX לעמודה השמאלית במסכי טאבלט (2 עמודות) */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .max-card-special {
-                grid-column: 2;
-                grid-row: 1;
-            }
-        }
-
-        .ribbon-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 150px;
-            height: 150px;
-            overflow: hidden;
-            z-index: 10;
-        }
-
-        .ribbon {
-            position: absolute;
-            top: 30px;
-            left: -60px;
-            width: 240px;
-            background: linear-gradient(90deg, #00b4ff, #ffffff, #00b4ff);
-            background-size: 200% auto;
-            color: #0b0e14;
-            text-align: center;
-            padding: 6px 0;
-            font-size: 0.85rem;
-            font-weight: 900;
-            transform: rotate(-45deg);
-            box-shadow: 0 0 15px rgba(0, 180, 255, 0.8);
-            animation: glowRibbon 2s infinite alternate, shineRibbon 3s linear infinite;
-        }
-
-        @keyframes glowRibbon {
-            from { box-shadow: 0 0 10px rgba(0, 180, 255, 0.4); }
-            to { box-shadow: 0 0 25px rgba(0, 180, 255, 1); }
-        }
-        @keyframes shineRibbon {
-            to { background-position: 200% center; }
+        .footer-text {
+            color: var(--text-gray);
+            font-size: 0.9rem;
         }
 
         /* --- Responsive Design --- */
@@ -491,7 +453,7 @@
                 <i class="fa-solid fa-mobile-screen-button"></i> חנות מכשירים
             </div>
             <h2 class="page-header-title">המוצרים <span>שלנו</span></h2>
-            <p>נגני אנדרואיד כשרים ומתקדמים, חסומים הרמטית ללא אינטרנט וללא וידיאו כלל, עם הגרסאות הטובות ביותר במחירים הזולים ביותר.</p>
+            <p>נגני האנדרואיד הכשרים הטובים ביותר בשוק, חסומים הרמטית עם האבטחה הגבוהה ביותר, כולל כל התכונות והשידרוגים הכי עדכניים עם תכונות ופיתוחים בלעדיים במחירים זולים במיוחד.</p>
         </div>
     </section>
 
@@ -500,55 +462,6 @@
         <div class="container">
             <div class="products-grid">
                 
-                <!-- מוצר 4: HPower MAX (מוקם במכוון כאן כדי להיות ראשון) -->
-                <div class="product-card max-card-special">
-                    <div class="ribbon-wrapper">
-                        <div class="ribbon">הנגן הטוב ביותר בשוק</div>
-                    </div>
-
-                    <div class="product-image-box">
-                        <img src="HPower_MAX.jpg" alt="נגן HPower MAX">
-                    </div>
-                    
-                    <div class="product-content">
-                        <div class="badge-stock"><i class="fa-solid fa-check"></i> זמין במלאי</div>
-                        <h2 class="product-title">HPower <span>MAX</span></h2>
-                        
-                        <div class="spec-list">
-                            <h4><i class="fa-solid fa-microchip"></i> מפרט טכני</h4>
-                            <ul>
-                                <li><i class="fa-brands fa-android"></i> אנדרואיד 13.</li>
-                                <li><i class="fa-solid fa-bolt"></i> מעבד חזק.</li>
-                                <li><i class="fa-solid fa-memory"></i> 3GB ראם | 32GB זיכרון אחסון.</li>
-                                <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 2000 mAh.</li>
-                                <li><i class="fa-solid fa-camera"></i> מצלמה אחורית 13MP | קדמית 5MP.</li>
-                                <li><i class="fa-brands fa-usb"></i> תומך OTG.</li>
-                            </ul>
-                        </div>
-
-                        <div class="spec-list" style="border:none; margin-bottom:10px;">
-                            <h4><i class="fa-solid fa-star"></i> תכונות מיוחדות</h4>
-                            <ul>
-                                <li><i class="fa-solid fa-store"></i> חנות כשרה ומתקדמת עם 300 אפליקציות ומשחקים מובילים.</li>
-                                <li><i class="fa-solid fa-video-slash"></i> מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה.</li>
-                                <li><i class="fa-solid fa-film"></i> מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו.</li>
-                                <li><i class="fa-solid fa-radio"></i> רדיו כשר בלעדי (תחנות חרדיות בלבד).</li>
-                                <li><i class="fa-solid fa-user-lock"></i> מנגנון זיהוי פנים בלעדי.</li>
-                                <li><i class="fa-solid fa-headphones"></i> מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר.</li>
-                                <li><i class="fa-solid fa-share-nodes"></i> מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower').</li>
-                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון ייחודי נגד פריצות.</li>
-                                <li><i class="fa-solid fa-sliders"></i> גרסה בהתאמה אישית.</li>
-                            </ul>
-                        </div>
-
-                        <!-- אזור המחיר והכפתור למטה -->
-                        <div class="buy-btn-wrap">
-                            <div class="product-price">490 <small>₪</small></div>
-                            <a href="index.html#contact" class="btn btn-primary">להזמנה</a>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- מוצר 1: HPower Pro -->
                 <div class="product-card">
                     <div class="product-image-box">
@@ -578,7 +491,7 @@
                                 <li><i class="fa-solid fa-video-slash"></i> מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה.</li>
                                 <li><i class="fa-solid fa-film"></i> מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו.</li>
                                 <li><i class="fa-solid fa-radio"></i> רדיו כשר בלעדי (תחנות חרדיות בלבד).</li>
-                                <li><i class="fa-solid fa-user-lock"></i> מנגנון זיהוי פנים בלעדי.</li>
+                                <li><i class="fa-solid fa-user-lock"></i> מנגנון זיהוי פנים מובנה בלעדי.</li>
                                 <li><i class="fa-solid fa-headphones"></i> מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר.</li>
                                 <li><i class="fa-solid fa-share-nodes"></i> מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower').</li>
                                 <li><i class="fa-solid fa-shield-halved"></i> מנגנון ייחודי נגד פריצות.</li>
@@ -610,7 +523,7 @@
                                 <li><i class="fa-brands fa-android"></i> אנדרואיד 13.</li>
                                 <li><i class="fa-solid fa-bolt"></i> מעבד חזק.</li>
                                 <li><i class="fa-solid fa-memory"></i> 3GB ראם | 16GB זיכרון אחסון.</li>
-                                <li><i class="fa-solid fa-battery-full"></i> סוללה בנפח 1250 mAh.</li>
+                                <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 1950 mAh.</li>
                                 <li><i class="fa-solid fa-mobile-screen"></i> עיצוב קומפקטי ונוח.</li>
                             </ul>
                         </div>
@@ -618,7 +531,7 @@
                         <div class="spec-list" style="border:none; margin-bottom:10px;">
                             <h4><i class="fa-solid fa-star"></i> תכונות מיוחדות</h4>
                             <ul>
-                                <li><i class="fa-solid fa-store"></i> חנות כשרה ומתקדמת עם 140 אפליקציות ומשחקים מובילים.</li>
+                                <li><i class="fa-solid fa-store"></i> חנות כשרה ומתקדמת עם 150 אפליקציות ומשחקים מובילים.</li>
                                 <li><i class="fa-solid fa-video-slash"></i> מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה.</li>
                                 <li><i class="fa-solid fa-film"></i> מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו.</li>
                                 <li><i class="fa-solid fa-radio"></i> רדיו כשר בלעדי (תחנות חרדיות בלבד).</li>
@@ -674,6 +587,51 @@
                         <!-- אזור המחיר והכפתור למטה -->
                         <div class="buy-btn-wrap">
                             <div class="product-price">390 <small>₪</small></div>
+                            <a href="index.html#contact" class="btn btn-primary">להזמנה</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- מוצר 4: HPower MAX -->
+                <div class="product-card">
+                    <div class="product-image-box">
+                        <img src="HPower_MAX.jpg" alt="נגן HPower MAX">
+                    </div>
+                    
+                    <div class="product-content">
+                        <div class="badge-stock"><i class="fa-solid fa-check"></i> זמין במלאי</div>
+                        <h2 class="product-title">HPower <span>MAX</span></h2>
+                        
+                        <div class="spec-list">
+                            <h4><i class="fa-solid fa-microchip"></i> מפרט טכני</h4>
+                            <ul>
+                                <li><i class="fa-brands fa-android"></i> אנדרואיד 13.</li>
+                                <li><i class="fa-solid fa-bolt"></i> מעבד עוצמתי</li>
+                                <li><i class="fa-solid fa-memory"></i> 3GB ראם | 32GB זיכרון אחסון.</li>
+                                <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 2000 mAh.</li>
+                                <li><i class="fa-solid fa-camera"></i> מצלמה אחורית 13MP | קדמית 5MP.</li>
+                                <li><i class="fa-brands fa-usb"></i> תומך OTG.</li>
+                            </ul>
+                        </div>
+
+                        <div class="spec-list" style="border:none; margin-bottom:10px;">
+                            <h4><i class="fa-solid fa-star"></i> תכונות מיוחדות</h4>
+                            <ul>
+                                <li><i class="fa-solid fa-store"></i> חנות כשרה ומתקדמת עם 300 אפליקציות ומשחקים מובילים.</li>
+                                <li><i class="fa-solid fa-video-slash"></i> מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה.</li>
+                                <li><i class="fa-solid fa-film"></i> מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו.</li>
+                                <li><i class="fa-solid fa-radio"></i> רדיו כשר בלעדי (תחנות חרדיות בלבד).</li>
+                                <li><i class="fa-solid fa-user-lock"></i> מנגנון זיהוי פנים מובנה בלעדי.</li>
+                                <li><i class="fa-solid fa-headphones"></i> מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר.</li>
+                                <li><i class="fa-solid fa-share-nodes"></i> מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower').</li>
+                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון ייחודי נגד פריצות.</li>
+                                <li><i class="fa-solid fa-sliders"></i> גרסה בהתאמה אישית.</li>
+                            </ul>
+                        </div>
+
+                        <!-- אזור המחיר והכפתור למטה -->
+                        <div class="buy-btn-wrap">
+                            <div class="product-price">490 <small>₪</small></div>
                             <a href="index.html#contact" class="btn btn-primary">להזמנה</a>
                         </div>
                     </div>

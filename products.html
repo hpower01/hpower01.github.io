@@ -372,6 +372,34 @@
             font-size: 1.1rem;
         }
 
+        /* תגית אלכסונית זוהרת ל-MAX */
+        .ribbon-max {
+            position: absolute;
+            top: 25px;
+            left: -40px;
+            background: linear-gradient(45deg, var(--primary-blue), #0077a8);
+            color: #fff;
+            padding: 8px 45px;
+            font-size: 0.85rem;
+            font-weight: 900;
+            transform: rotate(-45deg);
+            z-index: 10;
+            pointer-events: none;
+            box-shadow: 0 0 15px rgba(0, 180, 255, 0.8);
+            animation: ribbonGlow 1.5s infinite alternate;
+        }
+
+        @keyframes ribbonGlow {
+            from {
+                box-shadow: 0 0 10px rgba(0, 180, 255, 0.4);
+                text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
+            }
+            to {
+                box-shadow: 0 0 25px rgba(0, 180, 255, 1), 0 0 10px rgba(0, 180, 255, 0.8);
+                text-shadow: 0 0 8px rgba(255, 255, 255, 1);
+            }
+        }
+
         /* --- Footer --- */
         footer {
             border-top: 1px solid var(--border-color);
@@ -453,7 +481,7 @@
                 <i class="fa-solid fa-mobile-screen-button"></i> חנות מכשירים
             </div>
             <h2 class="page-header-title">המוצרים <span>שלנו</span></h2>
-            <p>נגני האנדרואיד הכשרים הטובים ביותר בשוק, חסומים הרמטית עם האבטחה הגבוהה ביותר, כולל כל התכונות והשידרוגים הכי עדכניים עם תכונות ופיתוחים בלעדיים במחירים זולים במיוחד.</p>
+            <p>נגני האנדרואיד הכשרים הטובים ביותר בשוק, חסימה הרמטית עם האבטחה הגבוהה ביותר, כולל כל התכונות והשידרוגים הכי עדכניים עם תכונות ופיתוחים בלעדיים.</p>
         </div>
     </section>
 
@@ -462,7 +490,54 @@
         <div class="container">
             <div class="products-grid">
                 
-                <!-- מוצר 1: HPower Pro -->
+                <!-- מוצר 1: HPower MAX -->
+                <div class="product-card">
+                    <div class="product-image-box">
+                        <div class="ribbon-max">הנגן הכי טוב בשוק</div>
+                        <img src="HPower_MAX.jpg" alt="נגן HPower MAX">
+                    </div>
+                    
+                    <div class="product-content">
+                        <div class="badge-stock"><i class="fa-solid fa-check"></i> זמין במלאי</div>
+                        <h2 class="product-title">HPower <span>MAX</span></h2>
+                        
+                        <div class="spec-list">
+                            <h4><i class="fa-solid fa-microchip"></i> מפרט טכני</h4>
+                            <ul>
+                                <li><i class="fa-brands fa-android"></i> אנדרואיד 13.</li>
+                                <li><i class="fa-solid fa-bolt"></i> מעבד עוצמתי</li>
+                                <li><i class="fa-solid fa-memory"></i> 3GB ראם | 32GB זיכרון אחסון.</li>
+                                <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 2000 mAh.</li>
+                                <li><i class="fa-solid fa-camera"></i> מצלמה אחורית 13MP | קדמית 5MP.</li>
+                                <li><i class="fa-brands fa-usb"></i> תומך OTG.</li>
+                            </ul>
+                        </div>
+
+                        <div class="spec-list" style="border:none; margin-bottom:10px;">
+                            <h4><i class="fa-solid fa-star"></i> תכונות מיוחדות</h4>
+                            <ul>
+                                <li><i class="fa-solid fa-store"></i> חנות כשרה ומתקדמת עם 300 אפליקציות ומשחקים מובילים.</li>
+                                <li><i class="fa-solid fa-video-slash"></i> מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה.</li>
+                                <li><i class="fa-solid fa-film"></i> מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו.</li>
+                                <li><i class="fa-solid fa-radio"></i> רדיו כשר בלעדי (תחנות חרדיות בלבד).</li>
+                                <li><i class="fa-solid fa-user-lock"></i> מנגנון זיהוי פנים מובנה בלעדי.</li>
+                                <li><i class="fa-solid fa-headphones"></i> מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר.</li>
+                                <li><i class="fa-solid fa-share-nodes"></i> מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower').</li>
+                                <li><i class="fa-brands fa-bluetooth"></i> מתקן כתובת בלוטוס מובנה.</li>
+                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון ייחודי נגד פריצות.</li>
+                                <li><i class="fa-solid fa-sliders"></i> גרסה בהתאמה אישית.</li>
+                            </ul>
+                        </div>
+
+                        <!-- אזור המחיר והכפתור למטה -->
+                        <div class="buy-btn-wrap">
+                            <div class="product-price">490 <small>₪</small></div>
+                            <a href="index.html#contact" class="btn btn-primary">להזמנה</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- מוצר 2: HPower Pro -->
                 <div class="product-card">
                     <div class="product-image-box">
                         <img src="HPower_Pro.jpg" alt="נגן HPower Pro">
@@ -494,6 +569,7 @@
                                 <li><i class="fa-solid fa-user-lock"></i> מנגנון זיהוי פנים מובנה בלעדי.</li>
                                 <li><i class="fa-solid fa-headphones"></i> מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר.</li>
                                 <li><i class="fa-solid fa-share-nodes"></i> מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower').</li>
+                                <li><i class="fa-brands fa-bluetooth"></i> מתקן כתובת בלוטוס מובנה.</li>
                                 <li><i class="fa-solid fa-shield-halved"></i> מנגנון ייחודי נגד פריצות.</li>
                                 <li><i class="fa-solid fa-sliders"></i> גרסה בהתאמה אישית.</li>
                             </ul>
@@ -502,49 +578,6 @@
                         <!-- אזור המחיר והכפתור למטה -->
                         <div class="buy-btn-wrap">
                             <div class="product-price">400 <small>₪</small></div>
-                            <a href="index.html#contact" class="btn btn-primary">להזמנה</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- מוצר 2: HPower Lite -->
-                <div class="product-card">
-                    <div class="product-image-box">
-                        <img src="HPower_Lite.jpg" alt="נגן HPower Lite">
-                    </div>
-                    
-                    <div class="product-content">
-                        <div class="badge-stock"><i class="fa-solid fa-check"></i> זמין במלאי</div>
-                        <h2 class="product-title">HPower <span>Lite</span></h2>
-                        
-                        <div class="spec-list">
-                            <h4><i class="fa-solid fa-microchip"></i> מפרט טכני</h4>
-                            <ul>
-                                <li><i class="fa-brands fa-android"></i> אנדרואיד 13.</li>
-                                <li><i class="fa-solid fa-bolt"></i> מעבד חזק.</li>
-                                <li><i class="fa-solid fa-memory"></i> 3GB ראם | 16GB זיכרון אחסון.</li>
-                                <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 1950 mAh.</li>
-                                <li><i class="fa-solid fa-mobile-screen"></i> עיצוב קומפקטי ונוח.</li>
-                            </ul>
-                        </div>
-
-                        <div class="spec-list" style="border:none; margin-bottom:10px;">
-                            <h4><i class="fa-solid fa-star"></i> תכונות מיוחדות</h4>
-                            <ul>
-                                <li><i class="fa-solid fa-store"></i> חנות כשרה ומתקדמת עם 150 אפליקציות ומשחקים מובילים.</li>
-                                <li><i class="fa-solid fa-video-slash"></i> מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה.</li>
-                                <li><i class="fa-solid fa-film"></i> מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו.</li>
-                                <li><i class="fa-solid fa-radio"></i> רדיו כשר בלעדי (תחנות חרדיות בלבד).</li>
-                                <li><i class="fa-solid fa-headphones"></i> מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר.</li>
-                                <li><i class="fa-solid fa-share-nodes"></i> מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower').</li>
-                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון ייחודי נגד פריצות.</li>
-                                <li><i class="fa-solid fa-sliders"></i> גרסה בהתאמה אישית.</li>
-                            </ul>
-                        </div>
-
-                        <!-- אזור המחיר והכפתור למטה -->
-                        <div class="buy-btn-wrap">
-                            <div class="product-price">380 <small>₪</small></div>
                             <a href="index.html#contact" class="btn btn-primary">להזמנה</a>
                         </div>
                     </div>
@@ -579,6 +612,7 @@
                                 <li><i class="fa-solid fa-film"></i> מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו.</li>
                                 <li><i class="fa-solid fa-radio"></i> רדיו כשר בלעדי (תחנות חרדיות בלבד).</li>
                                 <li><i class="fa-solid fa-share-nodes"></i> מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower').</li>
+                                <li><i class="fa-brands fa-bluetooth"></i> מתקן כתובת בלוטוס מובנה.</li>
                                 <li><i class="fa-solid fa-shield-halved"></i> מנגנון ייחודי נגד פריצות.</li>
                                 <li><i class="fa-solid fa-sliders"></i> גרסה בהתאמה אישית.</li>
                             </ul>
@@ -592,38 +626,37 @@
                     </div>
                 </div>
 
-                <!-- מוצר 4: HPower MAX -->
+                <!-- מוצר 4: HPower Lite -->
                 <div class="product-card">
                     <div class="product-image-box">
-                        <img src="HPower_MAX.jpg" alt="נגן HPower MAX">
+                        <img src="HPower_Lite.jpg" alt="נגן HPower Lite">
                     </div>
                     
                     <div class="product-content">
                         <div class="badge-stock"><i class="fa-solid fa-check"></i> זמין במלאי</div>
-                        <h2 class="product-title">HPower <span>MAX</span></h2>
+                        <h2 class="product-title">HPower <span>Lite</span></h2>
                         
                         <div class="spec-list">
                             <h4><i class="fa-solid fa-microchip"></i> מפרט טכני</h4>
                             <ul>
                                 <li><i class="fa-brands fa-android"></i> אנדרואיד 13.</li>
-                                <li><i class="fa-solid fa-bolt"></i> מעבד עוצמתי</li>
-                                <li><i class="fa-solid fa-memory"></i> 3GB ראם | 32GB זיכרון אחסון.</li>
-                                <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 2000 mAh.</li>
-                                <li><i class="fa-solid fa-camera"></i> מצלמה אחורית 13MP | קדמית 5MP.</li>
-                                <li><i class="fa-brands fa-usb"></i> תומך OTG.</li>
+                                <li><i class="fa-solid fa-bolt"></i> מעבד חזק.</li>
+                                <li><i class="fa-solid fa-memory"></i> 3GB ראם | 16GB זיכרון אחסון.</li>
+                                <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 1950 mAh.</li>
+                                <li><i class="fa-solid fa-mobile-screen"></i> עיצוב קומפקטי ונוח.</li>
                             </ul>
                         </div>
 
                         <div class="spec-list" style="border:none; margin-bottom:10px;">
                             <h4><i class="fa-solid fa-star"></i> תכונות מיוחדות</h4>
                             <ul>
-                                <li><i class="fa-solid fa-store"></i> חנות כשרה ומתקדמת עם 300 אפליקציות ומשחקים מובילים.</li>
+                                <li><i class="fa-solid fa-store"></i> חנות כשרה ומתקדמת עם 150 אפליקציות ומשחקים מובילים.</li>
                                 <li><i class="fa-solid fa-video-slash"></i> מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה.</li>
                                 <li><i class="fa-solid fa-film"></i> מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו.</li>
                                 <li><i class="fa-solid fa-radio"></i> רדיו כשר בלעדי (תחנות חרדיות בלבד).</li>
-                                <li><i class="fa-solid fa-user-lock"></i> מנגנון זיהוי פנים מובנה בלעדי.</li>
                                 <li><i class="fa-solid fa-headphones"></i> מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר.</li>
                                 <li><i class="fa-solid fa-share-nodes"></i> מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower').</li>
+                                <li><i class="fa-brands fa-bluetooth"></i> מתקן כתובת בלוטוס מובנה.</li>
                                 <li><i class="fa-solid fa-shield-halved"></i> מנגנון ייחודי נגד פריצות.</li>
                                 <li><i class="fa-solid fa-sliders"></i> גרסה בהתאמה אישית.</li>
                             </ul>
@@ -631,7 +664,7 @@
 
                         <!-- אזור המחיר והכפתור למטה -->
                         <div class="buy-btn-wrap">
-                            <div class="product-price">490 <small>₪</small></div>
+                            <div class="product-price">380 <small>₪</small></div>
                             <a href="index.html#contact" class="btn btn-primary">להזמנה</a>
                         </div>
                     </div>

@@ -143,16 +143,40 @@
         .footer-content { display: flex; justify-content: space-between; align-items: center; }
         .footer-text { color: var(--text-gray); font-size: 0.95rem; }
 
-        @media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+        /* --- Responsive Design --- */
+        @media (max-width: 1024px) { 
+            .products-grid { grid-template-columns: repeat(2, 1fr); } 
+        }
+        
         @media (max-width: 768px) {
-            .nav-container { flex-wrap: wrap; }
-            nav { order: 3; width: 100%; margin-top: 20px; }
-            nav ul { justify-content: center; flex-wrap: wrap; gap: 15px; }
-            .page-header { padding: 150px 0 60px; }
-            .page-header-title { font-size: 3rem; }
+            .nav-container { flex-wrap: wrap; justify-content: space-between; align-items: center; }
+            .logo-area { order: 1; margin: 0; }
+            .header-btn { order: 2; margin: 0; }
+            nav { order: 3; width: 100%; margin-top: 15px; }
+            nav ul { justify-content: center; flex-wrap: wrap; gap: 12px; font-size: 0.95rem; }
+            
+            .page-header { padding: 160px 0 60px; }
+            .page-header-title { font-size: 2.8rem; }
+            
             .products-grid { grid-template-columns: 1fr; gap: 30px; }
-            .footer-content { flex-direction: column; gap: 20px; text-align: center; }
-            .logo-area { margin: 0 auto; }
+            .footer-content { flex-direction: column; gap: 15px; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .page-header-title { font-size: 2.2rem; }
+            .page-header p { font-size: 1.05rem; }
+            
+            .logo-text h2 { font-size: 1.1rem; }
+            .logo-icon { width: 35px; height: 35px; font-size: 1.1rem; }
+            .header-btn .btn { padding: 8px 15px !important; font-size: 0.85rem !important; }
+            
+            .product-content { padding: 25px 20px; }
+            .product-title { font-size: 1.7rem; }
+            .product-price { font-size: 2.4rem; }
+            .buy-btn-wrap .btn { padding: 14px; font-size: 1.05rem; }
+            
+            .product-image-box { height: 250px; padding: 20px; }
+            .ribbon-max { padding: 8px 40px; font-size: 0.8rem; top: 25px; left: -35px; }
         }
     </style>
 </head>

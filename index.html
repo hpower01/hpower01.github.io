@@ -217,12 +217,14 @@
         }
 
         @media (max-width: 768px) {
+            /* === Header (בדיוק כמו בשאר העמודים) === */
             .nav-container { flex-wrap: wrap; justify-content: space-between; align-items: center; }
             .logo-area { order: 1; margin: 0; }
             .header-btn { order: 2; margin: 0; }
             nav { order: 3; width: 100%; margin-top: 15px; }
-            nav ul { justify-content: center; flex-wrap: wrap; gap: 12px; font-size: 0.95rem; }
+            nav ul { justify-content: center; flex-wrap: wrap; gap: 12px; font-size: 0.95rem; margin: 0; padding: 0; }
             
+            /* === שאר העמוד === */
             .hero { padding: 180px 0 80px; text-align: center; }
             .hero h1 { font-size: 2.8rem; }
             .hero p { font-size: 1.1rem; }
@@ -251,6 +253,8 @@
             .logo-text h2 { font-size: 1.1rem; }
             .logo-icon { width: 35px; height: 35px; font-size: 1.1rem; }
             .header-btn .btn { padding: 8px 15px !important; font-size: 0.85rem !important; }
+            
+            nav ul { gap: 8px; font-size: 0.9rem; }
             
             .info-box { flex-direction: column; text-align: center; gap: 15px; padding: 20px; }
             .info-box-content { text-align: center; width: 100%; }

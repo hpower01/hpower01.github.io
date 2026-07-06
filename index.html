@@ -212,22 +212,53 @@
         @media (max-width: 992px) {
             .hero h1 { font-size: 3.5rem; }
             .services-grid { grid-template-columns: repeat(2, 1fr); }
-            .about-layout, .contact-layout { grid-template-columns: 1fr; }
+            .about-layout, .contact-layout { grid-template-columns: 1fr; gap: 40px; }
             .info-box:hover { transform: translateY(-5px); }
         }
 
         @media (max-width: 768px) {
-            .nav-container { flex-wrap: wrap; }
-            nav { order: 3; width: 100%; margin-top: 20px; }
-            nav ul { justify-content: center; flex-wrap: wrap; gap: 15px; }
-            .hero { padding: 160px 0 80px; text-align: center; }
+            .nav-container { flex-wrap: wrap; justify-content: space-between; align-items: center; }
+            .logo-area { order: 1; margin: 0; }
+            .header-btn { order: 2; margin: 0; }
+            nav { order: 3; width: 100%; margin-top: 15px; }
+            nav ul { justify-content: center; flex-wrap: wrap; gap: 12px; font-size: 0.95rem; }
+            
+            .hero { padding: 180px 0 80px; text-align: center; }
             .hero h1 { font-size: 2.8rem; }
-            .hero-buttons { flex-direction: column; align-items: center; }
+            .hero p { font-size: 1.1rem; }
+            
+            .hero-buttons { flex-direction: column; align-items: center; width: 100%; gap: 15px; }
+            .hero-buttons .btn { width: 100%; max-width: 300px; }
+            
             .hero-features { flex-direction: column; align-items: center; gap: 15px; }
+            
             .services-grid, .stats-grid, .form-row { grid-template-columns: 1fr; }
-            .contact-form { padding: 30px 20px; }
-            .footer-content { flex-direction: column; gap: 20px; text-align: center; }
-            .logo-area { margin: 0 auto; }
+            
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .stat-box { padding: 25px 15px; }
+            .stat-number { font-size: 2.2rem; }
+            
+            .contact-form { padding: 35px 20px; }
+            .footer-content { flex-direction: column; gap: 15px; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.2rem; }
+            .section-title { font-size: 2.2rem; }
+            
+            .stats-grid { grid-template-columns: 1fr; }
+            
+            .logo-text h2 { font-size: 1.1rem; }
+            .logo-icon { width: 35px; height: 35px; font-size: 1.1rem; }
+            .header-btn .btn { padding: 8px 15px !important; font-size: 0.85rem !important; }
+            
+            .info-box { flex-direction: column; text-align: center; gap: 15px; padding: 20px; }
+            .info-box-content { text-align: center; width: 100%; }
+            .info-box-content p { font-size: 1rem; text-align: center; word-break: break-all; direction: ltr; }
+            
+            .card-content { padding: 0 20px 30px; }
+            .form-header h3 { font-size: 1.25rem; }
+            .btn-submit { font-size: 1rem; padding: 15px; }
         }
     </style>
 </head>
@@ -526,7 +557,8 @@
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    const headerOffset = 80;
+                    // חישוב דינאמי של גובה התפריט לטובת מניעת הסתרת תוכן במובייל
+                    const headerOffset = document.querySelector('header').offsetHeight + 20;
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                     window.scrollTo({ top: offsetPosition, behavior: "smooth" });

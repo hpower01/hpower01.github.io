@@ -191,11 +191,12 @@
         }
 
         @media (max-width: 768px) {
-            .nav-container { flex-wrap: wrap; }
-            nav { order: 3; width: 100%; margin-top: 20px; }
-            nav ul { justify-content: center; flex-wrap: wrap; gap: 15px; }
+            .nav-container { flex-wrap: wrap; justify-content: space-between; align-items: center; }
+            .logo-area { order: 1; margin: 0; }
+            .header-btn { order: 2; margin: 0; }
+            nav { order: 3; width: 100%; margin-top: 15px; }
+            nav ul { justify-content: center; flex-wrap: wrap; gap: 12px; font-size: 0.95rem; }
             .footer-content { flex-direction: column; gap: 20px; text-align: center; }
-            .logo-area { margin: 0 auto; }
 
             /* ספציפי לעמוד ראשי שיהיה רספונסיבי */
             .hero { padding: 160px 0 80px; text-align: center; }

@@ -149,15 +149,35 @@
         .footer-content { display: flex; justify-content: space-between; align-items: center; }
         .footer-text { color: var(--text-gray); font-size: 0.95rem; }
 
+        /* --- Responsive Design --- */
         @media (max-width: 768px) {
-            .nav-container { flex-wrap: wrap; }
-            nav { order: 3; width: 100%; margin-top: 20px; }
-            nav ul { justify-content: center; flex-wrap: wrap; gap: 15px; }
-            .hero { padding: 150px 0 60px; }
-            .hero .hero-main-title { font-size: 3rem; }
-            .app-grid { grid-template-columns: 1fr; gap: 30px; }
-            .footer-content { flex-direction: column; gap: 20px; text-align: center; }
-            .logo-area { margin: 0 auto; }
+            .nav-container { flex-wrap: wrap; justify-content: space-between; align-items: center; }
+            .logo-area { order: 1; margin: 0; }
+            .header-btn { order: 2; margin: 0; }
+            nav { order: 3; width: 100%; margin-top: 15px; }
+            nav ul { justify-content: center; flex-wrap: wrap; gap: 12px; font-size: 0.95rem; }
+            
+            .hero { padding: 160px 0 60px; }
+            .hero .hero-main-title { font-size: 2.8rem; }
+            
+            .app-grid { grid-template-columns: 1fr; gap: 30px; padding: 60px 0 30px 0; }
+            .footer-content { flex-direction: column; gap: 15px; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero .hero-main-title { font-size: 2.2rem; }
+            .hero p { font-size: 1.05rem; }
+            
+            .logo-text h2 { font-size: 1.1rem; }
+            .logo-icon { width: 35px; height: 35px; font-size: 1.1rem; }
+            .header-btn .btn { padding: 8px 15px !important; font-size: 0.85rem !important; }
+            
+            .app-card { padding: 25px 20px; }
+            .app-icon { width: 60px; height: 60px; font-size: 1.8rem; }
+            .app-title-area h2 { font-size: 1.5rem; }
+            .app-header { gap: 15px; margin-bottom: 20px; }
+            
+            .ribbon-exclusive { top: 20px; right: -40px; font-size: 0.8rem; padding: 4px 0; }
         }
     </style>
 </head>
@@ -224,7 +244,7 @@
                     <span class="tag">אופליין</span>
                     <span class="tag">ללא רוט</span>
                 </div>
-                <div class="app-version">גרסה אחרונה: <span>V1.8</span></div>
+                <div class="app-version">גרסה אחרונה: <span>V2.0</span></div>
                 <a href="index.html#contact" class="btn btn-purchase download-btn">לרכישה* <i class="fa-solid fa-bag-shopping"></i></a>
             </div>
 
@@ -287,7 +307,7 @@
                     <span class="tag">מהירות גבוהה</span>
                     <span class="tag">מובנה במערכת</span>
                 </div>
-                <div class="app-version">גרסה אחרונה: <span>V1.0</span></div>
+                <div class="app-version">גרסה אחרונה: <span>V2.0</span></div>
                 <a href="index.html#contact" class="btn btn-purchase download-btn">לרכישה* <i class="fa-solid fa-bag-shopping"></i></a>
             </div>
 
@@ -331,7 +351,7 @@
                     <span class="tag">ללא רוט</span>
                     <span class="tag">ללא מודולים</span>
                 </div>
-                <div class="app-version">גרסה אחרונה: <span>V2.9</span></div>
+                <div class="app-version">גרסה אחרונה: <span>V2.0</span></div>
                 <a href="index.html#contact" class="btn btn-purchase download-btn">לרכישה* <i class="fa-solid fa-bag-shopping"></i></a>
             </div>
 
@@ -446,6 +466,23 @@
             const header = document.getElementById('header');
             if (window.scrollY > 50) { header.classList.add('scrolled'); } 
             else { header.classList.remove('scrolled'); }
+        });
+
+        // סקרול חלק פנימי (במידה ויש קישורים פנימיים לעמוד עצמו, הוסף למען האחידות בקוד)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                if(this.closest('nav')) { this.classList.add('active'); }
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = document.querySelector('header').offsetHeight + 20;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                }
+            });
         });
     </script>
 </body>

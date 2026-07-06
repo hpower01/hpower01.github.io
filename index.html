@@ -219,8 +219,6 @@
         @media (max-width: 992px) {
             /* סידור התפריט כך שישבר יפה לשורה חדשה במסכים צרים */
             .nav-container { flex-wrap: wrap; justify-content: space-between; align-items: center; }
-            .logo-area { order: 1; margin: 0; }
-            .header-btn { order: 2; margin: 0; }
             nav { order: 3; width: 100%; margin-top: 15px; }
             nav ul { justify-content: center; flex-wrap: wrap; gap: 15px; font-size: 1rem; margin: 0; padding: 0; }
             
@@ -285,8 +283,15 @@
     <!-- Header -->
     <header id="header">
         <div class="container nav-container">
-            <div class="header-btn">
-                <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; border-radius: 20px; font-size: 0.9rem;">צור קשר</a>
+            <!-- אזור הלוגו יהיה ראשון בצד ימין -->
+            <div class="logo-area">
+                <div class="logo-text" style="text-align: right;">
+                    <h2>המעבדה</h2>
+                    <p>מעבדת מחשבים וסלולר</p>
+                </div>
+                <div class="logo-icon">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
             </div>
             
             <nav>
@@ -300,14 +305,9 @@
                 </ul>
             </nav>
 
-            <div class="logo-area">
-                <div class="logo-text" style="text-align: right;">
-                    <h2>המעבדה</h2>
-                    <p>מעבדת מחשבים וסלולר</p>
-                </div>
-                <div class="logo-icon">
-                    <i class="fa-solid fa-microchip"></i>
-                </div>
+            <!-- אזור הכפתור יהיה בסוף בצד שמאל -->
+            <div class="header-btn">
+                <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; border-radius: 20px; font-size: 0.9rem;">צור קשר</a>
             </div>
         </div>
     </header>
@@ -524,6 +524,12 @@
     <!-- Footer -->
     <footer>
         <div class="container footer-content">
+            <!-- הטקסט של הזכויות יהיה ראשון בצד ימין -->
+            <div class="footer-text">
+                © 2026 המעבדה. כל הזכויות שמורות.
+            </div>
+            
+            <!-- הלוגו יהיה בסוף בצד שמאל -->
             <div class="logo-area">
                 <div class="logo-text" style="text-align: right;">
                     <h2>המעבדה</h2>
@@ -532,9 +538,6 @@
                 <div class="logo-icon" style="width: 35px; height: 35px; font-size: 1rem; border-radius: 8px;">
                     <i class="fa-solid fa-microchip"></i>
                 </div>
-            </div>
-            <div class="footer-text">
-                © 2026 המעבדה. כל הזכויות שמורות.
             </div>
         </div>
     </footer>

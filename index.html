@@ -31,7 +31,14 @@
         /* --- איפוס גלובלי --- */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Heebo', sans-serif; }
 
-        body { background-color: var(--bg-main); color: var(--text-white); line-height: 1.6; overflow-x: hidden; }
+        html, body { 
+            background-color: var(--bg-main); 
+            color: var(--text-white); 
+            line-height: 1.6; 
+            max-width: 100vw; 
+            overflow-x: hidden; /* מונע גלישה אופקית ותזוזה לצדדים */
+        }
+        
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
 
@@ -39,7 +46,7 @@
         .reveal { opacity: 0; transform: translateY(40px); transition: var(--transition); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; }
 
         /* --- רכיבים חוזרים --- */
         .badge {
@@ -78,7 +85,7 @@
         }
         header.scrolled { padding: 10px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5); background: rgba(5, 8, 15, 0.9); border-bottom-color: var(--border-color); }
 
-        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
         .logo-area { display: flex; align-items: center; gap: 15px; }
         
         .logo-icon {
@@ -89,7 +96,7 @@
         .logo-text h2 { font-size: 1.3rem; font-weight: 900; line-height: 1; letter-spacing: 0.5px; }
         .logo-text p { font-size: 0.75rem; color: var(--text-gray); margin: 0; letter-spacing: 1px; }
 
-        nav ul { display: flex; gap: 35px; }
+        nav ul { display: flex; gap: 35px; flex-wrap: wrap; }
         nav a { color: var(--text-gray); font-weight: 500; transition: var(--transition); position: relative; }
         nav a::after { content: ''; position: absolute; bottom: -5px; right: 0; width: 0%; height: 2px; background: var(--gradient-tech); transition: width 0.3s ease; }
         nav a:hover, nav a.active { color: var(--text-white); }
@@ -108,7 +115,7 @@
             background: radial-gradient(circle at 80% 50%, rgba(14, 165, 233, 0.15) 0%, transparent 50%); pointer-events: none;
         }
 
-        .hero-content { position: relative; z-index: 10; max-width: 650px; }
+        .hero-content { position: relative; z-index: 10; max-width: 650px; width: 100%; }
         .hero h1 { font-size: 4.8rem; font-weight: 900; line-height: 1.1; margin-bottom: 25px; letter-spacing: -2px; }
         .hero h1 span { background: var(--gradient-tech); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; filter: drop-shadow(0 0 15px rgba(14, 165, 233, 0.5)); }
         .hero p { color: var(--text-gray); font-size: 1.25rem; margin-bottom: 15px; }
@@ -208,24 +215,29 @@
         .footer-content { display: flex; justify-content: space-between; align-items: center; }
         .footer-text { color: var(--text-gray); font-size: 0.95rem; }
 
-        /* --- Responsive Design --- */
+        /* --- Responsive Design (טאבלטים ומובייל) --- */
         @media (max-width: 992px) {
+            /* סידור התפריט כך שישבר יפה לשורה חדשה במסכים צרים */
+            .nav-container { flex-wrap: wrap; justify-content: space-between; align-items: center; }
+            .logo-area { order: 1; margin: 0; }
+            .header-btn { order: 2; margin: 0; }
+            nav { order: 3; width: 100%; margin-top: 15px; }
+            nav ul { justify-content: center; flex-wrap: wrap; gap: 15px; font-size: 1rem; margin: 0; padding: 0; }
+            
+            /* מרכוז ה-Hero */
+            .hero-content { margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
+            .hero-buttons { justify-content: center; }
+            .hero-features { justify-content: center; flex-wrap: wrap; }
             .hero h1 { font-size: 3.5rem; }
+            
+            /* שאר האלמנטים */
             .services-grid { grid-template-columns: repeat(2, 1fr); }
             .about-layout, .contact-layout { grid-template-columns: 1fr; gap: 40px; }
             .info-box:hover { transform: translateY(-5px); }
         }
 
         @media (max-width: 768px) {
-            /* === Header (בדיוק כמו בשאר העמודים) === */
-            .nav-container { flex-wrap: wrap; justify-content: space-between; align-items: center; }
-            .logo-area { order: 1; margin: 0; }
-            .header-btn { order: 2; margin: 0; }
-            nav { order: 3; width: 100%; margin-top: 15px; }
-            nav ul { justify-content: center; flex-wrap: wrap; gap: 12px; font-size: 0.95rem; margin: 0; padding: 0; }
-            
-            /* === שאר העמוד === */
-            .hero { padding: 180px 0 80px; text-align: center; }
+            .hero { padding: 180px 0 80px; }
             .hero h1 { font-size: 2.8rem; }
             .hero p { font-size: 1.1rem; }
             
@@ -235,7 +247,6 @@
             .hero-features { flex-direction: column; align-items: center; gap: 15px; }
             
             .services-grid, .stats-grid, .form-row { grid-template-columns: 1fr; }
-            
             .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
             .stat-box { padding: 25px 15px; }
             .stat-number { font-size: 2.2rem; }

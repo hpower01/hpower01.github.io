@@ -97,6 +97,48 @@
         .page-header-title span { background: var(--gradient-tech); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 15px rgba(14, 165, 233, 0.5)); }
         .page-header p { color: var(--text-gray); font-size: 1.25rem; max-width: 650px; margin: 0 auto; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
 
+        /* --- Promotional Banner --- */
+        .max-banner {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(14, 165, 233, 0.15) 100%);
+            border: 1px solid var(--primary-blue);
+            border-radius: 24px;
+            padding: 35px 45px;
+            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(14, 165, 233, 0.1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+        }
+        .max-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .banner-content { flex-grow: 1; z-index: 2; position: relative; }
+        .banner-badge {
+            display: inline-block; background: var(--gradient-tech); color: #fff;
+            padding: 5px 16px; border-radius: 50px; font-size: 0.95rem; font-weight: 800;
+            margin-bottom: 15px; box-shadow: var(--glow); letter-spacing: 0.5px;
+        }
+        .banner-title { font-size: 2.2rem; font-weight: 900; margin-bottom: 10px; line-height: 1.2; }
+        .banner-title span { background: var(--gradient-tech); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .banner-desc { color: var(--text-white); font-size: 1.15rem; line-height: 1.6; font-weight: 500; }
+        .banner-icon {
+            font-size: 4.5rem; color: var(--primary-light); z-index: 2; position: relative;
+            filter: drop-shadow(0 0 25px rgba(14, 165, 233, 0.6));
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
         /* --- Products Grid --- */
         .products-section { padding: 100px 0; background: radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.03) 0%, transparent 40%); }
         .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
@@ -158,6 +200,8 @@
             .page-header { padding: 160px 0 60px; }
             .page-header-title { font-size: 2.8rem; }
             
+            .max-banner { flex-direction: column; text-align: center; padding: 30px 20px; }
+
             .products-grid { grid-template-columns: 1fr; gap: 30px; }
             .footer-content { flex-direction: column; gap: 15px; text-align: center; }
         }
@@ -166,6 +210,10 @@
             .page-header-title { font-size: 2.2rem; }
             .page-header p { font-size: 1.05rem; }
             
+            .banner-title { font-size: 1.8rem; }
+            .banner-desc { font-size: 1.05rem; }
+            .banner-icon { font-size: 3.5rem; }
+
             .logo-text h2 { font-size: 1.1rem; }
             .logo-icon { width: 35px; height: 35px; font-size: 1.1rem; }
             .header-btn .btn { padding: 8px 15px !important; font-size: 0.85rem !important; }
@@ -227,6 +275,19 @@
 
     <section class="products-section">
         <div class="container">
+            
+            <!-- באנר פרסום ל-MAX -->
+            <div class="max-banner reveal">
+                <div class="banner-content">
+                    <div class="banner-badge">חדש!</div>
+                    <h3 class="banner-title">HPower <span>Max</span> הנגן הכשר המתקדם ביותר</h3>
+                    <p class="banner-desc">הנגן היחיד עם מאה אחוז הגנה, מנגנון אבטחה בלעדי בעל שלוש שכבות הגנה ללא אפשרות פריצה או החלפת גירסה כלל. כולל תכונות ושידרוגים בלעדיים.</p>
+                </div>
+                <div class="banner-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+            </div>
+
             <div class="products-grid">
                 
                 <!-- מוצר 1 -->
@@ -237,7 +298,7 @@
                     </div>
                     
                     <div class="product-content">
-                        <div class="badge-stock" style="background: rgba(234, 179, 8, 0.1); color: #eab308; border-color: rgba(234, 179, 8, 0.2);"><i class="fa-solid fa-clock"></i> בקרוב במלאי</div>
+                        <div class="badge-stock"><i class="fa-solid fa-check-circle"></i> זמין במלאי</div>
                         <h2 class="product-title">HPower <span>Max</span></h2>
                         
                         <div class="spec-list">
@@ -264,7 +325,7 @@
                                 <li><i class="fa-solid fa-headphones"></i> מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר.</li>
                                 <li><i class="fa-solid fa-share-nodes"></i> מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower').</li>
                                 <li><i class="fa-brands fa-bluetooth"></i> מתקן כתובת בלוטוס מובנה.</li>
-                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון ייחודי נגד פריצות.</li>
+                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון אבטחה בלעדי בעל שלוש שכבות הגנה ללא אפשרות פריצה או החלפת גירסה כלל.</li>
                                 <li><i class="fa-solid fa-sliders"></i> גרסה בהתאמה אישית.</li>
                             </ul>
                         </div>
@@ -328,7 +389,7 @@
                     </div>
                     
                     <div class="product-content">
-                        <div class="badge-stock"><i class="fa-solid fa-check-circle"></i> זמין במלאי</div>
+                        <div class="badge-stock" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border-color: rgba(239, 68, 68, 0.2);"><i class="fa-solid fa-circle-xmark"></i> אזל מהמלאי</div>
                         <h2 class="product-title">HPower <span>Plus</span></h2>
                         
                         <div class="spec-list">
@@ -370,7 +431,7 @@
                     </div>
                     
                     <div class="product-content">
-                        <div class="badge-stock"><i class="fa-solid fa-check-circle"></i> זמין במלאי</div>
+                        <div class="badge-stock" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border-color: rgba(239, 68, 68, 0.2);"><i class="fa-solid fa-circle-xmark"></i> אזל מהמלאי</div>
                         <h2 class="product-title">HPower <span>Lite</span></h2>
                         
                         <div class="spec-list">

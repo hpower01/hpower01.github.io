@@ -1,513 +1,571 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://www.yosef-mobile.co.il/products.html" />
-    <title>מוצרים - המעבדה</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* --- משתני צבעים - תואמים למסך הבית בגרסת ההייטק --- */
-        :root {
-            --bg-main: #05080f;
-            --bg-card: rgba(15, 23, 42, 0.6);
-            --bg-input: rgba(15, 23, 42, 0.8);
-            --border-color: rgba(56, 189, 248, 0.15);
-            --primary-blue: #0ea5e9;
-            --primary-light: #38bdf8;
-            --gradient-tech: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
-            --badge-bg: rgba(14, 165, 233, 0.1);
-            --success: #10b981;
-            --success-bg: rgba(16, 185, 129, 0.1);
-            --text-white: #f8fafc;
-            --text-gray: #94a3b8;
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --glow: 0 0 20px rgba(14, 165, 233, 0.4);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>נגני אנדרואיד כשרים HPower – נגן כשר עם חסימת וידאו | המעבדה</title>
+  <meta name="description" content="נגני אנדרואיד כשרים HPower Max, Pro, Plus ו־Lite: מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה, חנות כשרה ומתקדמת, רדיו כשר בלעדי ומנגנון נגד פריצות.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://www.yosef-mobile.co.il/products.html">
+  <meta name="theme-color" content="#06080f">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Heebo', sans-serif; }
-        body { background-color: var(--bg-main); color: var(--text-white); line-height: 1.6; overflow-x: hidden; }
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-        
-        .reveal { opacity: 0; transform: translateY(40px); transition: var(--transition); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="המעבדה">
+  <meta property="og:title" content="נגני אנדרואיד כשרים HPower | המעבדה">
+  <meta property="og:description" content="חסימת וידאו בכל האפליקציות עם התקנה פתוחה, חנות כשרה ואבטחה נגד פריצות. כל הדגמים והשוואה מלאה.">
+  <meta property="og:url" content="https://www.yosef-mobile.co.il/products.html">
+  <meta property="og:image" content="https://www.yosef-mobile.co.il/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
 
-        .btn {
-            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-            padding: 14px 32px; border-radius: 12px; font-weight: 700; font-size: 1rem;
-            cursor: pointer; border: none; transition: var(--transition); position: relative; overflow: hidden;
-        }
-        .btn-primary { background: var(--gradient-tech); color: #fff; box-shadow: var(--glow); }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(14, 165, 233, 0.6); }
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-        .badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: var(--badge-bg); color: var(--primary-light);
-            padding: 6px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 600;
-            margin-bottom: 20px; border: 1px solid rgba(56, 189, 248, 0.3); box-shadow: 0 0 10px rgba(14, 165, 233, 0.1);
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add("js")</script>
 
-        .badge-stock {
-            display: inline-flex; align-items: center; gap: 6px;
-            background: var(--success-bg); color: var(--success);
-            padding: 6px 14px; border-radius: 50px; font-size: 0.85rem; font-weight: 700;
-            border: 1px solid rgba(16, 185, 129, 0.2); margin-bottom: 15px; align-self: flex-start;
-        }
-
-        /* --- Header --- */
-        header {
-            position: fixed; top: 0; left: 0; width: 100%;
-            background: rgba(5, 8, 15, 0.7); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05); z-index: 1000; padding: 15px 0; transition: var(--transition);
-        }
-        header.scrolled { padding: 10px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5); background: rgba(5, 8, 15, 0.9); border-bottom-color: var(--border-color); }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .logo-area { display: flex; align-items: center; gap: 15px; }
-        .logo-icon {
-            width: 45px; height: 45px; background: var(--gradient-tech); border-radius: 12px;
-            display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.4rem; box-shadow: var(--glow);
-        }
-        .logo-text h2 { font-size: 1.3rem; font-weight: 900; line-height: 1; letter-spacing: 0.5px; }
-        .logo-text p { font-size: 0.75rem; color: var(--text-gray); margin: 0; letter-spacing: 1px; }
-        nav ul { display: flex; gap: 35px; }
-        nav a { color: var(--text-gray); font-weight: 500; transition: var(--transition); position: relative; }
-        nav a::after { content: ''; position: absolute; bottom: -5px; right: 0; width: 0%; height: 2px; background: var(--gradient-tech); transition: width 0.3s ease; }
-        nav a:hover, nav a.active { color: var(--text-white); }
-        nav a:hover::after, nav a.active::after { width: 100%; left: 0; }
-
-        /* --- Page Header --- */
-        .page-header {
-            position: relative; padding: 180px 0 100px;
-            background: linear-gradient(to bottom, rgba(5, 8, 15, 0.95) 0%, rgba(5, 8, 15, 0.7) 100%), 
-                        url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2080&auto=format&fit=crop') center/cover;
-            text-align: center; border-bottom: 1px solid var(--border-color);
-        }
-        .page-header::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, rgba(14, 165, 233, 0.1) 0%, transparent 60%); pointer-events: none;
-        }
-        .page-header .container { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
-        .page-header-title { font-size: 4rem; font-weight: 900; margin-bottom: 15px; letter-spacing: -1px; }
-        .page-header-title span { background: var(--gradient-tech); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 15px rgba(14, 165, 233, 0.5)); }
-        .page-header p { color: var(--text-gray); font-size: 1.25rem; max-width: 650px; margin: 0 auto; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-
-        /* --- Promotional Banner --- */
-        .max-banner {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(14, 165, 233, 0.15) 100%);
-            border: 1px solid var(--primary-blue);
-            border-radius: 24px;
-            padding: 35px 45px;
-            margin-bottom: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(14, 165, 233, 0.1);
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(15px);
-        }
-        .max-banner::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        .banner-content { flex-grow: 1; z-index: 2; position: relative; }
-        .banner-badge {
-            display: inline-block; background: var(--gradient-tech); color: #fff;
-            padding: 5px 16px; border-radius: 50px; font-size: 0.95rem; font-weight: 800;
-            margin-bottom: 15px; box-shadow: var(--glow); letter-spacing: 0.5px;
-        }
-        .banner-title { font-size: 2.2rem; font-weight: 900; margin-bottom: 10px; line-height: 1.2; }
-        .banner-title span { background: var(--gradient-tech); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .banner-desc { color: var(--text-white); font-size: 1.15rem; line-height: 1.6; font-weight: 500; }
-        .banner-icon {
-            font-size: 4.5rem; color: var(--primary-light); z-index: 2; position: relative;
-            filter: drop-shadow(0 0 25px rgba(14, 165, 233, 0.6));
-            animation: floatIcon 3s ease-in-out infinite;
-        }
-        @keyframes floatIcon {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* --- Products Grid --- */
-        .products-section { padding: 100px 0; background: radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.03) 0%, transparent 40%); }
-        .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-
-        .product-card {
-            background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px;
-            overflow: hidden; display: flex; flex-direction: column; backdrop-filter: blur(15px); transition: var(--transition);
-        }
-        .product-card:hover { border-color: var(--primary-blue); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), var(--glow); }
-
-        .product-image-box {
-            background: rgba(10, 15, 25, 0.5); height: 300px; display: flex; align-items: center; justify-content: center;
-            padding: 30px; border-bottom: 1px solid rgba(255,255,255,0.05); position: relative;
-        }
-        .product-image-box img { max-width: 100%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)); transition: transform 0.5s ease; }
-        .product-card:hover .product-image-box img { transform: scale(1.08) translateY(-5px); }
-
-        .product-content { padding: 35px 30px; flex-grow: 1; display: flex; flex-direction: column; }
-        .product-title { font-size: 2rem; font-weight: 900; margin-bottom: 25px; }
-        .product-title span { background: var(--gradient-tech); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-        .spec-list { margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 25px; }
-        .spec-list h4 { font-size: 1.1rem; color: var(--text-white); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-weight: 800; }
-        .spec-list h4 i { color: var(--primary-light); font-size: 1.2rem; }
-        .spec-list ul { display: flex; flex-direction: column; gap: 12px; }
-        .spec-list li { color: var(--text-gray); font-size: 0.95rem; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
-        .spec-list li i { color: var(--primary-blue); font-size: 0.9rem; margin-top: 4px; text-shadow: 0 0 5px rgba(14,165,233,0.5); }
-
-        .buy-btn-wrap { margin-top: auto; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 25px; display: flex; flex-direction: column; gap: 15px; }
-        .product-price { font-size: 2.8rem; font-weight: 900; color: #fff; display: flex; align-items: center; justify-content: center; gap: 5px; line-height: 1; text-shadow: 0 0 20px rgba(255,255,255,0.2); }
-        .product-price small { font-size: 1.4rem; color: var(--primary-light); font-weight: 700; }
-        .buy-btn-wrap .btn { width: 100%; padding: 16px; font-size: 1.1rem; border-radius: 12px; }
-
-        /* תגית אלכסונית הייטקיסטית ל-MAX */
-        .ribbon-max {
-            position: absolute; top: 30px; left: -40px;
-            background: var(--gradient-tech); color: #fff; padding: 10px 50px; font-size: 0.85rem; font-weight: 900;
-            transform: rotate(-45deg); z-index: 10; pointer-events: none; box-shadow: 0 5px 15px rgba(14, 165, 233, 0.6);
-            letter-spacing: 1px; border: 1px solid rgba(255,255,255,0.3); text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        /* --- Footer --- */
-        footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 40px 0; background: #020408; }
-        .footer-content { display: flex; justify-content: space-between; align-items: center; }
-        .footer-text { color: var(--text-gray); font-size: 0.95rem; }
-
-        /* --- Responsive Design --- */
-        @media (max-width: 1024px) { 
-            .products-grid { grid-template-columns: repeat(2, 1fr); } 
-        }
-        
-        @media (max-width: 768px) {
-            .nav-container { flex-wrap: wrap; justify-content: space-between; align-items: center; }
-            .logo-area { order: 1; margin: 0; }
-            .header-btn { order: 2; margin: 0; }
-            nav { order: 3; width: 100%; margin-top: 15px; }
-            nav ul { justify-content: center; flex-wrap: wrap; gap: 12px; font-size: 0.95rem; }
-            
-            .page-header { padding: 160px 0 60px; }
-            .page-header-title { font-size: 2.8rem; }
-            
-            .max-banner { flex-direction: column; text-align: center; padding: 30px 20px; }
-
-            .products-grid { grid-template-columns: 1fr; gap: 30px; }
-            .footer-content { flex-direction: column; gap: 15px; text-align: center; }
-        }
-
-        @media (max-width: 480px) {
-            .page-header-title { font-size: 2.2rem; }
-            .page-header p { font-size: 1.05rem; }
-            
-            .banner-title { font-size: 1.8rem; }
-            .banner-desc { font-size: 1.05rem; }
-            .banner-icon { font-size: 3.5rem; }
-
-            .logo-text h2 { font-size: 1.1rem; }
-            .logo-icon { width: 35px; height: 35px; font-size: 1.1rem; }
-            .header-btn .btn { padding: 8px 15px !important; font-size: 0.85rem !important; }
-            
-            .product-content { padding: 25px 20px; }
-            .product-title { font-size: 1.7rem; }
-            .product-price { font-size: 2.4rem; }
-            .buy-btn-wrap .btn { padding: 14px; font-size: 1.05rem; }
-            
-            .product-image-box { height: 250px; padding: 20px; }
-            .ribbon-max { padding: 8px 40px; font-size: 0.8rem; top: 25px; left: -35px; }
-        }
-    </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "ראשי",
+            "item": "https://www.yosef-mobile.co.il/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "מוצרים",
+            "item": "https://www.yosef-mobile.co.il/products.html"
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "נגני אנדרואיד כשרים HPower",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Product",
+              "name": "HPower Max",
+              "sku": "HPOWER-MAX",
+              "brand": {
+                "@type": "Brand",
+                "name": "HPower"
+              },
+              "image": "https://www.yosef-mobile.co.il/assets/img/hpower-max.jpg",
+              "description": "נגן אנדרואיד כשר. אנדרואיד 13. מעבד עוצמתי. 3GB ראם | 32GB זיכרון אחסון. סוללה חזקה 2000 mAh. מצלמה אחורית 13MP | קדמית 5MP. פנס מובנה. תומך OTG. חנות כשרה ומתקדמת עם 300 אפליקציות ומשחקים מובילים. מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה. מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו. רדיו כשר בלעדי (תחנות חרדיות בלבד). מנגנון זיהוי פנים מובנה בלעדי. מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר. מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower'). מתקן כתובת בלוטוס מובנה. מנגנון אבטחה בלעדי בעל שלוש שכבות הגנה ללא אפשרות פריצה או החלפת גירסה כלל. גרסה בהתאמה אישית.",
+              "offers": {
+                "@type": "Offer",
+                "price": "499",
+                "priceCurrency": "ILS",
+                "availability": "https://schema.org/InStock",
+                "itemCondition": "https://schema.org/NewCondition",
+                "url": "https://www.yosef-mobile.co.il/products.html#hpower-max"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Product",
+              "name": "HPower Pro",
+              "sku": "HPOWER-PRO",
+              "brand": {
+                "@type": "Brand",
+                "name": "HPower"
+              },
+              "image": "https://www.yosef-mobile.co.il/assets/img/hpower-pro.jpg",
+              "description": "נגן אנדרואיד כשר. אנדרואיד 13. מעבד חזק. 3GB ראם | 16GB זיכרון אחסון. סוללה חזקה 2000 mAh. מצלמה אחורית 13MP | קדמית 5MP. תומך OTG. חנות כשרה ומתקדמת עם 150 אפליקציות ומשחקים מובילים. מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה. מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו. רדיו כשר בלעדי (תחנות חרדיות בלבד). מנגנון זיהוי פנים מובנה בלעדי. מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר. מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower'). מתקן כתובת בלוטוס מובנה. מנגנון ייחודי נגד פריצות. גרסה בהתאמה אישית.",
+              "offers": {
+                "@type": "Offer",
+                "price": "399",
+                "priceCurrency": "ILS",
+                "availability": "https://schema.org/OutOfStock",
+                "itemCondition": "https://schema.org/NewCondition",
+                "url": "https://www.yosef-mobile.co.il/products.html#hpower-pro"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Product",
+              "name": "HPower Plus",
+              "sku": "HPOWER-PLUS",
+              "brand": {
+                "@type": "Brand",
+                "name": "HPower"
+              },
+              "image": "https://www.yosef-mobile.co.il/assets/img/hpower-plus.jpg",
+              "description": "נגן אנדרואיד כשר. אנדרואיד 10. מעבד עוצמתי. 2GB ראם | 16GB זיכרון אחסון. סוללה חזקה 2050 mAh. תומך OTG. חנות כשרה ומתקדמת עם 170 אפליקציות ומשחקים מובילים. מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה. מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו. רדיו כשר בלעדי (תחנות חרדיות בלבד). מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower'). מתקן כתובת בלוטוס מובנה. מנגנון ייחודי נגד פריצות. גרסה בהתאמה אישית.",
+              "offers": {
+                "@type": "Offer",
+                "price": "390",
+                "priceCurrency": "ILS",
+                "availability": "https://schema.org/OutOfStock",
+                "itemCondition": "https://schema.org/NewCondition",
+                "url": "https://www.yosef-mobile.co.il/products.html#hpower-plus"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Product",
+              "name": "HPower Lite",
+              "sku": "HPOWER-LITE",
+              "brand": {
+                "@type": "Brand",
+                "name": "HPower"
+              },
+              "image": "https://www.yosef-mobile.co.il/assets/img/hpower-lite.jpg",
+              "description": "נגן אנדרואיד כשר. אנדרואיד 13. מעבד חזק. 3GB ראם | 16GB זיכרון אחסון. סוללה חזקה 1950 mAh. עיצוב קומפקטי ונוח. חנות כשרה ומתקדמת עם 150 אפליקציות ומשחקים מובילים. מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה. מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו. רדיו כשר בלעדי (תחנות חרדיות בלבד). מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר. מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower'). מתקן כתובת בלוטוס מובנה. מנגנון ייחודי נגד פריצות. גרסה בהתאמה אישית.",
+              "offers": {
+                "@type": "Offer",
+                "price": "380",
+                "priceCurrency": "ILS",
+                "availability": "https://schema.org/OutOfStock",
+                "itemCondition": "https://schema.org/NewCondition",
+                "url": "https://www.yosef-mobile.co.il/products.html#hpower-lite"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+<symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M11 18h2"/></symbol>
+  <symbol id="i-drive" viewBox="0 0 24 24"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><path d="M6 16h.01M10 16h.01"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol>
+  <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m10 9 5 3-5 3z"/></symbol>
+  <symbol id="i-video-off" viewBox="0 0 24 24"><path d="M10.66 6H14a2 2 0 0 1 2 2v2.5l5.25-3.06a.5.5 0 0 1 .75.43v8.2M16 16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2M2 2l20 20"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9 4.5 4h15L21 9M4 9v11h16V9M3 9h18M9.5 20v-6h5v6"/></symbol>
+  <symbol id="i-radio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49M7.76 16.24a6 6 0 0 1 0-8.49M19.07 4.93a10 10 0 0 1 0 14.14M4.93 19.07a10 10 0 0 1 0-14.14"/></symbol>
+  <symbol id="i-face" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></symbol>
+  <symbol id="i-transfer" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4M4 7h16M16 21l4-4-4-4M20 17H4"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="13" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+  <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2M6 11v2M10 11v2"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
+  <symbol id="i-android" viewBox="0 0 24 24"><path d="M5 16V11a7 7 0 0 1 14 0v5z"/><path d="M5 16h14v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2zM7 5 5.5 3M17 5l1.5-2"/><path d="M9.5 10h.01M14.5 10h.01"/></symbol>
+  <symbol id="i-bluetooth" viewBox="0 0 24 24"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></symbol>
+  <symbol id="i-nav" viewBox="0 0 24 24"><path d="m3 11 19-9-9 19-2-8-8-2z"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.1 2.1M15.6 15.6l2.1 2.1M6.3 17.7l2.1-2.1M15.6 8.4l2.1-2.1"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></symbol>
+  <symbol id="i-bug" viewBox="0 0 24 24"><rect x="8" y="6" width="8" height="14" rx="4"/><path d="M12 20v-9M3 13h5M16 13h5M4 7l4 2M20 7l-4 2M4 19l4-2M20 19l-4-2M9 3l1.5 3M15 3l-1.5 3"/></symbol>
+</svg>
+  <a class="skip-link" href="#main">דלג לתוכן הראשי</a>
 
-    <h1 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">
-        חנות נגני אנדרואיד כשרים ומתקדמים: HPower Pro, HPower Lite, HPower Plus, HPower Max. הנגנים שלנו כוללים מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה, מנגנון זיהוי פנים מובנה, מנגנון לפתיחת כל תכונות איירפודס, חנות אפליקציות כשרה, אבטחה נגד פריצות, והכל במחיר הזול והמשתלם ביותר.
-    </h1>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="המעבדה – לעמוד הבית">
+        <img class="brand-mark" src="assets/img/favicon.svg" width="42" height="42" alt="">
+        <span>
+          <span class="brand-name">המעבדה</span>
+          <span class="brand-tag">מעבדת מחשבים וסלולר</span>
+        </span>
+      </a>
 
-    <header id="header">
-        <div class="container nav-container">
-            <div class="header-btn">
-                <a href="index.html#contact" class="btn btn-primary" style="padding: 10px 20px; border-radius: 20px; font-size: 0.9rem;">צור קשר</a>
+      <nav class="main-nav" id="main-nav" aria-label="ניווט ראשי">
+        <ul>
+          <li><a href="./">ראשי</a></li>
+          <li><a href="./#services">שירותים</a></li>
+          <li><a href="products.html" aria-current="page">מוצרים</a></li>
+          <li><a href="downloads.html">הורדות</a></li>
+          <li><a href="./#about">אודות</a></li>
+          <li><a href="./#faq">שאלות נפוצות</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-primary btn-sm" href="./#contact">צור קשר</a>
+        <button class="nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="פתיחת תפריט">
+          <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav class="breadcrumbs reveal" aria-label="פירורי לחם">
+          <ol>
+            <li><a href="./">ראשי</a></li>
+            <li><span aria-current="page">מוצרים</span></li>
+          </ol>
+        </nav>
+        <h1 id="page-title" class="reveal" style="--d:.06s">נגני אנדרואיד כשרים <span class="grad-text">HPower</span></h1>
+        <p class="reveal" style="--d:.12s">נגני האנדרואיד הכשרים הטובים ביותר בשוק, חסימה הרמטית עם האבטחה הגבוהה ביותר, כולל כל התכונות והשידרוגים הכי עדכניים עם תכונות ופיתוחים בלעדיים.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="דגמים">
+      <div class="container">
+
+        <!-- Featured -->
+        <article class="featured glow-border reveal" id="featured">
+          <div class="featured-media">
+            <img src="assets/img/hpower-max-400.webp" srcset="assets/img/hpower-max-400.webp 400w, assets/img/hpower-max-600.webp 600w" sizes="290px" width="400" height="600" fetchpriority="high" decoding="async" alt="נגן אנדרואיד כשר HPower Max">
+          </div>
+          <div class="featured-text">
+            <div class="badge-row">
+              <span class="badge badge-accent">חדש!</span>
+              <span class="badge badge-ok"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>זמין במלאי</span>
             </div>
-            
-            <nav>
-                <ul>
-                    <li><a href="index.html#home">ראשי</a></li>
-                    <li><a href="index.html#services">שירותים</a></li>
-                    <li><a href="products.html" class="active">מוצרים</a></li>
-                    <li><a href="download.html">הורדות</a></li>
-                    <li><a href="index.html#about">אודות</a></li>
-                    <li><a href="index.html#contact">צור קשר</a></li>
+            <h2>HPower <span class="grad-text">Max</span><br>הנגן הכשר המתקדם ביותר</h2>
+            <p>הנגן היחיד עם מאה אחוז הגנה, מנגנון אבטחה בלעדי בעל שלוש שכבות הגנה ללא אפשרות פריצה או החלפת גירסה כלל. כולל תכונות ושידרוגים בלעדיים.</p>
+            <div class="featured-buy">
+              <div class="product-price"><strong>499<small>₪</small></strong></div>
+              <a class="btn btn-primary" href="./?product=HPower%20Max#contact"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>להזמנה</a>
+              <a class="btn btn-ghost" href="#hpower-max" data-open-details>לפירוט המלא</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="section-head center reveal">
+          <p class="eyebrow">כל הדגמים</p>
+          <h2>המוצרים <span class="grad-text">שלנו</span></h2>
+        </div>
+
+        <div class="product-grid">
+          <article class="product is-top reveal" id="hpower-max">
+            <div class="product-media">
+              <img src="assets/img/hpower-max-400.webp" width="400" height="600" loading="lazy" decoding="async" alt="נגן אנדרואיד כשר HPower Max">
+            </div>
+            <div class="product-body">
+              <div class="badge-row">
+                <span class="badge badge-ok"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>זמין במלאי</span>
+                <span class="badge badge-accent">הנגן הכי טוב בשוק</span>
+              </div>
+              <h3>HPower <span>Max</span></h3>
+              <h4 class="spec-title"><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg>מפרט טכני</h4>
+              <ul class="spec-rows">
+                <li><span>אנדרואיד 13</span></li>
+                <li><span>מעבד עוצמתי</span></li>
+                <li><span>3GB ראם | 32GB זיכרון אחסון</span></li>
+                <li><span>סוללה חזקה <span class="ltr">2000 mAh</span></span></li>
+                <li><span>מצלמה אחורית 13MP | קדמית 5MP</span></li>
+                <li><span>פנס מובנה</span></li>
+                <li><span>תומך OTG</span></li>
+              </ul>
+              <details class="more">
+                <summary>
+                  <span class="more-label-open">לפירוט המלא (10 תכונות)</span>
+                  <span class="more-label-close">הסתרת הפירוט</span>
+                </summary>
+                <h4 class="spec-title"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>תכונות מיוחדות</h4>
+                <ul class="feature-rows">
+                  <li><span>חנות כשרה ומתקדמת עם 300 אפליקציות ומשחקים מובילים</span></li>
+                  <li><span>מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה</span></li>
+                  <li><span>מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו</span></li>
+                  <li><span>רדיו כשר בלעדי (תחנות חרדיות בלבד)</span></li>
+                  <li><span>מנגנון זיהוי פנים מובנה בלעדי</span></li>
+                  <li><span>מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר</span></li>
+                  <li><span>מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower')</span></li>
+                  <li><span>מתקן כתובת בלוטוס מובנה</span></li>
+                  <li><span>מנגנון אבטחה בלעדי בעל שלוש שכבות הגנה ללא אפשרות פריצה או החלפת גירסה כלל</span></li>
+                  <li><span>גרסה בהתאמה אישית</span></li>
                 </ul>
-            </nav>
-
-            <div class="logo-area">
-                <div class="logo-text" style="text-align: right;">
-                    <h2>המעבדה</h2>
-                    <p>מעבדת מחשבים וסלולר</p>
-                </div>
-                <div class="logo-icon">
-                    <i class="fa-solid fa-microchip"></i>
-                </div>
+              </details>
+              <div class="product-foot">
+                <div class="product-price"><strong>499<small>₪</small></strong></div>
+                <a class="btn btn-primary btn-block" href="./?product=HPower%20Max#contact"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>להזמנה</a>
+              </div>
             </div>
-        </div>
-    </header>
+          </article>
 
-    <section class="page-header reveal">
-        <div class="container">
-            <div class="badge">
-                <i class="fa-solid fa-microchip"></i> חנות מכשירים
+          <article class="product reveal" style="--d:0.06s" id="hpower-pro">
+            <div class="product-media">
+              <img src="assets/img/hpower-pro-400.webp" width="400" height="597" loading="lazy" decoding="async" alt="נגן אנדרואיד כשר HPower Pro">
             </div>
-            <h2 class="page-header-title">המוצרים <span>שלנו</span></h2>
-            <p>נגני האנדרואיד הכשרים הטובים ביותר בשוק, חסימה הרמטית עם האבטחה הגבוהה ביותר, כולל כל התכונות והשידרוגים הכי עדכניים עם תכונות ופיתוחים בלעדיים.</p>
+            <div class="product-body">
+              <div class="badge-row">
+                <span class="badge badge-no"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>אזל מהמלאי</span>
+              </div>
+              <h3>HPower <span>Pro</span></h3>
+              <h4 class="spec-title"><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg>מפרט טכני</h4>
+              <ul class="spec-rows">
+                <li><span>אנדרואיד 13</span></li>
+                <li><span>מעבד חזק</span></li>
+                <li><span>3GB ראם | 16GB זיכרון אחסון</span></li>
+                <li><span>סוללה חזקה <span class="ltr">2000 mAh</span></span></li>
+                <li><span>מצלמה אחורית 13MP | קדמית 5MP</span></li>
+                <li><span>תומך OTG</span></li>
+              </ul>
+              <details class="more">
+                <summary>
+                  <span class="more-label-open">לפירוט המלא (10 תכונות)</span>
+                  <span class="more-label-close">הסתרת הפירוט</span>
+                </summary>
+                <h4 class="spec-title"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>תכונות מיוחדות</h4>
+                <ul class="feature-rows">
+                  <li><span>חנות כשרה ומתקדמת עם 150 אפליקציות ומשחקים מובילים</span></li>
+                  <li><span>מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה</span></li>
+                  <li><span>מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו</span></li>
+                  <li><span>רדיו כשר בלעדי (תחנות חרדיות בלבד)</span></li>
+                  <li><span>מנגנון זיהוי פנים מובנה בלעדי</span></li>
+                  <li><span>מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר</span></li>
+                  <li><span>מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower')</span></li>
+                  <li><span>מתקן כתובת בלוטוס מובנה</span></li>
+                  <li><span>מנגנון ייחודי נגד פריצות</span></li>
+                  <li><span>גרסה בהתאמה אישית</span></li>
+                </ul>
+              </details>
+              <div class="product-foot">
+                <div class="product-price"><strong>399<small>₪</small></strong></div>
+                <a class="btn btn-ghost btn-block" href="./?product=HPower%20Pro#contact"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>להזמנה</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product reveal" style="--d:0.12s" id="hpower-plus">
+            <div class="product-media">
+              <img src="assets/img/hpower-plus-400.webp" width="400" height="598" loading="lazy" decoding="async" alt="נגן אנדרואיד כשר HPower Plus">
+            </div>
+            <div class="product-body">
+              <div class="badge-row">
+                <span class="badge badge-no"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>אזל מהמלאי</span>
+              </div>
+              <h3>HPower <span>Plus</span></h3>
+              <h4 class="spec-title"><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg>מפרט טכני</h4>
+              <ul class="spec-rows">
+                <li><span>אנדרואיד 10</span></li>
+                <li><span>מעבד עוצמתי</span></li>
+                <li><span>2GB ראם | 16GB זיכרון אחסון</span></li>
+                <li><span>סוללה חזקה <span class="ltr">2050 mAh</span></span></li>
+                <li><span>תומך OTG</span></li>
+              </ul>
+              <details class="more">
+                <summary>
+                  <span class="more-label-open">לפירוט המלא (8 תכונות)</span>
+                  <span class="more-label-close">הסתרת הפירוט</span>
+                </summary>
+                <h4 class="spec-title"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>תכונות מיוחדות</h4>
+                <ul class="feature-rows">
+                  <li><span>חנות כשרה ומתקדמת עם 170 אפליקציות ומשחקים מובילים</span></li>
+                  <li><span>מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה</span></li>
+                  <li><span>מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו</span></li>
+                  <li><span>רדיו כשר בלעדי (תחנות חרדיות בלבד)</span></li>
+                  <li><span>מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower')</span></li>
+                  <li><span>מתקן כתובת בלוטוס מובנה</span></li>
+                  <li><span>מנגנון ייחודי נגד פריצות</span></li>
+                  <li><span>גרסה בהתאמה אישית</span></li>
+                </ul>
+              </details>
+              <div class="product-foot">
+                <div class="product-price"><strong>390<small>₪</small></strong></div>
+                <a class="btn btn-ghost btn-block" href="./?product=HPower%20Plus#contact"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>להזמנה</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product reveal" style="--d:0.18s" id="hpower-lite">
+            <div class="product-media">
+              <img src="assets/img/hpower-lite-400.webp" width="400" height="600" loading="lazy" decoding="async" alt="נגן אנדרואיד כשר HPower Lite">
+            </div>
+            <div class="product-body">
+              <div class="badge-row">
+                <span class="badge badge-no"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>אזל מהמלאי</span>
+              </div>
+              <h3>HPower <span>Lite</span></h3>
+              <h4 class="spec-title"><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg>מפרט טכני</h4>
+              <ul class="spec-rows">
+                <li><span>אנדרואיד 13</span></li>
+                <li><span>מעבד חזק</span></li>
+                <li><span>3GB ראם | 16GB זיכרון אחסון</span></li>
+                <li><span>סוללה חזקה <span class="ltr">1950 mAh</span></span></li>
+                <li><span>עיצוב קומפקטי ונוח</span></li>
+              </ul>
+              <details class="more">
+                <summary>
+                  <span class="more-label-open">לפירוט המלא (9 תכונות)</span>
+                  <span class="more-label-close">הסתרת הפירוט</span>
+                </summary>
+                <h4 class="spec-title"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>תכונות מיוחדות</h4>
+                <ul class="feature-rows">
+                  <li><span>חנות כשרה ומתקדמת עם 150 אפליקציות ומשחקים מובילים</span></li>
+                  <li><span>מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה</span></li>
+                  <li><span>מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו</span></li>
+                  <li><span>רדיו כשר בלעדי (תחנות חרדיות בלבד)</span></li>
+                  <li><span>מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר</span></li>
+                  <li><span>מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower')</span></li>
+                  <li><span>מתקן כתובת בלוטוס מובנה</span></li>
+                  <li><span>מנגנון ייחודי נגד פריצות</span></li>
+                  <li><span>גרסה בהתאמה אישית</span></li>
+                </ul>
+              </details>
+              <div class="product-foot">
+                <div class="product-price"><strong>380<small>₪</small></strong></div>
+                <a class="btn btn-ghost btn-block" href="./?product=HPower%20Lite#contact"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>להזמנה</a>
+              </div>
+            </div>
+          </article>
         </div>
+      </div>
     </section>
 
-    <section class="products-section">
-        <div class="container">
-            
-            <!-- באנר פרסום ל-MAX -->
-            <div class="max-banner reveal">
-                <div class="banner-content">
-                    <div class="banner-badge">חדש!</div>
-                    <h3 class="banner-title">HPower <span>Max</span> הנגן הכשר המתקדם ביותר</h3>
-                    <p class="banner-desc">הנגן היחיד עם מאה אחוז הגנה, מנגנון אבטחה בלעדי בעל שלוש שכבות הגנה ללא אפשרות פריצה או החלפת גירסה כלל. כולל תכונות ושידרוגים בלעדיים.</p>
-                </div>
-                <div class="banner-icon">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-            </div>
-
-            <div class="products-grid">
-                
-                <!-- מוצר 1 -->
-                <div class="product-card reveal">
-                    <div class="product-image-box">
-                        <div class="ribbon-max">הנגן הכי טוב בשוק</div>
-                        <img src="HPower_Max.jpg" alt="נגן HPower Max">
-                    </div>
-                    
-                    <div class="product-content">
-                        <div class="badge-stock"><i class="fa-solid fa-check-circle"></i> זמין במלאי</div>
-                        <h2 class="product-title">HPower <span>Max</span></h2>
-                        
-                        <div class="spec-list">
-                            <h4><i class="fa-solid fa-microchip"></i> מפרט טכני</h4>
-                            <ul>
-                                <li><i class="fa-brands fa-android"></i> אנדרואיד 13.</li>
-                                <li><i class="fa-solid fa-bolt"></i> מעבד עוצמתי.</li>
-                                <li><i class="fa-solid fa-memory"></i> 3GB ראם | 32GB זיכרון אחסון.</li>
-                                <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 2000 mAh.</li>
-                                <li><i class="fa-solid fa-camera"></i> מצלמה אחורית 13MP | קדמית 5MP.</li>
-                                <li><i class="fa-solid fa-lightbulb"></i> פנס מובנה.</li>
-                                <li><i class="fa-brands fa-usb"></i> תומך OTG.</li>
-                            </ul>
-                        </div>
-
-                        <div class="spec-list" style="border:none; margin-bottom:10px;">
-                            <h4><i class="fa-solid fa-star"></i> תכונות מיוחדות</h4>
-                            <ul>
-                                <li><i class="fa-solid fa-store"></i> חנות כשרה ומתקדמת עם 300 אפליקציות ומשחקים מובילים.</li>
-                                <li><i class="fa-solid fa-video-slash"></i> מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה.</li>
-                                <li><i class="fa-solid fa-film"></i> מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו.</li>
-                                <li><i class="fa-solid fa-radio"></i> רדיו כשר בלעדי (תחנות חרדיות בלבד).</li>
-                                <li><i class="fa-solid fa-user-lock"></i> מנגנון זיהוי פנים מובנה בלעדי.</li>
-                                <li><i class="fa-solid fa-headphones"></i> מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר.</li>
-                                <li><i class="fa-solid fa-share-nodes"></i> מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower').</li>
-                                <li><i class="fa-brands fa-bluetooth"></i> מתקן כתובת בלוטוס מובנה.</li>
-                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון אבטחה בלעדי בעל שלוש שכבות הגנה ללא אפשרות פריצה או החלפת גירסה כלל.</li>
-                                <li><i class="fa-solid fa-sliders"></i> גרסה בהתאמה אישית.</li>
-                            </ul>
-                        </div>
-
-                        <div class="buy-btn-wrap">
-                            <div class="product-price">499 <small>₪</small></div>
-                            <a href="index.html#contact" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> להזמנה</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- מוצר 2 -->
-                <div class="product-card reveal" style="transition-delay: 0.1s;">
-                    <div class="product-image-box">
-                        <img src="HPower_Pro.jpg" alt="נגן HPower Pro">
-                    </div>
-                    
-                    <div class="product-content">
-                        <div class="badge-stock" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border-color: rgba(239, 68, 68, 0.2);"><i class="fa-solid fa-circle-xmark"></i> אזל מהמלאי</div>
-                        <h2 class="product-title">HPower <span>Pro</span></h2>
-                        
-                        <div class="spec-list">
-                            <h4><i class="fa-solid fa-microchip"></i> מפרט טכני</h4>
-                            <ul>
-                                <li><i class="fa-brands fa-android"></i> אנדרואיד 13.</li>
-                                <li><i class="fa-solid fa-bolt"></i> מעבד חזק.</li>
-                                <li><i class="fa-solid fa-memory"></i> 3GB ראם | 16GB זיכרון אחסון.</li>
-                                <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 2000 mAh.</li>
-                                <li><i class="fa-solid fa-camera"></i> מצלמה אחורית 13MP | קדמית 5MP.</li>
-                                <li><i class="fa-brands fa-usb"></i> תומך OTG.</li>
-                            </ul>
-                        </div>
-
-                        <div class="spec-list" style="border:none; margin-bottom:10px;">
-                            <h4><i class="fa-solid fa-star"></i> תכונות מיוחדות</h4>
-                            <ul>
-                                <li><i class="fa-solid fa-store"></i> חנות כשרה ומתקדמת עם 150 אפליקציות ומשחקים מובילים.</li>
-                                <li><i class="fa-solid fa-video-slash"></i> מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה.</li>
-                                <li><i class="fa-solid fa-film"></i> מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו.</li>
-                                <li><i class="fa-solid fa-radio"></i> רדיו כשר בלעדי (תחנות חרדיות בלבד).</li>
-                                <li><i class="fa-solid fa-user-lock"></i> מנגנון זיהוי פנים מובנה בלעדי.</li>
-                                <li><i class="fa-solid fa-headphones"></i> מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר.</li>
-                                <li><i class="fa-solid fa-share-nodes"></i> מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower').</li>
-                                <li><i class="fa-brands fa-bluetooth"></i> מתקן כתובת בלוטוס מובנה.</li>
-                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון ייחודי נגד פריצות.</li>
-                                <li><i class="fa-solid fa-sliders"></i> גרסה בהתאמה אישית.</li>
-                            </ul>
-                        </div>
-
-                        <div class="buy-btn-wrap">
-                            <div class="product-price">399 <small>₪</small></div>
-                            <a href="index.html#contact" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> להזמנה</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- מוצר 3 -->
-                <div class="product-card reveal" style="transition-delay: 0.2s;">
-                    <div class="product-image-box">
-                        <img src="HPower_Plus.jpg" alt="נגן HPower Plus">
-                    </div>
-                    
-                    <div class="product-content">
-                        <div class="badge-stock" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border-color: rgba(239, 68, 68, 0.2);"><i class="fa-solid fa-circle-xmark"></i> אזל מהמלאי</div>
-                        <h2 class="product-title">HPower <span>Plus</span></h2>
-                        
-                        <div class="spec-list">
-                            <h4><i class="fa-solid fa-microchip"></i> מפרט טכני</h4>
-                            <ul>
-                                <li><i class="fa-brands fa-android"></i> אנדרואיד 10.</li>
-                                <li><i class="fa-solid fa-bolt"></i> מעבד עוצמתי.</li>
-                                <li><i class="fa-solid fa-memory"></i> 2GB ראם | 16GB זיכרון אחסון.</li>
-                                <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 2050 mAh.</li>
-                                <li><i class="fa-brands fa-usb"></i> תומך OTG.</li>
-                            </ul>
-                        </div>
-
-                        <div class="spec-list" style="border:none; margin-bottom:10px;">
-                            <h4><i class="fa-solid fa-star"></i> תכונות מיוחדות</h4>
-                            <ul>
-                                <li><i class="fa-solid fa-store"></i> חנות כשרה ומתקדמת עם 170 אפליקציות ומשחקים מובילים.</li>
-                                <li><i class="fa-solid fa-video-slash"></i> מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה.</li>
-                                <li><i class="fa-solid fa-film"></i> מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו.</li>
-                                <li><i class="fa-solid fa-radio"></i> רדיו כשר בלעדי (תחנות חרדיות בלבד).</li>
-                                <li><i class="fa-solid fa-share-nodes"></i> מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower').</li>
-                                <li><i class="fa-brands fa-bluetooth"></i> מתקן כתובת בלוטוס מובנה.</li>
-                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון ייחודי נגד פריצות.</li>
-                                <li><i class="fa-solid fa-sliders"></i> גרסה בהתאמה אישית.</li>
-                            </ul>
-                        </div>
-
-                        <div class="buy-btn-wrap">
-                            <div class="product-price">390 <small>₪</small></div>
-                            <a href="index.html#contact" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> להזמנה</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- מוצר 4 -->
-                <div class="product-card reveal">
-                    <div class="product-image-box">
-                        <img src="HPower_Lite.jpg" alt="נגן HPower Lite">
-                    </div>
-                    
-                    <div class="product-content">
-                        <div class="badge-stock" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border-color: rgba(239, 68, 68, 0.2);"><i class="fa-solid fa-circle-xmark"></i> אזל מהמלאי</div>
-                        <h2 class="product-title">HPower <span>Lite</span></h2>
-                        
-                        <div class="spec-list">
-                            <h4><i class="fa-solid fa-microchip"></i> מפרט טכני</h4>
-                            <ul>
-                                <li><i class="fa-brands fa-android"></i> אנדרואיד 13.</li>
-                                <li><i class="fa-solid fa-bolt"></i> מעבד חזק.</li>
-                                <li><i class="fa-solid fa-memory"></i> 3GB ראם | 16GB זיכרון אחסון.</li>
-                                <li><i class="fa-solid fa-battery-full"></i> סוללה חזקה 1950 mAh.</li>
-                                <li><i class="fa-solid fa-mobile-screen"></i> עיצוב קומפקטי ונוח.</li>
-                            </ul>
-                        </div>
-
-                        <div class="spec-list" style="border:none; margin-bottom:10px;">
-                            <h4><i class="fa-solid fa-star"></i> תכונות מיוחדות</h4>
-                            <ul>
-                                <li><i class="fa-solid fa-store"></i> חנות כשרה ומתקדמת עם 150 אפליקציות ומשחקים מובילים.</li>
-                                <li><i class="fa-solid fa-video-slash"></i> מנגנון בלעדי לחסימת וידיאו בכל האפליקציות עם התקנת אפליקציות פתוחה.</li>
-                                <li><i class="fa-solid fa-film"></i> מנגנון חכם לתמיכה מלאה בהסרטות ללא וידיאו.</li>
-                                <li><i class="fa-solid fa-radio"></i> רדיו כשר בלעדי (תחנות חרדיות בלבד).</li>
-                                <li><i class="fa-solid fa-headphones"></i> מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר.</li>
-                                <li><i class="fa-solid fa-share-nodes"></i> מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower').</li>
-                                <li><i class="fa-brands fa-bluetooth"></i> מתקן כתובת בלוטוס מובנה.</li>
-                                <li><i class="fa-solid fa-shield-halved"></i> מנגנון ייחודי נגד פריצות.</li>
-                                <li><i class="fa-solid fa-sliders"></i> גרסה בהתאמה אישית.</li>
-                            </ul>
-                        </div>
-
-                        <div class="buy-btn-wrap">
-                            <div class="product-price">380 <small>₪</small></div>
-                            <a href="index.html#contact" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> להזמנה</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <!-- Compare -->
+    <section class="section section-alt" id="compare" aria-labelledby="compare-title">
+      <div class="container">
+        <div class="section-head center reveal">
+          <p class="eyebrow">השוואת דגמים</p>
+          <h2 id="compare-title">כל הדגמים <span class="grad-text">בטבלה אחת</span></h2>
         </div>
+
+        <div class="table-wrap reveal" tabindex="0" role="region" aria-labelledby="compare-title">
+          <table class="compare">
+            <caption>✓ קיים בדגם · — לא קיים בדגם. במסכים קטנים ניתן לגלול את הטבלה הצידה.</caption>
+            <thead>
+              <tr>
+                <th scope="col">מאפיין</th>
+                <th scope="col" class="top">HPower Max</th>
+                <th scope="col">HPower Pro</th>
+                <th scope="col">HPower Plus</th>
+                <th scope="col">HPower Lite</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-group"><th colspan="5" scope="colgroup">מפרט</th></tr>
+              <tr><th scope="row">מחיר</th><td class="col-top"><strong>499 ₪</strong></td><td>399 ₪</td><td>390 ₪</td><td>380 ₪</td></tr>
+              <tr><th scope="row">מלאי</th><td class="col-top"><span class="badge badge-ok">זמין במלאי</span></td><td><span class="badge badge-no">אזל מהמלאי</span></td><td><span class="badge badge-no">אזל מהמלאי</span></td><td><span class="badge badge-no">אזל מהמלאי</span></td></tr>
+              <tr><th scope="row">מערכת הפעלה</th><td class="col-top">אנדרואיד 13</td><td>אנדרואיד 13</td><td>אנדרואיד 10</td><td>אנדרואיד 13</td></tr>
+              <tr><th scope="row">מעבד</th><td class="col-top">עוצמתי</td><td>חזק</td><td>עוצמתי</td><td>חזק</td></tr>
+              <tr><th scope="row">ראם</th><td class="col-top">3GB</td><td>3GB</td><td>2GB</td><td>3GB</td></tr>
+              <tr><th scope="row">אחסון</th><td class="col-top">32GB</td><td>16GB</td><td>16GB</td><td>16GB</td></tr>
+              <tr><th scope="row">סוללה</th><td class="col-top"><span class="ltr">2000 mAh</span></td><td><span class="ltr">2000 mAh</span></td><td><span class="ltr">2050 mAh</span></td><td><span class="ltr">1950 mAh</span></td></tr>
+              <tr><th scope="row">מצלמה אחורית | קדמית</th><td class="col-top">13MP | 5MP</td><td>13MP | 5MP</td><td>—</td><td>—</td></tr>
+              <tr><th scope="row">פנס</th><td class="col-top yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="no"><svg class="icon" role="img" aria-label="לא קיים"><use href="#i-minus"/></svg></td><td class="no"><svg class="icon" role="img" aria-label="לא קיים"><use href="#i-minus"/></svg></td><td class="no"><svg class="icon" role="img" aria-label="לא קיים"><use href="#i-minus"/></svg></td></tr>
+              <tr><th scope="row">OTG</th><td class="col-top yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="no"><svg class="icon" role="img" aria-label="לא קיים"><use href="#i-minus"/></svg></td></tr>
+              <tr class="row-group"><th colspan="5" scope="colgroup">תכונות</th></tr>
+              <tr><th scope="row">חנות כשרה</th><td class="col-top yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td></tr>
+              <tr><th scope="row">אפליקציות ומשחקים</th><td class="col-top">300</td><td>150</td><td>170</td><td>150</td></tr>
+              <tr><th scope="row">חסימת וידיאו חכמה אקטיבית</th><td class="col-top yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td></tr>
+              <tr><th scope="row">תמיכה בהסרטות</th><td class="col-top yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td></tr>
+              <tr><th scope="row">רדיו כשר</th><td class="col-top yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td></tr>
+              <tr><th scope="row">זיהוי פנים מובנה</th><td class="col-top yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="no"><svg class="icon" role="img" aria-label="לא קיים"><use href="#i-minus"/></svg></td><td class="no"><svg class="icon" role="img" aria-label="לא קיים"><use href="#i-minus"/></svg></td></tr>
+              <tr><th scope="row">תמיכה מובנית באיירפודס</th><td class="col-top yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="no"><svg class="icon" role="img" aria-label="לא קיים"><use href="#i-minus"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td></tr>
+              <tr><th scope="row">שיתוף קבצים מהיר</th><td class="col-top yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td></tr>
+              <tr><th scope="row">מתקן כתובת בלוטוס מובנה</th><td class="col-top yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td></tr>
+              <tr><th scope="row">מנגנון אבטחה הרמטי בעל שלוש שכבות הגנה</th><td class="col-top yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="no"><svg class="icon" role="img" aria-label="לא קיים"><use href="#i-minus"/></svg></td><td class="no"><svg class="icon" role="img" aria-label="לא קיים"><use href="#i-minus"/></svg></td><td class="no"><svg class="icon" role="img" aria-label="לא קיים"><use href="#i-minus"/></svg></td></tr>
+              <tr><th scope="row">מנגנון נגד פריצות</th><td class="col-top yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td></tr>
+              <tr><th scope="row">גרסה בהתאמה אישית</th><td class="col-top yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td><td class="yes"><svg class="icon" role="img" aria-label="קיים"><use href="#i-check"/></svg></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="logo-area">
-                <div class="logo-text" style="text-align: right;">
-                    <h2>המעבדה</h2>
-                    <p>מעבדת מחשבים וסלולר</p>
-                </div>
-                <div class="logo-icon" style="width: 35px; height: 35px; font-size: 1rem; border-radius: 8px;">
-                    <i class="fa-solid fa-microchip"></i>
-                </div>
-            </div>
-            <div class="footer-text">
-                © 2026 המעבדה. כל הזכויות שמורות.
-            </div>
+    <section class="section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <h2 id="cta-title">רוצים להזמין נגן?</h2>
+            <p>השאירו פרטים ונחזור אליכם בהקדם.</p>
+          </div>
+          <a class="btn btn-primary" href="./#contact">
+            צור קשר
+            <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script>
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal();
+  </main>
 
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) { header.classList.add('scrolled'); } 
-            else { header.classList.remove('scrolled'); }
-        });
-    </script>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="./">
+            <img class="brand-mark" src="assets/img/favicon.svg" width="42" height="42" alt="">
+            <span><span class="brand-name">המעבדה</span><span class="brand-tag">מעבדת מחשבים וסלולר</span></span>
+          </a>
+          <p>מעבדת מחשבים, אנדרואיד וסלולר בבית שמש: תיקון, שחזור מידע, נגנים כשרים ופיתוח חסימות בהתאמה אישית.</p>
+        </div>
+        <nav class="footer-col" aria-label="שירותים">
+          <h2>שירותים</h2>
+          <ul>
+            <li><a href="./#services">תיקון מחשבים</a></li>
+            <li><a href="./#services">מעבדת אנדרואיד וסלולר</a></li>
+            <li><a href="./#services">שחזור מידע</a></li>
+            <li><a href="./#development">פיתוח וחסימות</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="עמודים">
+          <h2>ניווט</h2>
+          <ul>
+            <li><a href="./">ראשי</a></li>
+            <li><a href="products.html">מוצרים</a></li>
+            <li><a href="downloads.html">הורדות</a></li>
+            <li><a href="./#faq">שאלות נפוצות</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h2>פרטי התקשרות</h2>
+          <address>
+            <span>רחוב נחל שורק 31, בית שמש</span>
+            <span>א'–ה' · 17:00–21:00</span>
+            <a class="ltr" href="mailto:hpower.cf@gmail.com">hpower.cf@gmail.com</a>
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> המעבדה. כל הזכויות שמורות.</span>
+        <span>מעבדת מחשבים וסלולר · בית שמש</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

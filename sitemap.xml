@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <!-- עמוד הבית -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.yosef-mobile.co.il/</loc>
-    <priority>1.0</priority>
+    <lastmod>2026-09-17</lastmod>
+    <image:image><image:loc>https://www.yosef-mobile.co.il/assets/img/og-image.jpg</image:loc></image:image>
   </url>
-
-  <!-- עמוד מוצרים -->
   <url>
     <loc>https://www.yosef-mobile.co.il/products.html</loc>
-    <priority>0.8</priority>
+    <lastmod>2026-09-17</lastmod>
+    <image:image><image:loc>https://www.yosef-mobile.co.il/assets/img/hpower-max.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.yosef-mobile.co.il/assets/img/hpower-pro.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.yosef-mobile.co.il/assets/img/hpower-plus.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.yosef-mobile.co.il/assets/img/hpower-lite.jpg</image:loc></image:image>
   </url>
-
-  <!-- עמוד הורדות -->
   <url>
-    <loc>https://www.yosef-mobile.co.il/download.html</loc>
-    <priority>0.8</priority>
+    <loc>https://www.yosef-mobile.co.il/downloads.html</loc>
+    <lastmod>2026-09-17</lastmod>
   </url>
-
 </urlset>

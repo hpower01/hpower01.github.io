@@ -9,6 +9,31 @@
   var nav = doc.getElementById("main-nav");
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+  /* ---------- מחרוזות ממשק לפי שפת העמוד ---------- */
+  var STRINGS = {
+    he: {
+      toTop: "חזרה לראש העמוד",
+      menuOpen: "פתיחת תפריט",
+      menuClose: "סגירת תפריט",
+      playerService: "רכישת נגן אנדרואיד כשר",
+      productNote: function (p) { return "אשמח לקבל פרטים על " + p + "."; },
+      sending: "שולח...",
+      sent: "תודה! הפנייה התקבלה ונחזור אליכם בהקדם.",
+      failed: "השליחה נכשלה. נסו שוב או כתבו לנו ישירות למייל."
+    },
+    en: {
+      toTop: "Back to top",
+      menuOpen: "Open menu",
+      menuClose: "Close menu",
+      playerService: "Buying a kosher Android player",
+      productNote: function (p) { return "I'd like details about the " + p + "."; },
+      sending: "Sending...",
+      sent: "Thank you! Your inquiry was received and we'll get back to you soon.",
+      failed: "Sending failed. Please try again or email us directly."
+    }
+  };
+  var t = STRINGS[(root.lang || "he").slice(0, 2)] || STRINGS.he;
+
   /* ---------- שכבות רקע ואלמנטים דקורטיביים ---------- */
   function buildChrome() {
     if (!reduced.matches) {
@@ -27,7 +52,7 @@
     var top = doc.createElement("button");
     top.className = "to-top";
     top.type = "button";
-    top.setAttribute("aria-label", "חזרה לראש העמוד");
+    top.setAttribute("aria-label", t.toTop);
     top.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>';
     top.addEventListener("click", function () {
       window.scrollTo({ top: 0, behavior: reduced.matches ? "auto" : "smooth" });
@@ -66,7 +91,7 @@
   function setMenu(open) {
     header.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute("aria-label", open ? "סגירת תפריט" : "פתיחת תפריט");
+    toggle.setAttribute("aria-label", open ? t.menuClose : t.menuOpen);
     doc.body.style.overflow = open ? "hidden" : "";
   }
   if (toggle && nav) {
@@ -233,8 +258,8 @@
     var params = new URLSearchParams(window.location.search);
     var product = params.get("product");
     if (product) {
-      form.elements.service.value = "רכישת נגן אנדרואיד כשר";
-      form.elements.description.value = "אשמח לקבל פרטים על " + product + ".";
+      form.elements.service.value = t.playerService;
+      form.elements.description.value = t.productNote(product);
     }
 
     var status = form.querySelector(".form-status");
@@ -248,7 +273,7 @@
         return;
       }
       button.disabled = true;
-      button.textContent = "שולח...";
+      button.textContent = t.sending;
       status.className = "form-status";
       status.textContent = "";
 
@@ -264,11 +289,11 @@
         .then(function () {
           form.reset();
           status.classList.add("ok");
-          status.textContent = "תודה! הפנייה התקבלה ונחזור אליכם בהקדם.";
+          status.textContent = t.sent;
         })
         .catch(function () {
           status.classList.add("err");
-          status.textContent = "השליחה נכשלה. נסו שוב או כתבו לנו ישירות למייל.";
+          status.textContent = t.failed;
         })
         .finally(function () {
           button.disabled = false;

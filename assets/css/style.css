@@ -127,7 +127,7 @@ p { text-wrap: pretty; }
 .container { width: 100%; max-width: 1220px; margin-inline: auto; padding-inline: 20px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .skip-link {
-  position: absolute; top: -100px; right: 16px; z-index: 3000;
+  position: absolute; top: -100px; inset-inline-start: 16px; z-index: 3000;
   background: var(--grad); color: #fff; padding: 11px 20px; border-radius: 999px; font-weight: 600;
 }
 .skip-link:focus { top: 12px; }
@@ -307,6 +307,18 @@ html[dir="ltr"] .scroll-progress { transform-origin: left center; }
 .main-nav a[aria-current="page"]::after { display: none; }
 .header-actions { display: flex; align-items: center; gap: 10px; }
 
+/* מתג שפה */
+.lang-switch {
+  display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 15px; border-radius: 999px;
+  font-size: 0.88rem; font-weight: 600; color: var(--text-body);
+  background: var(--surface); border: 1px solid var(--border-strong);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  transition: color 0.25s, border-color 0.25s, background-color 0.25s, transform 0.3s var(--spring);
+}
+.lang-switch:hover { color: var(--accent-hover); border-color: var(--accent-line); background: var(--accent-soft); transform: translateY(-2px); }
+.lang-switch .icon { width: 16px; height: 16px; color: var(--a2); transition: transform 0.6s var(--ease); }
+.lang-switch:hover .icon { transform: rotate(180deg); }
+
 .nav-toggle {
   display: none; width: 46px; height: 46px; border-radius: 14px;
   align-items: center; justify-content: center;
@@ -327,7 +339,7 @@ html[dir="ltr"] .scroll-progress { transform-origin: left center; }
   padding: calc(var(--header-h) + clamp(44px, 6.5vw, 82px)) 0 clamp(60px, 8vw, 104px);
 }
 .hero::before {
-  content: ""; position: absolute; inset-block-start: -30%; inset-inline-start: 50%;
+  content: ""; position: absolute; inset-block-start: -30%; right: 50%;
   width: 120vw; aspect-ratio: 1; translate: -50% 0; z-index: -1; pointer-events: none;
   background: conic-gradient(from var(--ang), transparent 0 18%, rgba(79, 140, 255, 0.14) 28%, transparent 42%, rgba(167, 139, 250, 0.12) 62%, transparent 78%);
   -webkit-mask-image: radial-gradient(closest-side, #000, transparent 72%);
@@ -788,7 +800,7 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
   border-bottom: 1px solid var(--border);
 }
 .page-hero::before {
-  content: ""; position: absolute; inset-block-start: -60%; inset-inline-start: 50%;
+  content: ""; position: absolute; inset-block-start: -60%; right: 50%;
   width: 100vw; aspect-ratio: 1; translate: -50% 0; z-index: -1;
   background: radial-gradient(closest-side, rgba(79, 140, 255, 0.16), transparent 70%);
 }
@@ -840,6 +852,9 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
 .badge-ok { color: var(--ok); background: var(--ok-bg); border-color: var(--ok-border); }
 .badge-no { color: var(--no); background: var(--no-bg); border-color: var(--no-border); }
 .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+/* בכרטיסי הדגמים התגיות תמיד באותה שורה, גם כשהכרטיס צר (4 עמודות) */
+.product .badge-row { flex-wrap: nowrap; gap: 6px; }
+.product .badge { white-space: nowrap; padding: 5px 10px; font-size: 0.76rem; }
 
 /* align-items: start — אחרת כל הכרטיסים בשורה נמתחים יחד כשנפתח פירוט באחד מהם */
 .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; align-items: start; }
@@ -908,7 +923,7 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
   scrollbar-width: thin;
 }
 .compare { width: 100%; min-width: 900px; border-collapse: collapse; font-size: 0.92rem; }
-.compare caption { text-align: right; padding: 16px 20px; color: var(--text-faint); font-size: 0.82rem; caption-side: bottom; border-top: 1px solid var(--border); }
+.compare caption { text-align: start; padding: 16px 20px; color: var(--text-faint); font-size: 0.82rem; caption-side: bottom; border-top: 1px solid var(--border); }
 .compare th, .compare td { padding: 15px 16px; text-align: center; border-bottom: 1px solid var(--border); vertical-align: middle; }
 .compare tbody tr:last-child th, .compare tbody tr:last-child td { border-bottom: 0; }
 .compare tbody tr:not(.row-group) { transition: background-color 0.2s; }
@@ -918,9 +933,9 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
   background: #10141f; font-size: 1rem; font-weight: 700; color: var(--text);
   direction: ltr; white-space: nowrap; border-bottom: 2px solid var(--border-strong);
 }
-.compare thead th:first-child { direction: rtl; }
+.compare thead th:first-child { direction: inherit; }
 .compare thead th.top { color: var(--accent-hover); background: #131c33; }
-.compare tbody th { text-align: right; font-weight: 500; color: var(--text-body); min-width: 230px; }
+.compare tbody th { text-align: start; font-weight: 500; color: var(--text-body); min-width: 230px; }
 .compare td .icon { margin-inline: auto; width: 19px; height: 19px; stroke-width: 2.4; }
 .compare .yes .icon { color: var(--ok); }
 .compare .no { color: var(--text-faint); }
@@ -976,7 +991,7 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
 .app-meta a { display: inline-flex; align-items: center; gap: 5px; color: var(--accent-hover); font-weight: 600; transition: color 0.25s; }
 .app-meta a:hover { color: var(--a2); }
 .app-meta .icon { width: 14px; height: 14px; }
-.app-ribbon { position: absolute; top: 17px; left: 17px; z-index: 3; }
+.app-ribbon { position: absolute; top: 17px; inset-inline-end: 17px; z-index: 3; }
 .note { text-align: center; color: var(--text-faint); font-size: 0.85rem; margin-top: 34px; }
 
 /* ---------- 404 ---------- */
@@ -1035,6 +1050,22 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
 }
 .js .reveal.is-visible { opacity: 1; transform: none; filter: none; will-change: auto; }
 
+/* טלפונים צרים במיוחד (320px): השורה המשנית של הלוגו יורדת כדי שהכותרת תיכנס */
+@media (max-width: 346px) {
+  .brand-tag { display: none; }
+}
+
+/* ---------- גרסת LTR (אנגלית) ---------- */
+[dir="ltr"] .flip { transform: none; }
+[dir="ltr"] .icon-arrow { transform: scaleX(-1); }
+[dir="ltr"] .btn:hover .icon-arrow { transform: scaleX(-1) translateX(-4px); }
+[dir="ltr"] .feature-list li:hover { transform: translateX(5px); }
+[dir="ltr"] .contact-card:hover { transform: translateX(4px); }
+[dir="ltr"] .card::before, [dir="ltr"] .app::before { transform-origin: left center; }
+[dir="ltr"] select.input { padding-left: 17px; padding-right: 44px; background-position: right 15px center; }
+[dir="ltr"] input[type="tel"].input, [dir="ltr"] input[type="email"].input,
+[dir="ltr"] .product-body h3, [dir="ltr"] .app-head h2 { text-align: left; }
+
 /* עצירת מעברים בזמן שינוי גודל החלון, למניעת ריצוד */
 .is-resizing *, .is-resizing *::before, .is-resizing *::after { transition: none !important; }
 
@@ -1053,6 +1084,15 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
 @media (max-width: 1080px) {
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* פס צר של דסקטופ: פחות מרווח בכותרת, כדי שהניווט, מתג השפה והכפתור ייכנסו גם באנגלית */
+@media (min-width: 961px) and (max-width: 1100px) {
+  .header-inner { gap: 14px; }
+  .main-nav a { padding-inline: 10px; font-size: 0.92rem; }
+  .main-nav a::after { inset-inline: 10px; }
+  .lang-switch { padding: 0 12px; }
+  .header-actions .btn-sm { padding: 10px 16px; }
 }
 
 @media (max-width: 960px) {
@@ -1094,6 +1134,11 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
 @media (max-width: 640px) {
   body { font-size: 1rem; }
   :root { --header-h: 70px; --radius-lg: 22px; }
+  /* כותרת קומפקטית: המילה "English"/"עברית" נשארת, רק האייקון יורד כדי שהכול ייכנס בשורה */
+  .header-inner { gap: 12px; }
+  .header-actions { gap: 8px; }
+  .lang-switch { min-height: 46px; padding: 0 13px; }
+  .lang-switch .icon { display: none; }
   .brand-mark { width: 38px; height: 38px; }
   .brand-name { font-size: 1.1rem; }
   .hero-actions .btn { flex: 1 1 100%; }
@@ -1121,7 +1166,7 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
   .faq .answer { padding: 0 19px 20px; }
   .contact-card { grid-template-columns: 46px 1fr; gap: 14px; padding: 18px; }
   .contact-card .ci { width: 46px; height: 46px; }
-  .contact-card:hover { transform: none; }
+  .contact-card:hover, [dir="ltr"] .contact-card:hover { transform: none; }
   .to-top { inset-block-end: 18px; inset-inline-start: 18px; width: 44px; height: 44px; }
   .orb { filter: blur(70px); opacity: 0.4; }
 

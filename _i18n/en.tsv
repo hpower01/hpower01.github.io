@@ -1,0 +1,353 @@
+# Hebrew → English translations for the /en/ pages.
+# Format: one pair per line, <Hebrew> TAB <English>. Lines starting with # are ignored.
+# After changing any Hebrew text on the site, add/update its line here and run:
+#     python _i18n/build_en.py
+# The build fails and lists the text if anything Hebrew is left untranslated.
+# Avoid double quotes (") in the English column – some strings are embedded in JSON-LD.
+
+# ---------- Shared: brand, header, navigation, footer ----------
+המעבדה	The Lab
+מעבדת מחשבים וסלולר	Computer & mobile lab
+מעבדת מחשבים וסלולר · בית שמש	Computer & mobile lab · Beit Shemesh
+המעבדה – לעמוד הבית	The Lab – home page
+דלג לתוכן הראשי	Skip to main content
+ניווט ראשי	Main navigation
+פתיחת תפריט	Open menu
+ראשי	Home
+שירותים	Services
+מוצרים	Products
+הורדות	Downloads
+אודות	About
+שאלות נפוצות	FAQ
+צור קשר	Contact us
+פירורי לחם	Breadcrumbs
+עמודים	Pages
+ניווט	Navigation
+פרטי התקשרות	Contact details
+תיקון מחשבים	Computer repair
+תיקון אנדרואיד וסלולר	Android & mobile repair
+שחזור מידע	Data recovery
+פיתוח וחסימות	Development & blocking
+מעבדת מחשבים, אנדרואיד וסלולר בבית שמש: תיקון, שדרוג, שחזור מידע, חסימות וגרסאות בהתאמה אישית.	A computer, Android and mobile lab in Beit Shemesh: repair, upgrades, data recovery, custom blocking and Android versions.
+רחוב נחל שורק 31, בית שמש	31 Nahal Sorek St., Beit Shemesh
+א'–ה' · 17:00–21:00	Sun–Thu · 17:00–21:00
+המעבדה. כל הזכויות שמורות.	The Lab. All rights reserved.
+
+# ---------- Home: meta ----------
+המעבדה | מעבדת מחשבים, סלולר ושחזור מידע בבית שמש	The Lab | Computer, mobile & data recovery lab in Beit Shemesh
+המעבדה בבית שמש – תיקון מחשבים ומכשירי אנדרואיד, שחזור מידע מדיסקים, כרטיסי זיכרון וטלפונים, נגני אנדרואיד כשרים HPower ופיתוח חסימות וגרסאות בהתאמה אישית.	The Lab in Beit Shemesh – computer and Android device repair, data recovery from drives, memory cards and phones, HPower kosher Android players, and custom blocking and Android version development.
+תיקון מחשבים ואנדרואיד, שחזור מידע, נגני אנדרואיד כשרים וחסימות בהתאמה אישית – שירות מקצועי ואישי בבית שמש.	Computer and Android repair, data recovery, kosher Android players and custom blocking – professional, personal service in Beit Shemesh.
+המעבדה – מעבדת מחשבים וסלולר בבית שמש	The Lab – computer & mobile lab in Beit Shemesh
+
+# ---------- Home: hero + phone mockup ----------
+מעבדה מקצועית מאז 2022	A professional lab since 2022
+תיקון, שדרוג, שחזור מידע, חסימות וגרסאות בהתאמה אישית	Repair, upgrades, data recovery, custom blocking and Android versions
+המעבדה מספקת פתרון מקצועי לכל בעיה טכנולוגית: תיקון מחשבים ומכשירי אנדרואיד, שחזור וחילוץ מידע, חסימות וגרסאות שנבנות במיוחד עבורכם.	The Lab delivers a professional solution to every tech problem: computer and Android device repair, data recovery and extraction, and blocking tools and versions built especially for you.
+לתיאום פנייה	Get in touch
+לכל השירותים	All services
+אמינות	Reliability
+שירות מהיר	Fast service
+מחירים ללא תחרות	Unbeatable prices
+חסימות בלעדיות	Exclusive blocking
+מערכת מוגנת	Protected system
+מנגנון החסימה פעיל	Blocking active
+הווידאו נחסם	Video blocked
+VidBlocker · חסימה בכל האפליקציות	VidBlocker · blocked in every app
+
+# ---------- Home: trust bar ----------
+למה המעבדה	Why The Lab
+5+ שנות ניסיון	5+ years of experience
+מעבדה פעילה מאז 2022	Operating since 2022
+4,000+ תיקונים	4,000+ repairs
+מחשבים ומכשירים ניידים	Computers and mobile devices
+פיתוח בלעדי	In-house development
+אפליקציות וחסימות שלנו	Our own apps and blocking tools
+שירות אישי	Personal service
+ללקוחות פרטיים ועסקים	for private customers and businesses
+
+# ---------- Home: services ----------
+השירותים שלנו	Our services
+כל הפתרונות למחשב ולסלולר	Every computer and mobile solution
+תחת קורת גג אחת	under one roof
+מתיקון תקלה פשוטה ועד שחזור מידע מורכב ופיתוח גרסה ייעודית – כל עבודה מבוצעת במעבדה, בציוד מתקדם ובתשומת לב לפרטים.	From a simple fix to complex data recovery and purpose-built versions – every job is done in our lab, with advanced equipment and attention to detail.
+מחשבים	Computers
+תיקון ושדרוג מחשבים – מאבחון תקלות ועד מחשב מהיר ויציב.	Computer repair and upgrades – from diagnosing faults to a fast, stable machine.
+תיקון תקלות	Fault repair
+שדרוג	Upgrades
+ניקוי וירוסים	Virus removal
+אופטימיזציה	Optimization
+שיפור ביצועים	Performance boost
+אנדרואיד וסלולר	Android & mobile
+טיפול מקצועי בטלפונים ומכשירי אנדרואיד – תיקון, שדרוג והכשרה.	Professional care for phones and Android devices – repair, upgrades and koshering.
+הכשרה	Koshering
+גרסאות בהתאמה אישית	Custom versions
+שחזור וחילוץ מידע שנמחק או אבד מכל סוגי התקני האחסון, מכשירים תקולים או נעולים.	Recovery and extraction of deleted or lost data from every kind of storage device, and from faulty or locked devices.
+דיסקים קשיחים	Hard drives
+כוננים נשלפים	Removable drives
+כרטיסי זיכרון	Memory cards
+מכשירי אנדרואיד	Android devices
+תוכנות ומערכות הפעלה	Software & operating systems
+התקנה והגדרה נכונה של כל מה שהמחשב או המכשיר צריכים.	Proper installation and setup of everything your computer or device needs.
+התקנת תוכנות	Software installation
+אפליקציות	Apps
+מערכות הפעלה	Operating systems
+חסימות	Blocking tools
+התאמה אישית	Customization
+אפליקציות, חסימות וגרסאות אנדרואיד שנבנות לפי הדרישות שלכם.	Apps, blocking tools and Android versions built to your requirements.
+פיתוח ובניית אפליקציות	App development
+חסימות וגרסאות בהתאמה אישית	Custom blocking tools and versions
+
+# ---------- Home: development ----------
+חסימות ואפליקציות אנדרואיד	Android blocking tools and apps
+שפותחו אצלנו	developed in-house
+אנחנו לא רק מתקינים – אנחנו מפתחים. כל אפליקציה וחסימה נבנית במעבדה, כך שאפשר להתאים אותה בדיוק לצרכים של המשתמש, של המשפחה או של העסק.	We don't just install – we develop. Every app and blocking tool is built in our lab, so it can be tailored precisely to the needs of the user, the family or the business.
+חסימת וידאו חכמה	Smart video blocking
+חוסמת נגני וידאו בתוך כל אפליקציה, בלי לפגוע בשימוש השוטף ועם התקנת אפליקציות פתוחה.	Blocks video players inside every app without disrupting everyday use, and with app installs left open.
+הגנה מפני עקיפה	Bypass protection
+מנגנוני אבטחה מבוססי MDM שמונעים הסרת מגבלות והחלפת גרסה.	MDM-based security that prevents restrictions from being removed or the version from being swapped.
+בוחרים מה פתוח, מה חסום ואילו אפליקציות נכללות בגרסה.	You choose what's open, what's blocked and which apps the version includes.
+למרכז ההורדות	Go to downloads
+אפליקציות שפותחו במעבדה	Apps developed at The Lab
+
+# ---------- Home: product showcase ----------
+המוצרים שלנו	Our products
+הנגן הכשר המתקדם ביותר	The most advanced kosher player
+הנגן היחיד עם מאה אחוז הגנה, מנגנון אבטחה בלעדי בעל שלוש שכבות הגנה ללא אפשרות פריצה או החלפת גירסה כלל. כולל תכונות ושדרוגים בלעדיים.	The only player with 100% protection – an exclusive three-layer security mechanism with no way to break in or swap the version. Includes exclusive features and upgrades.
+נגני HPower החל מ־	HPower players from
+לכל המוצרים	All products
+להזמנה	Order
+
+# ---------- Home: process ----------
+איך זה עובד	How it works
+תהליך פשוט,	A simple process,
+תוצאה מקצועית	a professional result
+פנייה	Contact
+משאירים פרטים באתר או מגיעים למעבדה בשעות הפעילות.	Leave your details on the site or drop by The Lab during opening hours.
+אבחון	Diagnosis
+בודקים את המחשב או המכשיר ומאתרים את מקור הבעיה.	We examine the computer or device and pinpoint the source of the problem.
+ביצוע	Service
+תיקון, שחזור מידע, התקנה או חסימה – בציוד מתקדם.	Repair, data recovery, installation or blocking – with advanced equipment.
+מסירה	Handover
+מקבלים את המכשיר מוכן לעבודה, עם אחריות מלאה.	You get your device back ready to go, with a full warranty.
+
+# ---------- Home: about ----------
+אודות המעבדה	About The Lab
+למה לבחור	Why choose
+במעבדה?	The Lab?
+המעבדה הוקמה מתוך תשוקה לטכנולוגיה ורצון לספק שירות מקצועי, אמין ובמחיר הוגן. עם ניסיון רב בשחזור מידע, תיקון מחשבים וסלולר, אנחנו מציעים פתרונות מתקדמים לכל אתגר טכנולוגי.	The Lab was founded out of a passion for technology and a desire to provide professional, reliable service at a fair price. With extensive experience in data recovery and computer and mobile repair, we offer advanced solutions to every tech challenge.
+אנחנו מתמחים בפיתוח חסימות ואפליקציות בהתאמה אישית, בהתקנת גרסאות מותאמות ובמתן פתרונות טכנולוגיים מקיפים ללקוחות פרטיים ולעסקים בבית שמש והסביבה.	We specialize in developing custom blocking tools and apps, installing tailored versions, and providing complete tech solutions for private customers and businesses in Beit Shemesh and the surrounding area.
+תיקונים מוצלחים	Successful repairs
+לקוחות מרוצים	Happy customers
+שביעות רצון	Satisfaction
+שנות ניסיון	Years of experience
+
+# ---------- Home: FAQ (visible text and FAQPage structured data) ----------
+יש שאלה?	Got a question?
+יש תשובה	We've got answers
+איפה נמצאת המעבדה ומה שעות הפעילות?	Where is The Lab and what are your opening hours?
+המעבדה נמצאת ברחוב נחל שורק 31 בבית שמש. שעות הפעילות: ימים א'–ה' בין 17:00 ל־21:00.	The Lab is at 31 Nahal Sorek St., Beit Shemesh. Opening hours: Sunday to Thursday, 17:00–21:00.
+אילו שירותי תיקון מחשבים אתם מציעים?	What computer repair services do you offer?
+אנחנו מטפלים בתקלות חומרה ותוכנה, שדרוג, ניקוי וירוסים, אופטימיזציה ושיפור ביצועים, וכן התקנת מערכות הפעלה ותוכנות.	We handle hardware and software faults, upgrades, virus removal, optimization and performance tuning, as well as operating system and software installation.
+האם אפשר לשחזר מידע מדיסק קשיח, כרטיס זיכרון או טלפון אנדרואיד?	Can you recover data from a hard drive, memory card or Android phone?
+כן. אנחנו מבצעים שחזור וחילוץ מידע מדיסקים קשיחים, כוננים נשלפים, כרטיסי זיכרון, מחשבים ומכשירי אנדרואיד. הסיכוי להצלחה תלוי במצב ההתקן, ולכן מומלץ להפסיק להשתמש בו מיד ולהביא אותו למעבדה בהקדם.	Yes. We recover and extract data from hard drives, removable drives, memory cards, computers and Android devices. The chance of success depends on the device's condition, so we recommend you stop using it immediately and bring it to The Lab as soon as possible.
+מה ההבדל בין נגני האנדרואיד הכשרים HPower?	What's the difference between the HPower kosher Android players?
+כל הדגמים כוללים מנגנון בלעדי לחסימת וידאו בכל האפליקציות עם התקנת אפליקציות פתוחה, חנות כשרה ומתקדמת ורדיו כשר בלעדי. HPower Max הוא הנגן הכשר המתקדם ביותר, עם 32GB זיכרון אחסון, חנות של 300 אפליקציות ומשחקים ומנגנון אבטחה בלעדי בעל שלוש שכבות הגנה.	Every model includes exclusive video blocking in every app with app installs left open, an advanced kosher app store and exclusive kosher radio. HPower Max is the most advanced kosher player, with 32GB of storage, a store of 300 apps and games, and an exclusive three-layer security mechanism.
+להשוואה המלאה בין הדגמים	See the full model comparison
+האם ניתן לקבל גרסה או חסימה בהתאמה אישית?	Can I get a custom version or blocking setup?
+כן. אנחנו מפתחים גרסאות אנדרואיד, חסימות ואפליקציות בהתאמה אישית ללקוחות פרטיים ולעסקים.	Yes. We develop custom Android versions, blocking tools and apps for private customers and businesses.
+האם אפשר לרכוש את האפליקציות בתשלום בנפרד?	Can I buy the paid apps separately?
+האפליקציות והשירותים בתשלום אינם נמכרים בנפרד, אלא כחלק מגרסאות ומדגמים נבחרים בלבד. אפליקציות חינמיות כמו Kosher FM,‏ VidBlocker,‏ Smart Gallery ו־System Guard זמינות להורדה באתר.	Paid apps and services aren't sold separately – only as part of selected versions and models. Free apps such as Kosher FM, VidBlocker, Smart Gallery and System Guard are available to download on the site.
+האפליקציות והשירותים בתשלום אינם נמכרים בנפרד, אלא כחלק מגרסאות ומדגמים נבחרים בלבד. אפליקציות חינמיות כמו Kosher FM,‏ VidBlocker,‏ Smart Gallery ו־System Guard	Paid apps and services aren't sold separately – only as part of selected versions and models. Free apps such as Kosher FM, VidBlocker, Smart Gallery and System Guard
+זמינות להורדה באתר	are available to download on the site
+
+# ---------- Home: contact ----------
+בואו	Let's
+נדבר	talk
+נשמח לעזור בכל שאלה או בעיה טכנולוגית. השאירו פרטים ונחזור אליכם בהקדם.	We're happy to help with any question or tech problem. Leave your details and we'll get back to you soon.
+כתובת המעבדה	Lab address
+שעות פעילות	Opening hours
+אימייל	Email
+השאירו פרטים	Leave your details
+ספרו לנו במה מדובר ונחזור אליכם עם פתרון.	Tell us what it's about and we'll get back to you with a solution.
+פנייה חדשה מאתר המעבדה	New inquiry from The Lab website (English)
+שם מלא	Full name
+השם שלכם	Your name
+טלפון	Phone
+סוג השירות	Service type
+בחרו שירות...	Choose a service...
+תיקון מכשירי אנדרואיד	Android device repair
+תיקון מכשירי אנדרואיד וסלולר	Android & mobile device repair
+שחזור וחילוץ מידע	Data recovery & extraction
+רכישת נגן אנדרואיד כשר	Buying a kosher Android player
+אחר	Other
+תיאור הפנייה	Describe your request
+ספרו לנו על הבעיה או על מה שאתם צריכים...	Tell us about the problem or what you need...
+שליחת פנייה	Send inquiry
+
+# ---------- Home: structured data only ----------
+המעבדה – מעבדת מחשבים וסלולר	The Lab – Computer & mobile lab
+מעבדת מחשבים, אנדרואיד וסלולר בבית שמש: תיקון מחשבים, תיקון מכשירי אנדרואיד, שחזור מידע, התקנת תוכנות, נגני אנדרואיד כשרים ופיתוח חסימות וגרסאות בהתאמה אישית.	A computer, Android and mobile lab in Beit Shemesh: computer repair, Android device repair, data recovery, software installation, kosher Android players, and custom blocking and Android version development.
+נחל שורק 31	31 Nahal Sorek St.
+בית שמש	Beit Shemesh
+שירותי המעבדה	The Lab's services
+תיקון תקלות, שדרוג, ניקוי וירוסים ושיפור ביצועים למחשבים נייחים וניידים.	Fault repair, upgrades, virus removal and performance tuning for desktops and laptops.
+תיקון תקלות, שדרוג, הכשרה והתקנת גרסאות בהתאמה אישית לטלפונים ונגני אנדרואיד.	Fault repair, upgrades, koshering and custom version installs for Android phones and players.
+שחזור וחילוץ מידע מדיסקים קשיחים, כוננים נשלפים, כרטיסי זיכרון, מחשבים ומכשירי אנדרואיד.	Data recovery and extraction from hard drives, removable drives, memory cards, computers and Android devices.
+התקנת תוכנות ומערכות הפעלה	Software and operating system installation
+התקנת תוכנות, אפליקציות, מערכות הפעלה וחסימות.	Installing software, apps, operating systems and blocking tools.
+פיתוח אפליקציות וחסימות בהתאמה אישית	Custom app and blocking development
+פיתוח ובניית אפליקציות, חסימות וגרסאות אנדרואיד בהתאמה אישית.	Building custom apps, blocking tools and Android versions.
+
+# ---------- Products: meta ----------
+נגני אנדרואיד כשרים HPower – נגן כשר עם חסימת וידאו | המעבדה	HPower kosher Android players – kosher player with video blocking | The Lab
+נגני אנדרואיד כשרים HPower Max, Pro, Plus ו־Lite: מנגנון בלעדי לחסימת וידאו בכל האפליקציות עם התקנת אפליקציות פתוחה, חנות כשרה ומתקדמת, רדיו כשר בלעדי ומנגנון נגד פריצות.	HPower Max, Pro, Plus and Lite kosher Android players: exclusive video blocking in every app with app installs left open, an advanced kosher app store, exclusive kosher radio and anti-tamper protection.
+נגני אנדרואיד כשרים HPower | המעבדה	HPower kosher Android players | The Lab
+חסימת וידאו בכל האפליקציות עם התקנה פתוחה, חנות כשרה ואבטחה נגד פריצות. כל הדגמים והשוואה מלאה.	Video blocking in every app with open installs, a kosher app store and anti-tamper security. Every model, fully compared.
+נגני אנדרואיד כשרים HPower	HPower kosher Android players
+
+# ---------- Products: page ----------
+נגני האנדרואיד הכשרים הטובים ביותר בשוק, חסימה הרמטית עם האבטחה הגבוהה ביותר, כולל כל התכונות והשדרוגים הכי עדכניים עם תכונות ופיתוחים בלעדיים.	The best kosher Android players on the market – airtight blocking with the highest security, plus all the latest features and upgrades, including exclusive in-house developments.
+דגמים	Models
+חדש!	New!
+זמין במלאי	In stock
+אזל מהמלאי	Out of stock
+לפירוט התכונות	See features
+לפירוט התכונות (10)	See features (10)
+לפירוט התכונות (9)	See features (9)
+לפירוט התכונות (8)	See features (8)
+הסתרת הפירוט	Hide details
+כל הדגמים	All models
+נגן אנדרואיד כשר HPower Max	HPower Max kosher Android player
+נגן אנדרואיד כשר HPower Pro	HPower Pro kosher Android player
+נגן אנדרואיד כשר HPower Plus	HPower Plus kosher Android player
+נגן אנדרואיד כשר HPower Lite	HPower Lite kosher Android player
+מפרט טכני	Technical specs
+תכונות מיוחדות	Special features
+אנדרואיד 13	Android 13
+אנדרואיד 10	Android 10
+מעבד עוצמתי	Powerful processor
+מעבד חזק	Strong processor
+3GB ראם | 32GB זיכרון אחסון	3GB RAM | 32GB storage
+3GB ראם | 16GB זיכרון אחסון	3GB RAM | 16GB storage
+2GB ראם | 16GB זיכרון אחסון	2GB RAM | 16GB storage
+סוללה חזקה	Powerful battery
+מצלמה אחורית 13MP | קדמית 5MP	Rear camera 13MP | front 5MP
+פנס מובנה	Built-in flashlight
+תומך OTG	OTG support
+עיצוב קומפקטי ונוח	Compact, comfortable design
+חנות כשרה ומתקדמת עם 300 אפליקציות ומשחקים מובילים	Advanced kosher store with 300 leading apps and games
+חנות כשרה ומתקדמת עם 170 אפליקציות ומשחקים מובילים	Advanced kosher store with 170 leading apps and games
+חנות כשרה ומתקדמת עם 150 אפליקציות ומשחקים מובילים	Advanced kosher store with 150 leading apps and games
+מנגנון בלעדי לחסימת וידאו בכל האפליקציות עם התקנת אפליקציות פתוחה	Exclusive video blocking in every app, with app installs left open
+מנגנון חכם לתמיכה מלאה בהסרטות ללא וידאו	Smart full support for camera recordings, with video blocked
+רדיו כשר בלעדי (תחנות חרדיות בלבד)	Exclusive kosher radio (Haredi stations only)
+מנגנון זיהוי פנים מובנה בלעדי	Exclusive built-in face recognition
+מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר	Exclusive unlocking of all AirPods features on the device
+מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower')	Exclusive fast file sharing (between HPower devices)
+מתקן כתובת בלוטוס מובנה	Built-in Bluetooth address fixer
+מנגנון אבטחה בלעדי בעל שלוש שכבות הגנה ללא אפשרות פריצה או החלפת גירסה כלל	Exclusive three-layer security mechanism with no way to break in or swap the version
+מנגנון ייחודי נגד פריצות	Unique anti-tamper mechanism
+גרסה בהתאמה אישית	Custom version
+
+# ---------- Products: comparison table ----------
+השוואת דגמים	Compare models
+בטבלה אחת	in one table
+✓ קיים בדגם · — לא קיים בדגם. במסכים קטנים ניתן לגלול את הטבלה הצידה.	✓ Included · — Not included. On small screens you can scroll the table sideways.
+מאפיין	Spec
+מפרט	Specs
+מחיר	Price
+מלאי	Availability
+מערכת הפעלה	Operating system
+מעבד	Processor
+עוצמתי	Powerful
+חזק	Strong
+ראם	RAM
+אחסון	Storage
+סוללה	Battery
+מצלמה אחורית	Rear camera
+מצלמה קדמית	Front camera
+פנס	Flashlight
+תכונות	Features
+חנות כשרה	Kosher store
+אפליקציות ומשחקים	Apps & games
+חסימת וידאו חכמה אקטיבית	Active smart video blocking
+תמיכה בהסרטות	Camera recording support
+רדיו כשר	Kosher radio
+זיהוי פנים מובנה	Built-in face recognition
+תמיכה מובנית באיירפודס	Built-in AirPods support
+שיתוף קבצים מהיר	Fast file sharing
+מנגנון אבטחה הרמטי בעל שלוש שכבות הגנה	Airtight three-layer security
+מנגנון נגד פריצות	Anti-tamper mechanism
+קיים	Included
+לא קיים	Not included
+רוצים להזמין נגן?	Want to order a player?
+השאירו פרטים ונחזור אליכם בהקדם.	Leave your details and we'll get back to you soon.
+
+# ---------- Products: structured data ----------
+נגן אנדרואיד כשר. אנדרואיד 13. מעבד עוצמתי. 3GB ראם | 32GB זיכרון אחסון. סוללה חזקה 2000 mAh. מצלמה אחורית 13MP | קדמית 5MP. פנס מובנה. תומך OTG. חנות כשרה ומתקדמת עם 300 אפליקציות ומשחקים מובילים. מנגנון בלעדי לחסימת וידאו בכל האפליקציות עם התקנת אפליקציות פתוחה. מנגנון חכם לתמיכה מלאה בהסרטות ללא וידאו. רדיו כשר בלעדי (תחנות חרדיות בלבד). מנגנון זיהוי פנים מובנה בלעדי. מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר. מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower'). מתקן כתובת בלוטוס מובנה. מנגנון אבטחה בלעדי בעל שלוש שכבות הגנה ללא אפשרות פריצה או החלפת גירסה כלל. גרסה בהתאמה אישית.	Kosher Android player. Android 13. Powerful processor. 3GB RAM | 32GB storage. Powerful 2000 mAh battery. Rear camera 13MP | front 5MP. Built-in flashlight. OTG support. Advanced kosher store with 300 leading apps and games. Exclusive video blocking in every app, with app installs left open. Smart full support for camera recordings, with video blocked. Exclusive kosher radio (Haredi stations only). Exclusive built-in face recognition. Exclusive unlocking of all AirPods features on the device. Exclusive fast file sharing (between HPower devices). Built-in Bluetooth address fixer. Exclusive three-layer security mechanism with no way to break in or swap the version. Custom version.
+נגן אנדרואיד כשר. אנדרואיד 13. מעבד חזק. 3GB ראם | 16GB זיכרון אחסון. סוללה חזקה 2000 mAh. מצלמה אחורית 13MP | קדמית 5MP. תומך OTG. חנות כשרה ומתקדמת עם 150 אפליקציות ומשחקים מובילים. מנגנון בלעדי לחסימת וידאו בכל האפליקציות עם התקנת אפליקציות פתוחה. מנגנון חכם לתמיכה מלאה בהסרטות ללא וידאו. רדיו כשר בלעדי (תחנות חרדיות בלבד). מנגנון זיהוי פנים מובנה בלעדי. מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר. מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower'). מתקן כתובת בלוטוס מובנה. מנגנון ייחודי נגד פריצות. גרסה בהתאמה אישית.	Kosher Android player. Android 13. Strong processor. 3GB RAM | 16GB storage. Powerful 2000 mAh battery. Rear camera 13MP | front 5MP. OTG support. Advanced kosher store with 150 leading apps and games. Exclusive video blocking in every app, with app installs left open. Smart full support for camera recordings, with video blocked. Exclusive kosher radio (Haredi stations only). Exclusive built-in face recognition. Exclusive unlocking of all AirPods features on the device. Exclusive fast file sharing (between HPower devices). Built-in Bluetooth address fixer. Unique anti-tamper mechanism. Custom version.
+נגן אנדרואיד כשר. אנדרואיד 10. מעבד עוצמתי. 2GB ראם | 16GB זיכרון אחסון. סוללה חזקה 2050 mAh. תומך OTG. חנות כשרה ומתקדמת עם 170 אפליקציות ומשחקים מובילים. מנגנון בלעדי לחסימת וידאו בכל האפליקציות עם התקנת אפליקציות פתוחה. מנגנון חכם לתמיכה מלאה בהסרטות ללא וידאו. רדיו כשר בלעדי (תחנות חרדיות בלבד). מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower'). מתקן כתובת בלוטוס מובנה. מנגנון ייחודי נגד פריצות. גרסה בהתאמה אישית.	Kosher Android player. Android 10. Powerful processor. 2GB RAM | 16GB storage. Powerful 2050 mAh battery. OTG support. Advanced kosher store with 170 leading apps and games. Exclusive video blocking in every app, with app installs left open. Smart full support for camera recordings, with video blocked. Exclusive kosher radio (Haredi stations only). Exclusive fast file sharing (between HPower devices). Built-in Bluetooth address fixer. Unique anti-tamper mechanism. Custom version.
+נגן אנדרואיד כשר. אנדרואיד 13. מעבד חזק. 3GB ראם | 16GB זיכרון אחסון. סוללה חזקה 1950 mAh. עיצוב קומפקטי ונוח. חנות כשרה ומתקדמת עם 150 אפליקציות ומשחקים מובילים. מנגנון בלעדי לחסימת וידאו בכל האפליקציות עם התקנת אפליקציות פתוחה. מנגנון חכם לתמיכה מלאה בהסרטות ללא וידאו. רדיו כשר בלעדי (תחנות חרדיות בלבד). מנגנון בלעדי לפתיחת כל התכונות של איירפודס במכשיר. מנגנון בלעדי לשיתוף קבצים במהירות (בין מכשירי 'HPower'). מתקן כתובת בלוטוס מובנה. מנגנון ייחודי נגד פריצות. גרסה בהתאמה אישית.	Kosher Android player. Android 13. Strong processor. 3GB RAM | 16GB storage. Powerful 1950 mAh battery. Compact, comfortable design. Advanced kosher store with 150 leading apps and games. Exclusive video blocking in every app, with app installs left open. Smart full support for camera recordings, with video blocked. Exclusive kosher radio (Haredi stations only). Exclusive unlocking of all AirPods features on the device. Exclusive fast file sharing (between HPower devices). Built-in Bluetooth address fixer. Unique anti-tamper mechanism. Custom version.
+
+# ---------- Downloads: meta + page ----------
+הורדת אפליקציות כשרות וחסימות לאנדרואיד – VidBlocker, Kosher FM | המעבדה	Kosher apps and Android blocking tools – VidBlocker, Kosher FM | The Lab
+מרכז ההורדות של המעבדה: VidBlocker לחסימת וידאו, רדיו כשר Kosher FM, גלריה חכמה Smart Gallery, System Guard נגד עקיפת חסימות MDM, ואפליקציות נוספות לאנדרואיד.	The Lab's download center: VidBlocker for video blocking, Kosher FM kosher radio, the Smart Gallery app, System Guard against MDM bypass, and more Android apps.
+אפליקציות כשרות וחסימות לאנדרואיד | המעבדה	Kosher apps and Android blocking tools | The Lab
+VidBlocker, Kosher FM, Smart Gallery, System Guard ועוד – אפליקציות וחסימות שפותחו במעבדה.	VidBlocker, Kosher FM, Smart Gallery, System Guard and more – apps and blocking tools developed at The Lab.
+אפליקציות כשרות וחסימות לאנדרואיד	Kosher apps and Android blocking tools
+אפליקציות כשרות	Kosher apps
+וחסימות לאנדרואיד	and Android blocking tools
+חסימת וידאו באנדרואיד	Android video blocking
+סינון MDM	MDM filtering
+כל הכלים והאפליקציות פותחו במעבדה, נבדקו ואומתו – עם דגש על הטכנולוגיה המתקדמת ביותר, הגנה מקסימלית וחוויית משתמש נקייה.	Every tool and app was developed at The Lab, tested and verified – with a focus on cutting-edge technology, maximum protection and a clean user experience.
+סינון אפליקציות	Filter apps
+הכל	All
+חינם	Free
+חינם (מוגבל)	Free (limited)
+בתשלום	Paid
+בתשלום*	Paid*
+רשימת האפליקציות	App list
+בלעדי	Exclusive
+גרסה	Version
+מידע נוסף	More info
+הורדה	Download
+לפרטים ורכישה	Details & purchase
+* האפליקציות והשירותים בתשלום אינם זמינים לרכישה בנפרד, אלא כחלק מגרסאות ומדגמים נבחרים בלבד.	* Paid apps and services can't be bought separately – only as part of selected versions and models.
+צריכים חסימה או גרסה בהתאמה אישית?	Need a custom blocking setup or version?
+אנחנו מפתחים אפליקציות, חסימות וגרסאות אנדרואיד לפי הדרישות שלכם.	We develop apps, blocking tools and Android versions to your requirements.
+ספרו לנו מה צריך	Tell us what you need
+
+# ---------- Downloads: app descriptions ----------
+אפליקציה מתקדמת לביטול נעילת המכשיר באמצעות זיהוי פנים. תומכת במכשירים ללא זיהוי פנים מובנה – ללא אינטרנט וללא רוט.	An advanced app for unlocking your device with face recognition. Works on devices without built-in face unlock – no internet and no root.
+אפליקציית סינון וחסימת מכשירים עם שליטה מלאה בתכונות ובהגדרות המכשיר ובתעבורת הרשת. כוללת רשימה לבנה של אפליקציות, חסימת פרסומות, דפדפנים פנימיים, סטטוסים וערוצים.	A device filtering and blocking app with full control over device features, settings and network traffic. Includes an app whitelist and blocking of ads, in-app browsers, statuses and channels.
+חנות אפליקציות אופליין מתקדמת, עם תמיכה בהרחבות חיצוניות, גיבוי ושחזור נתונים, שליטה מלאה בתצוגה ומנוע חיפוש מתקדם. התקנה אוטומטית ומהירה ללא שימוש במתקין החבילות של המכשיר.	An advanced offline app store with support for external extensions, data backup and restore, full display control and an advanced search engine. Fast automatic installs without using the device's package installer.
+אפליקציה ייחודית להעברת קבצים ותיקיות במהירות גבוהה בין מכשירים – ללא אינטרנט כלל.	A unique app for transferring files and folders at high speed between devices – no internet at all.
+רדיו כשר אופליין. האפליקציה מאפשרת האזנה רק לתחנות החרדיות הנבחרות, ללא צורך בחיבור לאינטרנט. כולל תמיכה בבלוטות', ברמקול חיצוני ובהקלטה.	Offline kosher radio. The app lets you listen only to selected Haredi stations, with no internet connection needed. Includes Bluetooth, external speaker and recording support.
+אפליקציה מתקדמת ובלעדית שפותחת את כל תכונות האיירפודס באנדרואיד: סינון רעשים, שקיפות אדפטיבית, זיהוי אוזניים, מצב סוללה, מודעות לשיחה, מחוות ראש ועוד. מובנית במערכת – ללא רוט וללא מודולים.	An advanced, exclusive app that unlocks every AirPods feature on Android: noise cancellation, adaptive transparency, ear detection, battery status, conversation awareness, head gestures and more. Built into the system – no root and no modules.
+גלריה חכמה ומתקדמת שמציגה ופותחת רק הסרטות, ללא אפשרות צפייה או הצגה של וידאו חיצוני. מנגנון ייחודי שסורק ומנתח את הקבצים ללא אפשרות עקיפה.	A smart, advanced gallery that shows and opens only your own camera recordings, with no way to view or display outside video. A unique mechanism scans and analyzes files and can't be bypassed.
+אפליקציה מתקדמת למניעת עקיפת חסימות MDM במכשירים ללא שירותי גוגל רשמיים. מעניקה שכבת הגנה נוספת שמונעת הסרת מגבלות מערכת.	An advanced app that stops MDM blocking from being bypassed on devices without official Google services. Adds an extra layer of protection that prevents system restrictions from being removed.
+אפליקציה ייחודית ובלעדית לחסימת וידאו הרמטית בכל האפליקציות עם התקנת אפליקציות פתוחה. מנגנון מתקדם שמזהה וחוסם נגני וידאו בתוך כל אפליקציה באופן כירורגי, מבלי לפגוע בשימוש השוטף. כולל אפשרות לחסימת רשת ואפליקציות.	A unique, exclusive app for airtight video blocking across every app, with app installs left open. An advanced mechanism surgically detects and blocks video players inside any app without disrupting everyday use. Includes optional network and app blocking.
+עוזר קולי אופליין מבוסס AI. מאפשר לבצע פעולות מהירות במכשיר באמצעות פקודות קוליות פשוטות, כולל הקלדה קולית במודל מקומי – ללא אינטרנט כלל.	An offline, AI-powered voice assistant. Perform quick actions on your device with simple voice commands, including voice typing with an on-device model – no internet at all.
+
+# ---------- Downloads: feature tags ----------
+מובנה במערכת	Built into the system
+אופליין	Offline
+ללא רוט	No root
+מבוסס MDM	MDM-based
+לא ניתן לעקיפה	Bypass-proof
+שליטה מלאה במכשיר	Full device control
+התקנה אוטומטית	Automatic install
+ללא מתקין החבילות	No package installer
+מהירות גבוהה	High speed
+ללא אינטרנט	No internet
+תמיכה בבלוטות'	Bluetooth support
+תמיכה ברמקול	Speaker support
+אפשרות הקלטה	Recording option
+ללא מודולים	No modules
+ניתוח קבצים	File analysis
+שליטה בתצוגה	Display control
+חסימה מערכתית	System-level blocking
+לא דורש שירותי גוגל	No Google services needed
+ניטור בזמן אמת	Real-time monitoring
+משולב MDM	MDM-integrated
+הקלדה קולית	Voice typing

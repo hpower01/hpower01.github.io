@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.yosef-mobile.co.il/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.yosef-mobile.co.il/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.yosef-mobile.co.il/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yosef-mobile.co.il/"/>
     <image:image><image:loc>https://www.yosef-mobile.co.il/assets/img/og-image.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.yosef-mobile.co.il/products.html</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.yosef-mobile.co.il/products.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.yosef-mobile.co.il/en/products.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yosef-mobile.co.il/products.html"/>
     <image:image><image:loc>https://www.yosef-mobile.co.il/assets/img/hpower-max.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.yosef-mobile.co.il/assets/img/hpower-pro.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.yosef-mobile.co.il/assets/img/hpower-plus.jpg</image:loc></image:image>
@@ -16,6 +23,35 @@
   </url>
   <url>
     <loc>https://www.yosef-mobile.co.il/downloads.html</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.yosef-mobile.co.il/downloads.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.yosef-mobile.co.il/en/downloads.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yosef-mobile.co.il/downloads.html"/>
+  </url>
+  <url>
+    <loc>https://www.yosef-mobile.co.il/en/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.yosef-mobile.co.il/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.yosef-mobile.co.il/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yosef-mobile.co.il/"/>
+    <image:image><image:loc>https://www.yosef-mobile.co.il/assets/img/og-image.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.yosef-mobile.co.il/en/products.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.yosef-mobile.co.il/products.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.yosef-mobile.co.il/en/products.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yosef-mobile.co.il/products.html"/>
+    <image:image><image:loc>https://www.yosef-mobile.co.il/assets/img/hpower-max.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.yosef-mobile.co.il/assets/img/hpower-pro.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.yosef-mobile.co.il/assets/img/hpower-plus.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.yosef-mobile.co.il/assets/img/hpower-lite.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.yosef-mobile.co.il/en/downloads.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.yosef-mobile.co.il/downloads.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.yosef-mobile.co.il/en/downloads.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.yosef-mobile.co.il/downloads.html"/>
   </url>
 </urlset>

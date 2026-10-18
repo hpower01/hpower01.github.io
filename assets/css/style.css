@@ -876,8 +876,11 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
 :lang(en) .patent-seal .seal-sub { font-size: 9.4px; }
 @keyframes seal-turn { to { transform: rotate(360deg); } }
 @keyframes seal-in { from { opacity: 0; scale: 1.6; } }
+/* בדף המוצרים התמונה בצד השני של הבועה — החותמת בפינה החיצונית שם */
+.featured-media .patent-seal { inset-inline-end: auto; inset-inline-start: 22px; }
 @media (max-width: 640px) {
   .patent-seal { width: 132px; inset-block-start: 14px; inset-inline-end: 12px; }
+  .featured-media .patent-seal { inset-inline-end: auto; inset-inline-start: 12px; }
 }
 
 .badge {

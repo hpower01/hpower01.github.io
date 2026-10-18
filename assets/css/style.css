@@ -846,7 +846,7 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
 /* חותמת יוקרה עגולה — פטנט VidBlocker */
 .patent-seal {
   --gold-2: #f5d27a; --gold-3: #c9962e;
-  position: absolute; z-index: 3; inset-block-start: 22px; inset-inline-start: 22px;
+  position: absolute; z-index: 3; inset-block-start: 22px; inset-inline-end: 22px;
   width: clamp(140px, 15vw, 180px); aspect-ratio: 1;
   transform: rotate(12deg);
   filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 18px rgba(201, 150, 46, 0.35));
@@ -877,7 +877,7 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
 @keyframes seal-turn { to { transform: rotate(360deg); } }
 @keyframes seal-in { from { opacity: 0; scale: 1.6; } }
 @media (max-width: 640px) {
-  .patent-seal { width: 132px; inset-block-start: 14px; inset-inline-start: 12px; }
+  .patent-seal { width: 132px; inset-block-start: 14px; inset-inline-end: 12px; }
 }
 
 .badge {

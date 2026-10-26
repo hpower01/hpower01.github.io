@@ -16,7 +16,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = 'https://www.yosef-mobile.co.il/'
-PAGES = ['index.html', 'products.html', 'downloads.html']
+PAGES = ['index.html', 'products.html', 'downloads.html', 'hpower-max.html']
 
 HEBREW = re.compile(r'[֐-׿יִ-ﭏ]')
 LD_JSON = re.compile(r'<script type="application/ld\+json">.*?</script>', re.S)
@@ -31,6 +31,8 @@ MARKUP = [
      '<span class="grad-text">HPower</span> kosher Android players'),
     ('המוצרים <span class="grad-text">שלנו</span>',
      'Our <span class="grad-text">products</span>'),
+    ('חומרה <span class="grad-text">חזקה ומתקדמת</span>',
+     'Strong, <span class="grad-text">advanced hardware</span>'),
 ]
 
 

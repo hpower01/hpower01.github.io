@@ -1020,6 +1020,14 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
 .more .more-label-close, .more[open] .more-label-open { display: none; }
 .more[open] .more-label-close { display: inline; }
 .more .feature-rows { margin-bottom: 2px; }
+.more-link {
+  display: inline-flex; align-items: center; gap: 7px; margin: 10px 0 4px;
+  font-size: 0.9rem; font-weight: 600; color: var(--accent-hover); transition: color 0.25s;
+}
+.more-link:hover { color: var(--a2); }
+.more-link .icon { width: 16px; height: 16px; transition: transform 0.3s var(--ease); }
+.more-link:hover .icon-arrow { transform: translateX(-4px); }
+[dir="ltr"] .more-link:hover .icon-arrow { transform: scaleX(-1) translateX(-4px); }
 .js .more[open] .feature-rows, .js .more[open] .spec-title { animation: answer-in 0.4s var(--ease-out); }
 
 .product-foot { display: grid; gap: 13px; padding-top: 17px; border-top: 1px solid var(--border); }
@@ -1052,6 +1060,89 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
 .compare .row-group th { background: rgba(9, 12, 21, 0.9); color: var(--a2); font-size: 0.82rem; font-weight: 700; padding-block: 11px; letter-spacing: 0.04em; }
 .compare td.col-top { background: rgba(79, 140, 255, 0.08); }
 .compare tbody tr:not(.row-group):hover td.col-top { background: rgba(79, 140, 255, 0.14); }
+
+/* ---------- דף נחיתה: HPower Max ---------- */
+.lp-hero { padding-top: calc(var(--header-h) + clamp(28px, 4vw, 52px)); border-bottom: 1px solid var(--border); }
+.lp-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 70px); align-items: center; }
+.lp-hero-text .breadcrumbs ol { margin-bottom: 26px; }
+.lp-hero h1 { margin-bottom: 20px; }
+.lp-model { display: block; font-size: clamp(2.9rem, 6.6vw, 5.2rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.045em; }
+.lp-tagline { display: block; margin-top: 12px; font-size: clamp(1.4rem, 2.6vw, 2.05rem); font-weight: 600; color: var(--text-body); letter-spacing: -0.025em; }
+.lp-lead { color: var(--text-muted); font-size: clamp(1.02rem, 1.4vw, 1.1rem); max-width: 540px; margin-bottom: 26px; }
+.lp-quick { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
+.lp-quick li {
+  display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; border-radius: 999px;
+  font-size: 0.86rem; font-weight: 500; color: var(--text-body);
+  background: var(--surface-2); border: 1px solid var(--border);
+}
+.lp-quick .icon { width: 15px; height: 15px; color: var(--a2); }
+.lp-buy { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding-top: 26px; border-top: 1px solid var(--border); }
+.lp-price strong { font-size: 2.6rem; }
+
+/* הנגן עצמו: טבעות זוהרות מאחור וכיתובים מרחפים סביבו */
+.lp-hero-visual { position: relative; display: grid; place-items: center; min-height: 540px; }
+.lp-hero-visual::before {
+  content: ""; position: absolute; width: 80%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle, rgba(79, 140, 255, 0.34), rgba(167, 139, 250, 0.14) 45%, transparent 66%);
+  filter: blur(30px); animation: breathe 7s ease-in-out infinite;
+}
+.lp-ring {
+  position: absolute; width: min(470px, 94%); aspect-ratio: 1; border-radius: 50%;
+  border: 1px solid var(--accent-line); background: radial-gradient(circle, rgba(79, 140, 255, 0.07), transparent 70%);
+  box-shadow: inset 0 0 70px rgba(79, 140, 255, 0.12), 0 0 90px -30px rgba(167, 139, 250, 0.6);
+}
+.lp-ring::after {
+  content: ""; position: absolute; inset: 11%; border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.12); animation: seal-turn 70s linear infinite;
+}
+.lp-hero-visual img {
+  position: relative; z-index: 2; width: min(270px, 54%);
+  filter: drop-shadow(0 34px 44px rgba(0, 0, 0, 0.65));
+  animation: float 8s ease-in-out infinite;
+}
+/* הדגלון יורד מקו הכותרת בפינה החיצונית של צד הנגן, והחותמת בפינה הפנימית (כמו בדף הבית) */
+.lp-pennant { inset-block-start: var(--header-h); inset-inline-end: max(20px, calc((100% - 1220px) / 2 + 20px)); }
+.lp-hero-visual .patent-seal { inset-block-start: 6%; inset-inline-end: auto; inset-inline-start: 2%; }
+/* כל כרטיסי התכונות באותו גודל */
+.lp-features { grid-auto-rows: 1fr; }
+.lp-card-badge { position: absolute; z-index: 2; inset-block-start: clamp(26px, 3vw, 32px); inset-inline-end: clamp(26px, 3vw, 32px); }
+.lp-specs { --g: 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--g); }
+.spec-tile {
+  display: grid; justify-items: center; gap: 6px; padding: 26px 18px; text-align: center; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 var(--highlight);
+  transition: border-color 0.3s, transform 0.45s var(--ease);
+}
+.spec-tile:hover { border-color: var(--accent-line); transform: translateY(-4px); }
+.spec-tile > .icon {
+  width: 46px; height: 46px; padding: 11px; margin-bottom: 6px; border-radius: 14px;
+  color: var(--a2); background: var(--grad-soft); border: 1px solid var(--accent-line);
+}
+.spec-tile span { font-size: 0.85rem; color: var(--text-muted); }
+.spec-tile strong { font-size: 1.22rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; }
+.note a { color: var(--accent-hover); font-weight: 600; }
+.note a:hover { color: var(--a2); }
+@media (max-width: 960px) {
+  .lp-hero-grid { grid-template-columns: 1fr; }
+  .lp-hero-visual { order: -1; min-height: 460px; }
+  .spec-tile:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc((100% - var(--g, 20px)) / 2); }
+  .lp-specs { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  /* בטלפון הכיתובים יושבים בפינות, מעל ומתחת לנגן, כדי לא להסתיר את המסך */
+  /* טור אחד: כל כרטיס בגובה התוכן שלו */
+  .lp-features { grid-auto-rows: auto; }
+  /* הדגלון והחותמת יושבים מעל הנגן, והנגן יורד מתחתיהם */
+  .lp-hero-visual { min-height: 480px; padding-top: 130px; }
+  .lp-hero-visual img { width: min(200px, 52%); }
+  .lp-hero-visual .patent-seal { inset-block-start: 0; inset-inline-start: 0; }
+  .lp-price strong { font-size: 2.2rem; }
+  .lp-buy .btn { flex: 1 1 100%; }
+  .lp-specs { --g: 12px; }
+  .spec-tile { padding: 20px 12px; }
+  .lp-card-badge { inset-block-start: 26px; inset-inline-end: 26px; }
+}
 
 /* ---------- הורדות ---------- */
 .filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; margin-bottom: 42px; }

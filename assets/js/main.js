@@ -340,4 +340,26 @@
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () { root.classList.remove("is-resizing"); }, 200);
   }, { passive: true });
+
+  /* ---------- הירו: מחשב עם קוד וטלפון עם חסימות מתחלפים כל כמה שניות ---------- */
+  var heroVisual = doc.querySelector(".hero-visual");
+  var scenes = heroVisual ? heroVisual.querySelectorAll(".hero-scene") : [];
+  if (scenes.length > 1 && !reduced.matches) {
+    var SCENE_MS = [8000, 7000]; // מחשב, טלפון
+    var current = 0;
+    var showScene = function (i) {
+      for (var s = 0; s < scenes.length; s++) scenes[s].classList.toggle("is-active", s === i);
+    };
+    var nextScene = function () {
+      setTimeout(function () {
+        // כשהלשונית מוסתרת לא מחליפים, כדי שהאנימציה תתחיל מההתחלה כשחוזרים
+        if (!doc.hidden) {
+          current = (current + 1) % scenes.length;
+          showScene(current);
+        }
+        nextScene();
+      }, SCENE_MS[current] || SCENE_MS[0]);
+    };
+    nextScene();
+  }
 })();

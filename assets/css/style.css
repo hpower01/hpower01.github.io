@@ -362,7 +362,7 @@ html[dir="ltr"] .scroll-progress { transform-origin: left center; }
 .hero-points li:hover { color: var(--text); transform: translateY(-2px); }
 .hero-points .icon { color: var(--a2); }
 
-/* ---------- מוקאפ טלפון בהירו: מנגנון החסימה בפעולה ---------- */
+/* ---------- מוקאפ מחשב בהירו: קוד שנכתב ונבנה ---------- */
 .hero-visual { position: relative; display: grid; place-items: center; padding-block: 12px; }
 .hero-visual::before {
   content: ""; position: absolute; width: 74%; aspect-ratio: 1; border-radius: 50%;
@@ -370,13 +370,119 @@ html[dir="ltr"] .scroll-progress { transform-origin: left center; }
   filter: blur(34px); animation: breathe 7s ease-in-out infinite;
 }
 
+.pc {
+  position: relative; width: min(520px, 94%);
+  display: grid; justify-items: center;
+}
+.pc-screen {
+  position: relative; overflow: hidden; width: 100%; aspect-ratio: 16 / 10.4;
+  display: flex; flex-direction: column;
+  border: 10px solid #121726; border-radius: 22px;
+  background: radial-gradient(120% 80% at 0% 0%, rgba(79, 140, 255, 0.16), transparent 60%), #080b14;
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--border-strong), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  font-family: ui-monospace, "Cascadia Code", Consolas, "Courier New", monospace;
+  text-align: left;
+}
+.pc-neck {
+  width: 16%; height: 30px; margin-top: -1px;
+  background: linear-gradient(180deg, #0c1019, #1a2033);
+  clip-path: polygon(14% 0, 86% 0, 100% 100%, 0 100%);
+}
+.pc-base {
+  width: 40%; height: 9px; border-radius: 6px 6px 10px 10px;
+  background: linear-gradient(180deg, #262d44, #121726);
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 16px 26px -10px rgba(0, 0, 0, 0.8);
+}
+
+/* הבהוב אור עדין על המסך */
+.pc-sheen {
+  position: absolute; inset: 0; pointer-events: none; z-index: 5;
+  background-image: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.04) 55%, rgba(34, 211, 238, 0.1));
+  background-repeat: no-repeat; background-size: 100% 90px; background-position: 0 -100px;
+  animation: scan 7s var(--ease) infinite;
+}
+@keyframes scan {
+  0% { background-position: 0 -100px; opacity: 0; }
+  15%, 72% { opacity: 1; }
+  100% { background-position: 0 calc(100% + 100px); opacity: 0; }
+}
+
+.pc-bar {
+  display: flex; align-items: center; gap: 6px; padding: 0 10px;
+  min-height: 30px; border-bottom: 1px solid var(--border); background: rgba(255, 255, 255, 0.025);
+}
+.pc-dots { display: inline-flex; gap: 5px; margin-inline-end: 6px; }
+.pc-dots i { width: 8px; height: 8px; border-radius: 50%; background: #fb7185; }
+.pc-dots i:nth-child(2) { background: #fbbf24; }
+.pc-dots i:nth-child(3) { background: var(--ok); }
+.pc-tab {
+  display: inline-flex; align-items: center; gap: 5px; padding: 4px 9px; border-radius: 7px;
+  font-size: 0.64rem; color: var(--text); background: var(--accent-soft); border: 1px solid var(--accent-line);
+}
+.pc-tab .icon { width: 11px; height: 11px; color: var(--a2); }
+.pc-tab.is-dim { color: var(--text-faint); background: none; border-color: transparent; }
+
+.pc-code { display: grid; align-content: start; gap: 3px; padding: 14px 14px 0; flex: 1; }
+.cl {
+  display: block; white-space: pre; overflow: hidden;
+  font-size: 0.78rem; line-height: 1.6; color: var(--text-body);
+}
+/* כל שורה "מוקלדת" בתורה בכל פעם שהמחשב מופיע */
+.scene-pc.is-active .cl {
+  animation: type-line 0.7s steps(24, end) both;
+  animation-delay: calc(0.35s + var(--i) * 0.5s);
+}
+@keyframes type-line {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+.cl b { display: inline-block; width: 2.2em; font-weight: 400; color: var(--text-faint); }
+.cl em { font-style: normal; }
+.cl .k { color: #c4b5fd; }
+.cl .t { color: #67e8f9; }
+.cl .f { color: #8ab6ff; }
+.cl .n { color: #fbbf24; }
+
+.pc-term {
+  display: grid; gap: 4px; margin: 10px; padding: 9px 11px; border-radius: 10px;
+  font-size: 0.68rem; background: rgba(0, 0, 0, 0.38); border: 1px solid var(--border);
+}
+.pc-cmd { color: var(--text-muted); }
+.pc-cmd .p { font-style: normal; color: var(--a2); }
+.pc-caret {
+  display: inline-block; width: 6px; height: 1em; margin-inline-start: 3px; vertical-align: -2px;
+  background: var(--a2); animation: caret 1s steps(1) infinite;
+}
+@keyframes caret { 50% { opacity: 0; } }
+.pc-ok {
+  display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--ok);
+}
+.scene-pc.is-active .pc-ok { animation: build-ok 0.6s var(--ease) 4.4s both; }
+.pc-ok .icon { width: 13px; height: 13px; }
+@keyframes build-ok {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* שתי סצנות באותו מקום: מחשב וטלפון, מתחלפות כל כמה שניות (main.js) */
+.hero-stage { position: relative; display: grid; place-items: center; width: 100%; animation: float 9s ease-in-out infinite; }
+.hero-scene {
+  grid-area: 1 / 1; width: 100%; display: grid; place-items: center;
+  opacity: 0; visibility: hidden; transform: scale(0.94) translateY(12px);
+  transition: opacity 0.7s var(--ease), transform 0.9s var(--ease), visibility 0s linear 0.9s;
+}
+.hero-scene.is-active {
+  opacity: 1; visibility: visible; transform: none;
+  transition: opacity 0.8s var(--ease) 0.25s, transform 1s var(--ease) 0.25s, visibility 0s;
+}
+
 .phone {
-  position: relative; width: min(304px, 80%); aspect-ratio: 9 / 18.6;
-  padding: 10px; border-radius: 42px;
+  position: relative; width: min(252px, 66%); aspect-ratio: 9 / 18.6;
+  padding: 9px; border-radius: 36px;
   background: linear-gradient(155deg, #262d44, #0c1019 55%, #161b2a);
   border: 1px solid var(--border-strong);
   box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.14);
-  animation: float 9s ease-in-out infinite;
 }
 /* לחצני צד */
 .phone::before, .phone::after {
@@ -392,7 +498,7 @@ html[dir="ltr"] .scroll-progress { transform-origin: left center; }
   background: #04060c; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
 }
 .phone-screen {
-  position: relative; overflow: hidden; height: 100%; border-radius: 33px;
+  position: relative; overflow: hidden; height: 100%; border-radius: 28px;
   display: flex; flex-direction: column; padding: 11px 12px 14px;
   background: radial-gradient(120% 70% at 50% 0%, rgba(79, 140, 255, 0.2), transparent 62%), #080b14;
 }
@@ -421,35 +527,36 @@ html[dir="ltr"] .scroll-progress { transform-origin: left center; }
 .ph-sig .icon { width: 12px; height: 12px; }
 
 .ph-head { text-align: center; padding: 7px 0 10px; }
-.ph-head strong { display: block; font-size: 1rem; letter-spacing: -0.03em; direction: ltr; }
+.ph-head strong { display: block; font-size: 0.9rem; letter-spacing: -0.03em; direction: ltr; }
 .ph-head span { font-size: 0.6rem; color: var(--a2); }
 
-.ph-apps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px 4px; }
-.ph-app { display: grid; justify-items: center; align-content: start; gap: 6px; direction: ltr; }
+/* שלוש עמודות, והשורה האחרונה ממורכזת גם כשאין בה שלוש אפליקציות */
+.ph-apps { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 0; }
+.ph-app { flex: 0 0 33.333%; display: grid; justify-items: center; align-content: start; gap: 6px; direction: ltr; }
 /* שתי שורות שמורות לשם, כדי שכל השורות בגריד יישארו בגובה אחיד */
 .ph-name {
-  font-size: 0.53rem; font-weight: 500; line-height: 1.15; min-height: 2.3em;
+  font-size: 0.48rem; font-weight: 500; line-height: 1.15; min-height: 2.3em;
   color: var(--text-muted); text-align: center;
 }
 .ph-ico {
-  width: 40px; height: 40px; border-radius: 13px; display: grid; place-items: center;
+  width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center;
   background: var(--surface-2); border: 1px solid var(--border); color: var(--a2);
   transition: color 0.3s, border-color 0.3s;
 }
-.ph-ico .icon { width: 19px; height: 19px; }
-/* האפליקציה שנפתחת ונחסמת */
-.ph-app.is-target .ph-ico { animation: ph-tap 8s var(--ease) infinite; }
-.ph-app.is-target .ph-name { animation: ph-tap-name 8s var(--ease) infinite; }
-@keyframes ph-tap-name {
-  0%, 26% { color: var(--text-muted); }
-  33%, 64% { color: var(--no); }
-  74%, 100% { color: var(--text-muted); }
+.ph-ico .icon { width: 16px; height: 16px; }
+/* האפליקציות מופיעות אחת אחרי השנייה בכל פעם שהטלפון מופיע */
+.scene-phone.is-active .ph-app {
+  animation: ph-pop 0.55s var(--spring) both;
+  animation-delay: calc(0.35s + var(--i) * 0.12s);
 }
-@keyframes ph-tap {
-  0%, 17% { transform: none; }
-  23% { transform: scale(0.86); }
-  30%, 64% { transform: scale(1.07); color: var(--no); border-color: var(--no-border); box-shadow: 0 0 0 4px rgba(251, 113, 133, 0.13); }
-  74%, 100% { transform: none; }
+@keyframes ph-pop {
+  from { opacity: 0; transform: translateY(10px) scale(0.6); }
+  to { opacity: 1; transform: none; }
+}
+.scene-phone.is-active .ph-live { animation: ph-live-in 0.6s var(--ease) 1.9s both; }
+@keyframes ph-live-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
 }
 
 .ph-live {
@@ -459,41 +566,7 @@ html[dir="ltr"] .scroll-progress { transform-origin: left center; }
 }
 .ph-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ok); animation: ping-ok 2.2s var(--ease) infinite; }
 
-.ph-block {
-  position: absolute; z-index: 3; inset-inline: 12px; bottom: 16px;
-  display: grid; justify-items: center; gap: 7px; text-align: center;
-  padding: 20px 16px; border-radius: 22px;
-  background: rgba(9, 12, 21, 0.94); border: 1px solid var(--no-border);
-  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
-  box-shadow: 0 -14px 34px -14px rgba(0, 0, 0, 0.85);
-  opacity: 0; transform: translateY(26px);
-  animation: ph-block-in 8s var(--ease) infinite;
-}
-@keyframes ph-block-in {
-  0%, 27% { opacity: 0; transform: translateY(26px); }
-  36%, 66% { opacity: 1; transform: none; }
-  76%, 100% { opacity: 0; transform: translateY(26px); }
-}
-.ph-shield {
-  width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
-  color: var(--no); background: var(--no-bg); border: 1px solid var(--no-border);
-}
-.ph-shield .icon { width: 22px; height: 22px; }
-.ph-block strong { font-size: 0.84rem; }
-.ph-note { font-size: 0.62rem; line-height: 1.5; color: var(--text-muted); }
 
-/* בועות מרחפות סביב הטלפון */
-.hero-chip {
-  position: absolute; z-index: 3; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
-  padding: 11px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; color: var(--text);
-  background: rgba(20, 25, 39, 0.82); border: 1px solid var(--border-strong);
-  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
-  box-shadow: var(--shadow);
-  animation: float 7s ease-in-out infinite;
-}
-.hero-chip .icon { color: var(--a2); width: 17px; height: 17px; }
-.hero-chip.c1 { top: 12%; inset-inline-start: 0; }
-.hero-chip.c2 { bottom: 13%; inset-inline-end: 0; animation-delay: -3.5s; }
 @keyframes float { 50% { transform: translateY(-9px); } }
 /* ---------- פס אמון ---------- */
 .trust { position: relative; border-block: 1px solid var(--border); background: rgba(9, 12, 21, 0.55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
@@ -1105,6 +1178,53 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
 .lp-hero-visual .patent-seal { inset-block-start: 6%; inset-inline-end: auto; inset-inline-start: 2%; }
 /* כל כרטיסי התכונות באותו גודל */
 .lp-features { grid-auto-rows: 1fr; }
+/* ---------- עדכון גרסה אחרון: פאנל נפרד ומודגש ---------- */
+.lp-update-section { padding-block: clamp(36px, 5vw, 64px) 0; }
+.lp-update {
+  display: grid; grid-template-columns: minmax(230px, 0.8fr) 2fr; gap: clamp(24px, 4vw, 52px); align-items: center;
+  padding: clamp(26px, 4vw, 44px); overflow: hidden;
+  background:
+    radial-gradient(80% 120% at 100% 0%, rgba(79, 140, 255, 0.2), transparent 60%),
+    radial-gradient(60% 100% at 0% 100%, rgba(167, 139, 250, 0.14), transparent 60%),
+    var(--surface-solid);
+  box-shadow: var(--shadow-lg);
+}
+.lp-update-aside { position: relative; z-index: 2; }
+.lu-live {
+  display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;
+  padding: 7px 14px; border-radius: 999px; font-size: 0.82rem; font-weight: 700;
+  color: var(--a2); background: rgba(34, 211, 238, 0.1); border: 1px solid rgba(34, 211, 238, 0.32);
+}
+.lu-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--a2);
+  animation: ping 2.2s var(--ease) infinite;
+}
+.lp-update-aside h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.15; margin-bottom: 14px; }
+.lu-date {
+  display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px;
+  font-weight: 600; color: var(--text);
+}
+.lu-date .icon { width: 18px; height: 18px; color: var(--a2); }
+.lu-lead { color: var(--text-muted); font-size: 0.95rem; }
+
+.lp-update-main { position: relative; z-index: 2; }
+.lu-label { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 14px; }
+.lu-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.lu-list li {
+  display: flex; align-items: center; gap: 14px; padding: 13px 15px; border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border);
+  transition: border-color 0.3s, background 0.3s, transform 0.4s var(--ease);
+}
+/* פריט אחרון שנשאר לבד בשורה נמתח לכל הרוחב */
+.lu-list li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.lu-list li:hover { border-color: var(--accent-line); background: var(--accent-soft); transform: translateY(-3px); }
+.lu-ico {
+  flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+  color: var(--a2); background: var(--grad-soft); border: 1px solid var(--accent-line);
+}
+.lu-ico .icon { width: 19px; height: 19px; }
+.lu-list strong { display: block; font-size: 0.98rem; color: var(--text); }
+.lu-list span:not(.lu-ico) { display: block; font-size: 0.84rem; line-height: 1.5; color: var(--text-muted); }
 .lp-card-badge { position: absolute; z-index: 2; inset-block-start: clamp(26px, 3vw, 32px); inset-inline-end: clamp(26px, 3vw, 32px); }
 .lp-specs { --g: 14px; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--g); max-width: 1040px; margin-inline: auto; }
 /* אריח מפרט קומפקטי: אייקון בצד, כותרת וערך אחד מתחת לשני */
@@ -1278,9 +1398,7 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
   .js .reveal { opacity: 1; transform: none; filter: none; }
-  .bg-fx, .phone-sheen { display: none; }
-  /* בלי אנימציה מציגים את הודעת החסימה במצבה הסופי */
-  .ph-block { opacity: 1; transform: none; }
+  .bg-fx, .pc-sheen, .phone-sheen { display: none; }
   .grad-text, .product-body h3 span { background-position: 0 0; }
 }
 
@@ -1325,6 +1443,7 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
   .hero-grid, .split, .contact-grid { grid-template-columns: 1fr; }
   .hero-visual { max-width: 560px; margin-inline: auto; width: 100%; }
   .card-grid, .app-grid { grid-template-columns: repeat(2, 1fr); }
+  .lp-update { grid-template-columns: 1fr; }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .trust-item:nth-child(3) { border-inline-start: 0; }
@@ -1347,19 +1466,23 @@ input[type="tel"].input, input[type="email"].input { direction: ltr; text-align:
   .brand-name { font-size: 1.1rem; }
   .hero-actions .btn { flex: 1 1 100%; }
   .hero-points { gap: 12px 20px; }
-  .phone { width: min(268px, 74%); }
-  .ph-ico { width: 36px; height: 36px; border-radius: 12px; }
-  .ph-ico .icon { width: 17px; height: 17px; }
-  .ph-apps { gap: 7px 3px; }
-  .ph-name { font-size: 0.5rem; }
+  .pc-screen { border-width: 7px; border-radius: 16px; }
+  .pc-bar { min-height: 24px; padding: 0 8px; }
+  .pc-dots i { width: 6px; height: 6px; }
+  .pc-tab { font-size: 0.54rem; padding: 3px 7px; }
+  .pc-code { padding: 9px 10px 0; gap: 1px; }
+  .cl { font-size: 0.62rem; }
+  .pc-term { margin: 7px; padding: 7px 9px; font-size: 0.56rem; }
+  .pc-neck { height: 20px; }
+  .phone { width: min(222px, 62%); }
+  .ph-ico { width: 30px; height: 30px; border-radius: 10px; }
+  .ph-ico .icon { width: 14px; height: 14px; }
+  .ph-apps { gap: 7px 0; }
+  .ph-name { font-size: 0.44rem; }
   .ph-head { padding: 5px 0 8px; }
   .ph-head strong { font-size: 0.92rem; }
-  .ph-block { padding: 16px 12px; border-radius: 18px; }
-  .ph-shield { width: 40px; height: 40px; }
-  .hero-chip { padding: 9px 13px; font-size: 0.78rem; }
-  .hero-chip.c1 { top: 8%; }
-  .hero-chip.c2 { bottom: 9%; }
   .card-grid, .app-grid, .product-grid, .steps, .form-row { grid-template-columns: 1fr; }
+  .lu-list { grid-template-columns: 1fr; }
   .trust-grid { grid-template-columns: 1fr; }
   .trust-item + .trust-item { border-inline-start: 0; border-top: 1px solid var(--border); }
   .trust-item { padding: 19px 6px; }

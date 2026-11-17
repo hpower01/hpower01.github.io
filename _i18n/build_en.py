@@ -33,6 +33,8 @@ MARKUP = [
      'Our <span class="grad-text">products</span>'),
     ('חומרה <span class="grad-text">חזקה ומתקדמת</span>',
      'Strong, <span class="grad-text">advanced hardware</span>'),
+    ('עדכון גרסה <span class="grad-text">אחרון</span>',
+     'Latest <span class="grad-text">update</span>'),
 ]
 
 

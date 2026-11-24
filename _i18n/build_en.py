@@ -35,6 +35,7 @@ MARKUP = [
      'Strong, <span class="grad-text">advanced hardware</span>'),
     ('עדכון גרסה <span class="grad-text">אחרון</span>',
      'Latest <span class="grad-text">update</span>'),
+    ('<h3>עוזר קולי</h3>', '<h3>Voice assistant</h3>'),
 ]
 
 
